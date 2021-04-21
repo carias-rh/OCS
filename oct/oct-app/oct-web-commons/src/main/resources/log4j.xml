@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="false"
+	xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+<!-- UNCOMMENT FOR LOCAL CONSOLE LOGGING, DO NOT COMMIT FOR OTHER ENVIRONMENT! OCS-1530 -->
+<!-- 	<appender name="console" class="org.apache.log4j.ConsoleAppender"> -->
+<!-- 		<layout class="org.apache.log4j.PatternLayout"> -->
+<!-- 			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" /> -->
+<!-- 		</layout> -->
+<!-- 	</appender> -->
+
+	<appender name="file" class="org.apache.log4j.RollingFileAppender">
+		<param name="append" value="true" />
+		<param name="maxFileSize" value="10MB" />
+		<param name="maxBackupIndex" value="20" />
+		<param name="file" value="./logs/ocs.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+
+<!--
+	<logger name="org.springframework">
+		<level value="warn" />
+		<appender-ref ref="console" />
+	</logger>
+-->
+
+	<!-- debug level for others -->
+	<!-- <logger name="org.apache"> -->
+	<!-- <level value="Warn" /> -->
+	<!-- <appender-ref ref="console" /> -->
+	<!-- </logger> -->
+	<!-- <logger name=">org.dom4j"> -->
+	<!-- <level value="Warn" /> -->
+	<!-- <appender-ref ref="console" /> -->
+	<!-- </logger> -->
+<!-- 	<logger name=">org.hibernate"> -->
+<!-- 		<level value="Warn" /> -->
+<!-- 		<appender-ref ref="console" /> -->
+<!-- 	</logger> -->
+	<!-- <logger name="mysql"> -->
+	<!-- <level value="Warn" /> -->
+	<!-- <appender-ref ref="console" /> -->
+	<!-- </logger> -->
+
+	<root>
+		<level value="INFO" />
+<!--
+		<appender-ref ref="console" />
+-->
+		<appender-ref ref="file" />
+	</root>
+
+</log4j:configuration>

@@ -1,0 +1,12 @@
+
+<app-header></app-header>
+
+<section id="ocs-dashboard">
+    <h3 class="ocs-title-section">{{ 'dashboard.menu.viewdata' | translate }}</h3>
+    <div class="ocs-description col-md-10 ocs-padd-0"></div>
+
+    <ocs-total *ngIf="top" [data]="top"></ocs-total>
+    <ocs-top7 *ngIf="top7" [data]="top7"></ocs-top7>
+    <ocs-evolution-total *ngIf="evolutionTotal" [data]="evolutionTotal.evolutionMapEntryDetailDTOs"></ocs-evolution-total>
+    <ocs-evolution-country *ngIf="evolutionCountries" [countries]="countries" [data]="evolutionCountries"></ocs-evolution-country>
+</section>

@@ -1,0 +1,5 @@
+id;countryToSignFor;expectedResult;expectedReason;personal.number;firstname;lastname;date.of.birth;place.of.birth;nationality
+0000;se;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty}
+0001;se;FAIL;null values;{null};{null};{null};{null};{null};{null}
+0010;se;PASS;NONE;123456789012;Britt;Erland;01/01/1900;Stockholm;se
+0020;se;FAIL;wrong personal number;123456789;Britt;Erland;01/01/1900;Stockholm;se

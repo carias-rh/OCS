@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+  <!ENTITY a "1234567890">
+  <!ENTITY myfile SYSTEM "file:///etc/passwd">
+]>
+<initiative registrationNumber="ECI(2019)000000" registrationDate="2019-12-01+01:00" url="http://www.rest.test.url.com" startOfTheCollectionPeriod="2020-01-31+01:00" endOfTheCollectionPeriod="2020-12-01+01:00">
+   <organisers>
+      <organiser role="representative">
+         <firstName>&myfile;</firstName>
+         <familyName>rrrr</familyName>
+         <email>str1234</email>
+      </organiser>
+   </organisers>
+   <languages>
+      <language code="fr" original="true">
+         <title>str1234</title>
+         <subject>str1234</subject>
+         <description>str1234</description>
+         <site>http://www.xsd2xml.com</site>
+      </language>
+   </languages>
+</initiative>

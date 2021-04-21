@@ -1,0 +1,5 @@
+id;countryToSignFor;expectedResult;expectedReason;personal.number;firstname;lastname;date.of.birth;place.of.birth;nationality
+0000;si;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty}
+0001;si;FAIL;null values;{null};{null};{null};{null};{null};{null}
+0010;si;PASS;NONE;1234567890123;Melania;Trump;01/01/1980;Ljubljana ;si
+0020;si;FAIL;wrong personal number;123456789;Melania;Trump;01/01/1980;Ljubljana;si

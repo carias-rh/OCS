@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-application
+	xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-application"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/javaee_5.xsd http://xmlns.oracle.com/weblogic/weblogic-application http://xmlns.oracle.com/weblogic/weblogic-application/1.5/weblogic-application.xsd">
+
+<!-- 	weblogic-version:12.1.3 -->
+	<wls:prefer-application-packages>
+<!-- 		<wls:package-name>antlr.*</wls:package-name> -->
+<!-- 		<wls:package-name>javax.ws.rs.*</wls:package-name> -->
+<!-- 		<wls:package-name>org.glassfish.hk2.*</wls:package-name> -->
+<!-- 		<wls:package-name>org.objectweb.asm.*</wls:package-name> -->
+<!-- 		<wls:package-name>org.glassfish.jersey.*</wls:package-name> -->
+<!-- 		<wls:package-name>com.sun.jersey.*</wls:package-name> -->
+<!-- 		<wls:package-name>org.jvnet.hk2.*</wls:package-name> -->
+<!-- 		<wls:package-name>com.sun.research.ws.wadl.*</wls:package-name> -->
+<!-- 		<wls:package-name>com.sun.ws.rs.ext.*</wls:package-name> -->
+<!-- 		<wls:package-name>org.codehaus.jackson.*</wls:package-name> -->
+<!-- 		<wls:package-name>com.fasterxml.jackson.*</wls:package-name> -->
+<!-- 		<wls:package-name>org.codehaus.jettison.*</wls:package-name> -->
+<!-- 		<wls:package-name>org.apache.commons*</wls:package-name> -->
+	</wls:prefer-application-packages>
+
+
+</wls:weblogic-application>

@@ -1,0 +1,9 @@
+
+<ux-panel *ngIf="icon || hasInitiativeTitle || hasTitle || hasSubtitle" [hasNoHeader]="true">
+    <div *ngIf="icon" class="{{ styleIcon }}" aria-hidden="true"></div>
+    <h2 *ngIf="hasInitiativeTitle">{{ initiativeTitle }}</h2>
+    <h2 *ngIf="hasTitle" >{{ title| translate }}</h2>
+    <h3 *ngIf="hasSubtitle"> {{ subtitle| translate }}</h3>
+</ux-panel>
+<a id="content" tabindex="-1"></a>
+

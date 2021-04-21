@@ -1,0 +1,8 @@
+<component>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/lib</outputDirectory>          
+    </dependencySet>
+  </dependencySets>
+</component>
+

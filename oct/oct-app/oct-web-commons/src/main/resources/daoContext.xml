@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:annotation-config />
+	<bean id="accountDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaAccountDAO" />
+	<bean id="countryDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaCountryDAO" />
+	<bean id="countryRuleDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaCountryRuleDAO" />
+	<bean id="initiativeDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaInitiativeDAO" />
+	<bean id="propertyDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaPropertyDAO" />
+	<bean id="settingsDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaSettingsDAO" />
+	<bean id="signatureDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaSignatureDAO" />
+	<bean id="socialMediaDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaSocialMediaDAO" />
+	<bean id="systemPreferencesDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaSystemPreferencesDAO" />
+	<bean id="reportingDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaReportingDAO" />
+	<bean id="contactDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaContactDAO" />
+	<bean id="languageDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaLanguageDAO" />
+	<bean id="authenticationLockDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaAuthenticationLockDAO" />
+	<bean id="emailDAO"
+		class="eu.europa.ec.eci.oct.webcommons.services.persistence.jpa.JpaEmailDAO" />
+</beans>

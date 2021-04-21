@@ -1,0 +1,15 @@
+<app-title [hasInitiativeTitle]="true"></app-title>
+ <div class="row" id="skipLinkPath">
+    <div class="col-md-5 padding-container ocs-container-left">
+        <div class="ocs-panel-style">
+            <app-initiative [hasTitle]="false" [signatore]="false"></app-initiative>
+        </div>
+        <app-signatories [isProgress]=isProgress></app-signatories>
+        <app-carrousel *ngIf="isDistributionMap"></app-carrousel>
+        <app-recent *ngIf="isRecentSignatories"></app-recent>
+    </div>
+    <div class="col-md-7 padding-container ocs-container-right">
+        <app-form></app-form>
+    </div>
+</div>
+<app-support></app-support>

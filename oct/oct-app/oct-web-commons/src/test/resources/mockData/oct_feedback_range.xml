@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<OCT_FEEDBACK_RANGE id="1" label="oct.feedback.horrible" displayOrder="1" enabled="1" />
+	<OCT_FEEDBACK_RANGE id="2" label="oct.feedback.bad" displayOrder="2" enabled="1" />
+	<OCT_FEEDBACK_RANGE id="3" label="oct.feedback.fair" displayOrder="3" enabled="1" />
+	<OCT_FEEDBACK_RANGE id="4" label="oct.feedback.fine" displayOrder="4" enabled="1" />
+	<OCT_FEEDBACK_RANGE id="5" label="oct.feedback.good" displayOrder="5" enabled="1" />
+	<OCT_FEEDBACK_RANGE id="6" label="oct.feedback.great" displayOrder="6" enabled="1" />
+</dataset>

@@ -1,0 +1,7 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;firstname;lastname;nationality
+0000;cz;FAIL;null values;{null};{null};{null};{null};{null};{null}
+0001;cz;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty}
+0010;cz;PASS;NONE;01234567;{skip};Popov Dimitriov;Popov;Bolshoy Dimitrovich;cz
+0011;cz;PASS;NONE;{skip};123456az09;Popov Dimitriov;Popov;Bolshoy Dimitrovich;cz
+0012;cz;FAIL;wrong passort;zfd54rghjy;{skip};Popov Dimitriov;Popov;Bolshoy Dimitrovich;cz
+0013;cz;FAIL;wrong id;{skip};zfd54rghjy;Popov Dimitriov;Popov;Bolshoy Dimitrovich;cz

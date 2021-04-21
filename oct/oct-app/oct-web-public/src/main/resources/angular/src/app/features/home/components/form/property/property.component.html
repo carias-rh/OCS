@@ -1,0 +1,37 @@
+<ux-form-group [label]="label| translate" [isVertical]="true" [feedbackTypeClass]="feedbackClass" [isValid]="!isError">
+    <ng-container *ngIf="isInputText">
+        <ux-form-control [id]="property.label"
+            [isInputText]="true"
+            [(ngModel)]="property.value"
+            (modelChange)="onChange($event)">
+        </ux-form-control>
+    </ng-container>
+    <ng-container *ngIf="isSelect || isCountry">
+        <ux-form-control [id]="property.label"
+            [isSelect]="true"
+            [(ngModel)]="property.value"
+            (modelChange)="onChange($event)">
+            <option *ngFor="let option of property.options" [value]="option.id" [selected]="option.id === property.value">{{ option.value }}</option>
+        </ux-form-control>
+    </ng-container>
+    <ng-container *ngIf="isDate">
+        <ux-datepicker [id]="property.label"
+            placeholder="dd/mm/yyyy"
+            (onDateSelect)="onChange($event)">
+        </ux-datepicker>
+    </ng-container>
+    <ux-control-feedback *ngIf="property.error">{{ ('form.error.' + property.errorMessage) | translate }}</ux-control-feedback>
+</ux-form-group>
+
+<ux-form-group *ngIf="showOther"
+    label="{{ 'form.other-country'| translate }}"
+    [isVertical]="true"
+    [feedbackTypeClass]="feedbackClassOther"
+    [isValid]="!isErrorOther">
+    <ux-form-control [id]="other.label"
+        [isInputText]="true"
+        [(ngModel)]="other.value"
+        (modelChange)="onChangeOther($event)">
+    </ux-form-control>
+    <ux-control-feedback *ngIf="other.error">{{ ('form.error.' + other.errorMessage) | translate }}</ux-control-feedback>
+</ux-form-group>

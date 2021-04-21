@@ -1,0 +1,26 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;issuing.authority;firstname;lastname;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0000;it;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;it;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+0010;it;PASS;NONE;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;Via regina viarum;100;Roma;it
+0020;it;PASS;NONE;AZ1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;Via regina viarum;100;Roma;it
+0030;it;PASS;NONE;{skip};az123456;QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;Via regina viarum;100;Roma;it
+0040;it;PASS;NONE;{skip};AZ123456;QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;Via regina viarum;100;Roma;it
+0050;it;FAIL;issuing.authority is empty;{skip};az123456;{empty};Morricone;Ennio;1/01/1900;Roma;it;Via regina viarum;100;Roma;it
+0060;it;FAIL;date.of.birth;{skip};az123456;Comune;Morricone;Ennio;1/01/2015;Roma;it;Via regina viarum;100;Roma;it
+0070;it;FAIL;id.card format;{skip};azdd123456;Comune;Morricone;Ennio;1/01/2015;Roma;it;Via regina viarum;100;Roma;it
+9001;it;PASS;IT with residence in AT;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;Viennastraat;1234;Vienna;at
+9002;it;PASS;IT with residence in DE;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;bundestagstraat;10005;Berlin;de
+9003;it;PASS;IT with residence in BE;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;Rue neuve;1000;Bruxelles;be
+9004;it;PASS;IT with residence in DK;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;laksegade street;1234;Copenhagen;dk
+9005;it;PASS;IT with residence in EE;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;rue tallin;12345;Tallin;ee
+9006;it;PASS;IT with residence in FR;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;rue de la concorde;12345;Paris;fr
+9007;it;PASS;IT with residence in HR;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;croatia street;12345;Zadar;hr
+9008;it;PASS;IT with residence in LU;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;rue du lux;1234;Lux;lu
+9009;it;PASS;IT with residence in NL;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;flatstraat;1123az;Rotterdam;nl
+9010;it;PASS;IT with residence in PL;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;polosky straat;12345;Warsaw;pl
+9011;it;PASS;IT with residence in RO;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;via chauchesku;123456;Bucaresti;ro
+9012;it;PASS;IT with residence in SK;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;street Parickova;01234;Bratislava;sk
+9013;it;PASS;IT with residence in GB;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;Oxford street;BD15 0HS;London;gb
+9014;it;PASS;IT with residence in IE;az1234567;{skip};QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;beer street;1234AZ;Cork;ie
+9015;it;PASS;IT with residence in IE;{skip};1234567ab;QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;beer street;1234AZ;Cork;ie
+9015;it;PASS;IT with residence in IE;{skip};ab12345ab;QVESTVRA;Morricone;Ennio;1/01/1900;Roma;it;beer street;1234AZ;Cork;ie

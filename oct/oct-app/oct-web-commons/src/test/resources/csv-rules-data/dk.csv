@@ -1,0 +1,22 @@
+id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0001;dk;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0002;dk;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+0010;dk;PASS;NONE;Padukone;Deepika;01/01/1986;Copenhagen;dk;whatever street;1000;Copenhagen;dk
+0020;dk;PASS;NONE;Padukone;Deepika;01/01/1986;Copenhagen;dk;whatever street;1000;Copenhagen;it
+0030;dk;PASS;NONE;Padukone;Deepika;01/01/1986;Copenhagen;it;whatever street;1000;Copenhagen;dk
+0040;dk;FAIL;wrong country and nationality;Padukone;Deepika;01/01/1986;Copenhagen;it;whatever street;1000;Copenhagen;fr
+0050;dk;FAIL;wrong postal code;Padukone;Deepika;01/01/1986;Copenhagen;it;whatever street;1000;Copenhagen;fr
+9001;dk;PASS;DK with residence in AT;Padukone;Deepika;01/01/1986;Copenhagen;dk;Viennastraat;1234;Vienna;at
+9002;dk;PASS;DK with residence in DE;Padukone;Deepika;01/01/1986;Copenhagen;dk;bundestagstraat;10005;Berlin;de
+9003;dk;PASS;DK with residence in BE;Padukone;Deepika;01/01/1986;Copenhagen;dk;Rue neuve;1000;Bruxelles;be
+9004;dk;PASS;DK with residence in EE;Padukone;Deepika;01/01/1986;Copenhagen;dk;rue tallin;12345;Tallin;ee
+9005;dk;PASS;DK with residence in FR;Padukone;Deepika;01/01/1986;Copenhagen;dk;rue de la concorde;12345;Paris;fr
+9006;dk;PASS;DK with residence in HR;Padukone;Deepika;01/01/1986;Copenhagen;dk;croatia street;12345;Zadar;hr
+9007;dk;PASS;DK with residence in IT;Padukone;Deepika;01/01/1986;Copenhagen;dk;Via dei matti;1234567azxcvgre;Milano;it
+9008;dk;PASS;DK with residence in LU;Padukone;Deepika;01/01/1986;Copenhagen;dk;rue du lux;1234;Lux;lu
+9009;dk;PASS;DK with residence in NL;Padukone;Deepika;01/01/1986;Copenhagen;dk;flatstraat;1123az;Rotterdam;nl
+9010;dk;PASS;DK with residence in PL;Padukone;Deepika;01/01/1986;Copenhagen;dk;polosky straat;12345;Warsaw;pl
+9011;dk;PASS;DK with residence in RO;Padukone;Deepika;01/01/1986;Copenhagen;dk;via chauchesku;123456;Bucaresti;ro
+9012;dk;PASS;DK with residence in SK;Padukone;Deepika;01/01/1986;Copenhagen;dk;street Parickova;01234;Bratislava;sk
+9013;dk;PASS;DK with residence in GB;Padukone;Deepika;01/01/1986;Copenhagen;dk;Oxford street;BD15 0HS;London;gb
+9014;dk;PASS;DK with residence in IE;Padukone;Deepika;01/01/1986;Copenhagen;dk;beer street;1234AZ;Cork;ie

@@ -1,0 +1,35 @@
+<section class="ocs-content-settings certificate">
+    <h4 class="mb-3">{{'sections.certificate' | translate}}</h4>
+    <div class="description">
+        {{'certificate.sidebar-text' | translate}}
+    </div>
+    <div class="mt-3">
+        <ux-alert [isCloseable]="true" *ngIf="alert" [typeClass]="alert.type">
+            <div aria-live="polite">{{ alert.label | translate }}</div>
+        </ux-alert>
+        <div *ngIf="hasCertificate">
+            <div class="label mb-2">
+                {{'certificate.download-current' | translate}}
+            </div>
+            <a href="{{ urlCurrentCertificate }}"
+            role="button"
+            attr.aria-label="{{ 'sections.certificate-desc' | translate }}"
+            aria-pressed="false"
+            download="certificate"
+            class="btn">{{'certificate.download-current' | translate }}<span  class="fa fa-download ml-4" aria-label="hidden"></span></a>
+        </div>
+    </div>
+    <div class="description mt-4">
+        <span class="mb-2 ux-u-d-block label"> {{'certificate.upload-certificate' | translate}}</span>
+        <span> {{'certificate.title1' | translate}}</span><a href="https://eur-lex.europa.eu/legal-content/en/TXT/PDF/?uri=CELEX:32019R0788" title="{{ 'certificate.regulation' | translate }}" target="_blank">{{ 'certificate.regulation' | translate }}</a><span>{{'certificate.title2' | translate}}</span>
+    </div>
+    <div class="ocs-drop-drag mt-3 mb-2">
+        <ocs-upload #upload label="structure.upload-button-title"
+            [showTable]="false"
+            [allowedFiles]="['pdf','png','jpg', 'gif']"
+            [isMultiple]="false"
+            [required]="false"
+            (newDocuments)="onAddedFile($event)">
+        </ocs-upload>
+    </div>
+</section>

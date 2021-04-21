@@ -1,0 +1,13 @@
+<div class="signature-bottom padding-container ux-u-d-block signature-center">
+    <div class="signature-{{icon}} ux-u-display-inline-block" aria-hidden="true"></div>
+    <div class="ux-u-display-inline-block ml-3">
+        <ng-container *ngIf="!code">
+            <div class="signature-left">{{ title | translate }}</div>
+            <div class="signature-left">{{ subtitle | translate }}</div>
+        </ng-container>
+        <ng-container *ngIf="code">
+            <div class="signature-left">{{ 'info.' + code + '.title' | translate }}</div>
+            <div class="signature-left">{{ 'info.' + code + '.subtitle' | translate }}</div>
+        </ng-container>
+    </div>
+</div>

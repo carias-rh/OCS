@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<OCT_CONTACT_ROLE id="1" roleDescription="representative" />
+	<OCT_CONTACT_ROLE id="2" roleDescription="substitute" />
+	<OCT_CONTACT_ROLE id="3" roleDescription="member" />
+	<OCT_CONTACT_ROLE id="4" roleDescription="entity" />
+	<OCT_CONTACT_ROLE id="5" roleDescription="other" />
+
+	<OCT_CONTACT id="1" firstName="Peter" familyName="Benton" email="peter_benton@testmail.com" contactRole_id="1"  />
+	<OCT_CONTACT id="2" firstName="Dug" familyName="Ross" email="dug_ross@testmail.com" contactRole_id="2"  />
+	<OCT_CONTACT id="3" firstName="Cola Coca" familyName="" email="" contactRole_id="4" />
+	<OCT_CONTACT id="4" firstName="Kerry" familyName="Weaver" email="" contactRole_id="3"  />
+	<OCT_CONTACT id="5" firstName="Global Peace Foundation" familyName="Peace Boat" email="" contactRole_id="4" country_id="28" />
+</dataset>

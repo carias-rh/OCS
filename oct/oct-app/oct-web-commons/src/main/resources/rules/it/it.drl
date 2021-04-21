@@ -1,0 +1,23 @@
+package eu.europa.ec.eci.oct.validation
+global ValidationResult validationResult;
+rule "rule_oct.property.id.card"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "id.card", value == null || value.toLowerCase() not matches "([a-z]{2}[0-9]{6,8})|([0-9]{7}[a-z]{2})|([a-z]{2}[0-9]{5}[a-z]{2})" )
+    then
+        validationResult.addValidationError("id.card","oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end
+rule "rule_oct.property.issuing.authority"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "issuing.authority", value == null || value.empty == true)
+    then
+        validationResult.addValidationError("issuing.authority","oct.empty.property", ValidationConstants.SKIPPABLE);
+end
+rule "rule_oct.property.passport"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "passport", value == null || value.toLowerCase() not matches "([a-z]{2}[0-9]{7})|([a-z][0-9]{6})|([0-9]{6}[a-z])")
+    then
+        validationResult.addValidationError("passport","oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end

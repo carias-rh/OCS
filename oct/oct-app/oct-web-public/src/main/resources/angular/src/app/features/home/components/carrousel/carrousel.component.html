@@ -1,0 +1,38 @@
+<section>
+    <div class="ocs-box-padd">
+        <ux-carousel-items *ngIf="distributionMap" [isShowSummaryIndicators]="false">
+            <ng-container *ngFor="let country of distributionMap; let i = index">
+                <ux-carousel-item [isActive]="i < 1">
+                    <p class="ocs-title-carousel">{{ country.label | translate }}</p>
+                    <div class="ocs-circle">
+                        <ux-progress-circle
+                            [isLarge]="true"
+                            [value]="country.percentage"
+                            attr.aria-label="{{ 'map.progress_label'| translate: {
+                                percent: 0,
+                                code: country.label | translate,
+                                count: country.count | uxNumberFormat: '' :0: '.',
+                                threshold: country.threshold | uxNumberFormat: '' :0: '.'
+                            } }} "
+                            emptyLabel="{{ 'map.progress_label'| translate: {
+                                percent: 0,
+                                code: country.label | translate,
+                                count: country.count | uxNumberFormat: '' :0: '.',
+                                threshold: country.threshold | uxNumberFormat: '' :0: '.'
+                            } }} "
+                            valueLabel="{{ 'map.progress_label'| translate: {
+                                percent: country.percentage,
+                                code: country.label | translate,
+                                count: country.count | uxNumberFormat: '' :0: '.',
+                                threshold: country.threshold | uxNumberFormat: '' :0: '.'
+                            } }} ">
+                        </ux-progress-circle>
+                    </div>
+                </ux-carousel-item>
+            </ng-container>
+        </ux-carousel-items>
+        <div class="ocs-carousel-line">
+            <a [routerLink]="'/screen/home/allcountries'">{{ 'header.view.allcountries'| translate }}</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <OCT_ACCOUNT id="1"
+                 passHash="f992432fc2260e66247e9f8ec6d1d932d8b63f4474a6c5b9292b86250cd1566d5785b8ca8a3624774781bb97e41b3b1fe999a7cf0e9c134631b9f4cf2ddafb23"
+                 userName="admin"
+                 salt="8f409c36c9bd2690357d8e3fc16460229418babe33efd2841d687399a4a2d52c2a1e21178c34d1fafa618668525ab96832063fa4bdf973abb0ce1bf5ccf3ff11"/>
+</dataset>

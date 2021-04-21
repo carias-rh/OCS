@@ -1,0 +1,9 @@
+package eu.europa.ec.eci.oct.validation
+global ValidationResult validationResult;
+rule "rule_oct.property.postal.code_ie"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "postal.code", value == null)
+    then
+        validationResult.addValidationError("postal.code", "oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end

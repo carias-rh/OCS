@@ -1,0 +1,88 @@
+<ux-block-content [isBlocked]="isBlocked">
+    <section *ngIf="description" class="ocs-content-settings">
+        <ux-alert *ngIf="alert" [typeClass]="alert.type">
+            <div aria-live="polite">{{ alert.message| translate }}</div>
+        </ux-alert>
+        <h4 class="mb-3">{{'sections.structure' | translate}}</h4>
+        <div class="description mb-3">
+            {{ 'structure.sidebar-text1'| translate }}
+            {{ 'structure.sidebar-text2'| translate }}
+        </div>
+        <div class="ocs-drop-drag mt-2 mb-2">
+            <ocs-upload label="structure.upload-button-title"
+                [showTable]="false"
+                [allowedFiles]="['xml']"
+                [isMultiple]="false"
+                [required]="true"
+                (newDocuments)="onUpload($event)">
+            </ocs-upload>
+        </div>
+        <section aria-live="polite" class="ocs-after-upload mt-5">
+            <ng-container *ngIf="isInitialized()">
+                <div class="ocs-info col-md-10">
+                    <div class="mb-2"><span class="ux-u-font-bold"> {{ 'structure.registration-language' | translate }}:</span> {{ description?.languageCode | uppercase }}</div>
+                    <div class="mb-2"><span class="ux-u-font-bold"> {{ 'structure.registration-number' | translate }}:</span> {{ initiative?.registrationNumber }}</div>
+                    <div class="mb-2"><span class="ux-u-font-bold"> {{ 'structure.closing-date' | translate }}:</span> {{ initiative?.closingDate }}</div>
+                    <div class="mb-2"><span class="ux-u-font-bold"> {{ 'structure.registration-date' | translate }}:</span> {{ initiative?.registrationDate }}</div>
+                    <div class="mb-2"><span class="ux-u-font-bold"> {{ 'structure.public-webpage' | translate }}:</span> {{ initiative?.webpage }}</div>
+                </div>
+                <div class="ocs-languages mt-3">
+                    <span class="ux-u-font-bold ocs-font-22 mb-2">{{ 'structure.initiative-languages' | translate }}</span>
+                    <div class="ocs-box-languages">
+                        <div>
+                            <ul>
+                                <li lang="{{ language.code }}"
+                                *ngFor="let language of languages"
+                                [ngClass]="{'active': language.code === description?.languageCode }">
+                                    <button type="button" (click)="onSelectLanguage(language)">{{ language.name }}</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="ocs-title mt-3">
+                    <span class="ux-u-font-bold mb-2 ux-u-d-block">{{ 'structure.title' | translate }}</span>
+                    <span lang="{{ description?.languageCode }}">{{ description.title }}</span>
+                </div>
+                <div class="ocs-objetives mt-3">
+                    <span class="ux-u-font-bold mb-2 ux-u-d-block">{{ 'structure.objectives' | translate }}</span>
+                    <span lang="{{ description?.languageCode }}">{{ description.objectives }}</span>
+                </div>
+                <div class="ocs-website mt-3">
+                    <span class="ux-u-font-bold mb-2 ux-u-d-block">{{ 'structure.url' | translate }}</span>
+                    {{ description.url }}
+                </div>
+                <div class="ocs-subtitle mt-3">
+                    <span class="ux-u-font-bold mb-2 ux-u-d-block">{{ 'structure.partially-registered' | translate }}</span>
+                    <span lang="{{ description?.partialRegistration }}">{{ description.partialRegistration }}</span>
+                </div>
+                <div *ngIf="contacts" class="ocs-contact mt-3">
+                    <span class="ux-u-font-bold mb-2 ux-u-d-block">{{ 'structure.contact-person' | translate }}</span>
+                    <ng-container *ngIf="contacts.representative">
+                        <span class="ux-u-d-block">{{ contacts.representative.name }}</span>
+                        <a class="ux-u-d-block" href="mailto:{{ contacts.representative.email }}">{{ contacts.representative.email }}</a>
+                    </ng-container>
+                    <ng-container *ngIf="contacts.substitute">
+                    <br />
+                    <span class="ux-u-d-block">{{ contacts.substitute.name }}</span>
+                    <a href="mailto:{{ contacts.substitute.email }}" class="ux-u-d-block">{{ contacts.substitute.email }}</a>
+                    </ng-container>
+                </div>
+                <div *ngIf="contacts" class="ocs-organisers mt-3 mb-3">
+                    <span class="ux-u-font-bold mb-2 ux-u-d-block">{{ 'structure.organisers' | translate }}</span>
+                    <ul>
+                        <li *ngFor="let contact of contacts.members">
+                            {{ contact.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="confirmUpload" class="col-md-12 ocs-padd-0 mt-4 ux-u-d-block" style="float: left;">
+                    <div class="ocs-box-buttons col-md-6 ocs-padd-0">
+                        <ux-button [isLarge]="true" styleClass="ocs-button-white mr-2" (click)="onCancel()">{{ 'common.cancel' | translate }}</ux-button>
+                        <ux-button [isLarge]="true" styleClass="ocs-button-blue" (click)="onConfirm()">{{ 'common.save' | translate }}</ux-button>
+                    </div>
+                </div>
+            </ng-container>
+        </section>
+    </section>
+</ux-block-content>

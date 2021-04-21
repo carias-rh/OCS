@@ -1,0 +1,5 @@
+id;countryToSignFor;expectedResult;expectedReason;personal.id;firstname;lastname;name.at.birth;date.of.birth;place.of.birth;nationality
+0000;lv;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;lv;FAIL;null values;{null};{null};{null};{null};{null};{null};{null}
+0010;lv;PASS;NONE;12345612345;Baskin;Elya;Olya;10/10/1980;Riga;lv
+0020;lv;FAIL;wrong personal id;1332133ddss;Baskin;Elya;Olya;10/10/1980;Riga;lv

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export date="2016-02-09T15:41:35.165Z">
+	<initiative registrationNumber="ECI(2017)000001" registrationDate="2017-01-01Z" url="http://www.acceptance.ec.europa.eu/citizens-initiative/public/initiatives/open/details/2017/000004">
+		<organisers>
+			<organiser role="member">
+				<firstName>Paul-Henri</firstName>
+				<familyName>Spaak</familyName>
+			</organiser>
+			<organiser role="representative">
+				<firstName>Alcide</firstName>
+				<familyName>De Gasperi</familyName>
+				<email>adg@europa.eu</email>
+			</organiser>
+			<organiser role="substitute">
+				<firstName>Robert</firstName>
+				<familyName>Schuman</familyName>
+				<email>rs@europa.eu</email>
+			</organiser>
+			<organiser role="member">
+				<firstName>Altiero</firstName>
+				<familyName>Spinelli</familyName>
+			</organiser>
+			<organiser role="member">
+				<firstName>Jean</firstName>
+				<familyName>Monnet</familyName>
+			</organiser>
+			<organiser role="member">
+				<firstName>Winston</firstName>
+				<familyName>Churchill</familyName>
+			</organiser>
+			<organiser role="member">
+				<firstName>Joseph</firstName>
+				<familyName>Bech</familyName>
+			</organiser>
+		</organisers>
+		<languages>
+			<language code="en" original="true">
+				<title>[EN] Test env initiative title</title>
+				<subject>[EN] Test env initiative subject</subject>
+				<description>[EN] Test env initiative desc</description>
+			</language>
+			<language code="fr" original="false">
+				<title>[FR] Test env initiative title</title>
+				<subject>[FR] Test env initiative subject</subject>
+				<description>[FR] Test env initiative description</description>
+			</language>
+			<language code="it" original="false">
+				<title>[IT] Test env initiative title</title>
+				<subject>[IT] Test env initiative subject</subject>
+				<description>[IT] Test env initiative description</description>
+			</language>
+		</languages>
+	</initiative>
+</export>

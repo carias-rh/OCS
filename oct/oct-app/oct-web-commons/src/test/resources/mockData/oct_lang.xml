@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<OCT_LANG id="1" CODE="cs" NAME="oct.lang.Czech" display_order="2" />
+	<OCT_LANG id="2" CODE="da" NAME="oct.lang.Danish" display_order="3" />
+	<OCT_LANG id="3" CODE="de" NAME="oct.lang.German" display_order="4" />
+	<OCT_LANG id="4" CODE="et" NAME="oct.lang.Estonian" display_order="5" />
+	<OCT_LANG id="5" CODE="el" NAME="oct.lang.Greek" display_order="6" />
+	<OCT_LANG id="6" CODE="en" NAME="oct.lang.English" display_order="7" />
+	<OCT_LANG id="7" CODE="es" NAME="oct.lang.Spanish" display_order="8" />
+	<OCT_LANG id="8" CODE="fr" NAME="oct.lang.French" display_order="9" />
+	<OCT_LANG id="9" CODE="it" NAME="oct.lang.Italian" display_order="411" />
+	<OCT_LANG id="10" CODE="lv" NAME="oct.lang.Latvian" display_order="412" />
+	<OCT_LANG id="11" CODE="lt" NAME="oct.lang.Lithuanian" display_order="413" />
+	<OCT_LANG id="12" CODE="ga" NAME="oct.lang.Gaelic" display_order="10" />
+	<OCT_LANG id="13" CODE="hu" NAME="oct.lang.Hungarian" display_order="414" />
+	<OCT_LANG id="14" CODE="mt" NAME="oct.lang.Maltese" display_order="415" />
+	<OCT_LANG id="15" CODE="nl" NAME="oct.lang.Dutch" display_order="416" />
+	<OCT_LANG id="16" CODE="pl" NAME="oct.lang.Polish" display_order="417" />
+	<OCT_LANG id="17" CODE="pt" NAME="oct.lang.Portuguese" display_order="418" />
+	<OCT_LANG id="18" CODE="ro" NAME="oct.lang.Romanian" display_order="419" />
+	<OCT_LANG id="19" CODE="sk" NAME="oct.lang.Slovak" display_order="420" />
+	<OCT_LANG id="20" CODE="sl" NAME="oct.lang.Slovenian" display_order="421" />
+	<OCT_LANG id="21" CODE="fi" NAME="oct.lang.Finnish" display_order="422" />
+	<OCT_LANG id="22" CODE="sv" NAME="oct.lang.Swedish" display_order="423" />
+	<OCT_LANG id="23" CODE="bg" NAME="oct.lang.Bulgarian" display_order="1" />
+	<OCT_LANG id="24" CODE="hr" NAME="oct.lang.Croatian" display_order="11" />
+</dataset>

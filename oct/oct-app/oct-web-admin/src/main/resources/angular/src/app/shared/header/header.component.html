@@ -1,0 +1,48 @@
+<section class="ocs-header-manage">
+    <a id="content" tabindex="-1"></a>
+    <h2 class="signature-collection">{{ 'dashboard.menu.signature-collection' | translate }}</h2>
+    <div class="col-md-12 ocs-flex ocs-padd-0">
+        <div class="col-md-5 ocs-padd-0">
+            <div class="ocs-item-header">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>
+                <span class="ux-u-font-bold"> {{ 'header.registration-number' | translate }}</span> {{ initiative?.registrationNumber }}
+            </div>
+            <div class="ocs-item-header">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <span class="ux-u-font-bold"> {{ 'header.closing-date' | translate }}</span> {{ initiative?.closingDate }}
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="ocs-item-header">
+                <i class="fa fa-wrench" aria-hidden="true"></i>
+                <span class="ux-u-font-bold"> {{ 'header.mode' | translate }} </span>{{ systemLabel | translate }}
+            </div>
+            <div class="ocs-item-header">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <span class="ux-u-font-bold"> {{ 'dashboard.menu.signature-collection-title' | translate }}</span>
+                <ux-switch [isChecked]="isCollectionMode" [attr.aria-pressed]="isCollectionMode" tabindex="0" (toggle)="switchToggled()"> </ux-switch>
+                <span [ngClass]="collectionClass">{{ collectionLabel | translate }}</span></div>
+        </div>
+        <div *ngIf="isGoOnlineEnabled" class="col-md-2 ocs-right">
+            <ux-button styleClass="btn btn-primary" (click)="openModal($event)">{{ 'header.go-online' | translate }}</ux-button>
+            <ux-modal id="goonline" styleClass="ocs-modal" titleLabel="{{ 'goonline.title' | translate }}" [isFooterCustomAlignment]="true" (onClose)="onCloseModal()" footerStyleClass="modalfooter">
+                <uxModalBody>
+                    <div class="icon-modal"> <i aria-hidden="true" class="fa fa-exclamation-triangle"></i> {{ 'goonline.subtitle' | translate }}</div>
+                    <div class="ux-u-text-align-left mt-2">
+                        <ul>
+                            <li>·{{ 'goonline.text1' | translate }}</li>
+                            <li>·{{ 'goonline.text2' | translate }}</li>
+                            <li>·{{ 'goonline.text3' | translate }}</li>
+                            <li>·{{ 'goonline.text4' | translate }}</li>
+                        </ul>
+                    </div>
+
+                </uxModalBody>
+                <uxModalFooter>
+                    <ux-button styleClass="ocs-button-white mr-2" (click)="onCloseModal()">{{ 'common.cancel' | translate }}</ux-button>
+                    <ux-button styleClass="ocs-button-blue" (click)="onGoOnline($event)">{{ 'header.go-online' | translate }}</ux-button>
+                </uxModalFooter>
+            </ux-modal>
+        </div>
+    </div>
+</section>

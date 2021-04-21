@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+
+	<description>
+		Custom tag library for rendering JSP content in a sorted way.
+		This library allows to produce output in a different
+		order than it has been specified in a JSP page, namely
+		sorted according to a given piece of text in each item.
+	</description>	
+	<display-name>Tag library for producing sorted JSP content.</display-name>
+	<tlib-version>0.1</tlib-version>
+	<short-name>sort</short-name>
+	<uri>sort</uri>
+	
+	<tag>
+		<description>
+			Container for sorted items. Note that any
+			JSP content in the body of this tag which is NOT an
+			"item" or a "fixed" tag will be ignored!
+		</description>
+		<name>items</name>
+		<tag-class>eu.europa.ec.eci.oct.webcommons.tag.sort.SortedItemsTag</tag-class>
+ 		<body-content>JSP</body-content>
+ 		
+ 		<attribute>	
+			<description>
+				The name of an HTML element that will be used for wrapping each
+				rendered item. The default value is empty (no wrapper is created).
+			</description>
+			<name>itemHtmlWrapper</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>	
+			<description>
+				CSS class to be used on even item wrappers.
+				The default value is empty (no CSS class will be used).
+				This attribute is only effective, if "itemWrapper" has been
+				specified.
+			</description>
+			<name>itemEvenClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>
+			Defines a single sorted item.
+			This tag must be nested within an "items" tag.
+		</description>
+		<name>item</name>
+		<tag-class>eu.europa.ec.eci.oct.webcommons.tag.sort.SortedItemTag</tag-class>
+ 		<body-content>JSP</body-content>
+	</tag>
+	
+	<tag>
+		<description>
+			Marks a property of an item according to which the items
+			will be sorted.
+			This tag must be nested within an "item" tag.
+		</description>
+		<name>property</name>
+		<tag-class>eu.europa.ec.eci.oct.webcommons.tag.sort.SortedItemPropertyTag</tag-class>
+ 		<body-content>JSP</body-content> 		 		
+	</tag>
+	
+	<tag>
+		<description>
+			Defines a fixed content block. A fixed block will always appear
+			in the place where it was specified in the JSP page, and is
+			thus not affected by the logic that sorts the "item" tags.
+			This tag must be nested within an "items" tag.
+		</description>
+		<name>fixed</name>
+		<tag-class>eu.europa.ec.eci.oct.webcommons.tag.sort.SortedFixedContentTag</tag-class>
+ 		<body-content>JSP</body-content>
+	</tag>
+</taglib>

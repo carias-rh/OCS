@@ -1,0 +1,20 @@
+<ux-form-group id="captcha" [label]="label | translate" [isVertical]="true" [feedbackTypeClass]="feedbackClass" [isValid]="!isError">
+    <div class="row captcha-box">
+        <div class="col-md-8">
+            <figure class="captcha-img" *ngIf="isImage"><img [attr.src]="imageData" class="captcha-center-img" title="captcha"/></figure>
+            <div class="captcha-sound" *ngIf="isAudio">
+                <p class="captcha-sound-text">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                    <a  #audiofocus href="javascript:void(0)" title="{{'form.captcha-audio-download' | translate}}" [attr.href]="audioData" download="audio">{{'form.captcha-audio-download' | translate}}</a>
+                </p>
+            </div>
+            <ux-form-control id="captcha" [isInputText]="true" [(ngModel)]="property.value" (modelChange)="onChange($event)"></ux-form-control>
+        </div>
+        <div class="col-icons-captcha">
+            <ux-button *ngIf="isAudio" [isFlat]="true"  iconClass="fa fa-picture-o" (click)="selectImage()" styleClass="captcha-button"></ux-button>
+            <ux-button #imagefocus *ngIf="isImage" [isFlat]="true" iconClass="fa fa-volume-up" (click)="selectAudio()" styleClass="captcha-button"></ux-button>
+            <ux-button [isFlat]="true" iconClass="fa fa-refresh" (click)="refresh()" styleClass="captcha-button"></ux-button>
+        </div>
+    </div>
+    <ux-control-feedback typeClass="danger" *ngIf="isError">{{ ('form.error.' + property.errorMessage) | translate }}</ux-control-feedback>
+</ux-form-group>

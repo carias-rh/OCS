@@ -1,0 +1,14 @@
+﻿id;countryToSignFor;expectedResult;expectedReason;passport;id.card;permanent.residence;fathers.name;name.at.birth;firstname;lastname;date.of.birth;nationality;
+0000;gr;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};
+0001;gr;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};
+0010;gr;PASS;NONE;az1234567;{skip};{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/1990;gr;
+0020;gr;PASS;NONE;AZ1234567;{skip};{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/1990;gr;
+0030;gr;FAIL;wrong passport;az1234567s;{skip};{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/1990;gr;
+0040;gr;PASS;NONE;{skip};αβ123456;{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/1990;gr;
+0050;gr;FAIL;wrong id card;{skip};αβ123;{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/1990;gr;
+0060;gr;PASS;NONE;{skip};αβ123456;{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/1990;gr;
+0070;gr;FAIL;wrong permanent residence;{skip};{skip};1234567;POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/1990;gr;
+1111;gr;PASS;NONE;{skip};αβ123456;{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/2000;gr;
+2222;gr;PASS;17+ should pass;{skip};αβ123456;{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/2001;gr;
+3333;gr;FAIL;too young;{skip};αβ123456;{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/2011;gr;
+4444;gr;FAIL;too young;{skip};αβ123456;{skip};POPODUPOPOLUS;JANNOLIS;JANNIS;HELLAS;01/01/2022;gr;

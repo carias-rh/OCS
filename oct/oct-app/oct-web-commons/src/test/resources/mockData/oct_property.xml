@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<OCT_PROPERTY id="1" NAME="oct.property.street" priority="87" TYPE="LARGETEXT" group_id="2" />
+	<OCT_PROPERTY id="2" NAME="oct.property.postal.code" priority="85" TYPE="ALPHANUMERIC" group_id="2" />
+	<OCT_PROPERTY id="3" NAME="oct.property.city" priority="84" TYPE="ALPHANUMERIC" group_id="2" />
+	<OCT_PROPERTY id="4" NAME="oct.property.country" priority="83" TYPE="COUNTRY" group_id="2" />
+	<OCT_PROPERTY id="5" NAME="oct.property.date.of.birth" priority="97" TYPE="DATE" group_id="1" />
+	<OCT_PROPERTY id="7" NAME="oct.property.passport" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="8" NAME="oct.property.id.card" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="9" NAME="oct.property.residence.permit" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="10" NAME="oct.property.personal.number" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="11" NAME="oct.property.personal.id" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="12" NAME="oct.property.permanent.residence" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="13" NAME="oct.property.national.id.number" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="14" NAME="oct.property.registration.certificate" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="15" NAME="oct.property.citizens.card" priority="0" TYPE="ALPHANUMERIC" group_id="3" />
+	<OCT_PROPERTY id="16" NAME="oct.property.full.first.names" priority="99" TYPE="ALPHANUMERIC" group_id="1" />
+	<OCT_PROPERTY id="17" NAME="oct.property.family.names" priority="98" TYPE="ALPHANUMERIC" group_id="1" />
+	<OCT_PROPERTY id="18" NAME="oct.property.street.number" priority="86" TYPE="LARGETEXT" group_id="2" />
+</dataset>

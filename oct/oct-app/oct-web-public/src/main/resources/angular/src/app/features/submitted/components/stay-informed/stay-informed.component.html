@@ -1,0 +1,40 @@
+<ux-block-content [isBlocked]="isBlocked">
+    <div class="ocs-panel-style" *ngIf="!informedOk">
+        <div class="ocs-panel-stay">
+            <form [formGroup]="form">
+                <h3 class=""><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;{{ 'congratulations.stay-informed' | translate }} </h3>
+                <div class="form-group">
+                    <input id="citizensInitiative" name="citizensInitiative" formControlName="citizensInitiative" type="checkbox" class="form-control">
+                    <label for="citizensInitiative" innerHTML="{{'congratulations.stay-informed2' | translate }}"></label>
+                    <ux-control-feedback *ngIf="invalidCitizensInitiative"><div class="ocs-error-email ">{{'form.error.email.required' | translate}}</div></ux-control-feedback>
+                </div>
+                <!-- <div class="form-group">
+                    <input id="inGeneral" name="inGeneral" formControlName="inGeneral" type="checkbox" class="form-control">
+                    <label for="inGeneral" innerHTML="{{'congratulations.stay-informed3' | translate:{ url: ('footer.privacy-link3'| translate) } }}"></label>
+                    <ux-control-feedback *ngIf="invalidOneCheck"><div class="ocs-error-email ">{{'form.error.email.checkbox.1' | translate}}</div></ux-control-feedback>
+                </div> -->
+                <div class="form-group">
+                    <input id="privacy" name="privacy" formControlName="privacy" type="checkbox" class="form-control">
+                    <label for="privacy">{{ 'congratulations.stay-informed4' | translate }}</label>
+                    <ux-control-feedback *ngIf="invalidPrivacy"><div class="ocs-error-email ">{{'form.error.email.required' | translate}}</div></ux-control-feedback>
+                </div>
+                <p>{{ 'congratulations.stay-informed-subtitle' | translate }}</p>
+                <label class="hide-label" for="email">{{ 'congratulations.email' | translate }}</label>
+                <input type="email" id="email" name="email" formControlName="email" placeholder="{{ 'congratulations.email' | translate }}">
+                <ux-control-feedback *ngIf="invalidEmail"><div class="ocs-error-email ">{{'form.error.email' | translate}}</div></ux-control-feedback>
+                <div class="ocs-box-button">
+                    <ux-button [isLarge]="true" (click)="onSubmit()">{{ 'congratulations.stay-informed-button' | translate }}</ux-button>
+                </div>
+                <ux-alert *ngIf="errorSaveEmail && form.controls['email'].value" typeClass="danger" styleClass="mt-4">{{'feedback.email-error' | translate}}</ux-alert>
+            </form>
+        </div>
+    </div>
+</ux-block-content>
+<div *ngIf="informedOk">
+    <div class="ocs-panel-style">
+        <div class="ocs-panel-stay-ok">
+            <h3 class="">{{ 'congratulations.stay-informed-ok' | translate }} </h3>
+            <p>{{ 'congratulations.stay-informed-ok-subtitle' | translate }}</p>
+        </div>
+    </div>
+</div>

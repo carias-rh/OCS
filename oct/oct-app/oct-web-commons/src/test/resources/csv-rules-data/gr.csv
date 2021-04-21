@@ -1,0 +1,8 @@
+﻿id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0;gr;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+1;gr;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{empty}
+10;gr;PASS;NONE;Papathanassiou;Evangelos Odysseas;29/03/1943;Agria;gr;blade runner;37300;Agria;gr
+20;gr;PASS;NONE;Papathanassiou;Evangelos Odysseas;29/03/1943;Agria;xx;blade runner;37300;Agria;gr
+30;gr;PASS;NONE;Papathanassiou;Evangelos Odysseas;29/03/1943;Agria;gr;blade runner;37300;Agria;xx
+40;gr;FAIL;rong country and nationality;Papathanassiou;Evangelos Odysseas;29/03/1943;Agria;xx;blade runner;37300;Agria;xx
+50;gr;FAIL;wrong postal code;Papathanassiou;Evangelos Odysseas;29/03/1943;Agria;gr;blade runner;37300123;Agria;gr

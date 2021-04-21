@@ -1,0 +1,8 @@
+<app-header></app-header>
+<section id="ocs-export" class="col-md-12">
+    <h3 class="ocs-title-section">{{ 'dashboard.menu.export' | translate}}</h3>
+
+    <ocs-countries-export (exported)="OnExport()"></ocs-countries-export>
+    <ocs-history-export #history></ocs-history-export>
+
+</section>

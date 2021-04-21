@@ -1,0 +1,72 @@
+<div *ngIf="!viewMode">
+    <div class="mb-1" *ngIf="showInfo">{{ label | translate }}</div>
+    <div class="row drag-drop">
+        <div class="col-md-8">
+            <file-drop (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" customstyle="drag-drop-box">
+                {{ 'upload.drag-drop' | translate }}
+            </file-drop>
+            <span *ngIf="error" class="ux-u-color-danger-dark has-error">{{ errorMessage | translate }}</span>
+            <ux-control-feedback *ngIf="showInfo">{{ 'upload.accepted-file' | translate }}: {{ extensionList }} </ux-control-feedback>
+        </div>
+        <div class="col-md-4">
+            <form [formGroup]="form">
+                <ux-form-group [isVertical]="true">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input [hidden]="true" #inputFile id="myInput" type="file" formControlName="file" (change)="readFile($event.target.files)">
+                            <ux-button-group [hasPairedIcon]="true" (clicked)="openDialog()">
+                                <ux-button-group-item label="{{ 'common.upload' | translate }}"></ux-button-group-item>
+                                <ux-button-group-item iconClass="fa fa-upload"></ux-button-group-item>
+                            </ux-button-group>
+                            <ux-control-feedback>{{ 'upload.error.max-size' | translate: {max: size} }}</ux-control-feedback>
+                        </div>
+                    </div>
+                </ux-form-group>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="showTable" class="ux-u-z-depth-1 table-upload mt-5">
+    <ux-alert [isCloseable]="true" *ngIf="deleting" typeClass="success">
+        <div aria-live="polite">
+            {{'certificate.deleted' | translate }}
+        </div>
+    </ux-alert>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>{{ tableName | translate }}</th>
+                <th *ngIf="hasDate">{{ 'common.date' | translate }}</th>
+                <th *ngIf="hasStatus" >{{ 'common.status' | translate }}</th>
+                <th *ngIf="!viewMode">{{ 'common.actions' | translate }}</th>
+            </tr>
+        </thead>
+        <tbody class="tbody-upload">
+            <tr *ngIf="uploads.length === 0">
+                <td><small>{{ 'upload.no-additional' | translate }}</small></td>
+                <td *ngIf="hasDate"></td>
+                <td *ngIf="hasStatus"></td>
+                <td *ngIf="!viewMode"></td>
+            </tr>
+            <tr *ngFor="let item of uploads; let i = index">
+                <td *ngIf="item.id" class="filename" (click)="onDownload(item)">
+                    <a href="{{ downloadUrl }}" title="{{ 'common.download' | translate }} {{ item.fileName }}" target="_blank">{{ item.fileName }}</a>
+                </td>
+                <td *ngIf="!item.id" class="filename">{{ item.fileName }}</td>
+                <td *ngIf="hasDate">{{ item.date }}</td>
+                <td *ngIf="hasStatus" [ngClass]="{
+                    'status-published': item.status === 'bg_Published',
+                    'status-pendingapproval': item.status === 'bg_Pending approval',
+                    'status-draft': item.status === 'bg_draft' }">
+                    {{ item.status }}
+                </td>
+                <td *ngIf="!viewMode">
+                    <ux-button *ngIf="!viewMode" [isSmall]="true" iconClass="fa fa-trash-o" [isFlat]="true" typeClass="primary" (click)="onDelete(i)">
+                        {{ 'common.delete' | translate }}
+                    </ux-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

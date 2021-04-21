@@ -1,0 +1,16 @@
+<app-title [hasInitiativeTitle]="true"></app-title>
+
+<app-signature-alert icon="close" [code]="code"></app-signature-alert>
+
+<div class="row">
+    <div class="col-md-5 padding-container">
+        <app-signatories></app-signatories>
+        <app-carrousel></app-carrousel>
+        <app-recent></app-recent>
+    </div>
+    <div class="col-md-7 padding-container already-section">
+        <app-initiative [hasTitle]="true" [signatore]="true"></app-initiative>
+    </div>
+</div>
+
+<app-support></app-support>

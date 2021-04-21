@@ -1,0 +1,48 @@
+<persistence
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="oct" transaction-type="JTA">
+
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+		<jta-data-source>jdbc/oct</jta-data-source>
+
+		<class>eu.europa.ec.eci.oct.entities.AuthenticationLock</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.Contact</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.ContactRole</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.Account</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.InitiativeDescription</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.SystemPreferences</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.SocialMedia</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.SocialMediaMessage</class>
+		<class>eu.europa.ec.eci.oct.entities.system.Country</class>
+		<class>eu.europa.ec.eci.oct.entities.system.CountryRule</class>
+		<class>eu.europa.ec.eci.oct.entities.system.Language</class>
+		<class>eu.europa.ec.eci.oct.entities.signature.Signature</class>
+		<class>eu.europa.ec.eci.oct.entities.CountryProperty</class>
+		<class>eu.europa.ec.eci.oct.entities.Property</class>
+		<class>eu.europa.ec.eci.oct.entities.PropertyGroup</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.RuleParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.ValidationRule</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.GlobalRuleParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.GlobalValidationRule</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.LocalRuleParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.LocalValidationRule</class>
+		<class>eu.europa.ec.eci.oct.entities.ConfigurationParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.Feedback</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.FeedbackRange</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.StepState</class>
+		<class>eu.europa.ec.eci.oct.webcommons.services.export.utils.ExportSignatureBean</class>
+		<value>eu.europa.ec.eci.oct.entities.views.LastSignatures</value>
+		<value>eu.europa.ec.eci.oct.entities.views.EvolutionMapByCountry</value>
+		<value>eu.europa.ec.eci.oct.entities.views.FastSignatureCount</value>
+		<class>eu.europa.ec.eci.oct.entities.translations.Translation</class>
+		<value>eu.europa.ec.eci.oct.entities.email.Email</value>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<!-- <shared-cache-mode>NONE</shared-cache-mode> -->
+	</persistence-unit>
+</persistence>
+

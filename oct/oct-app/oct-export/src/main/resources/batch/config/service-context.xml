@@ -1,0 +1,78 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:property-placeholder
+		location="log4j.properties" />
+	<context:component-scan
+		base-package="eu.europa.ec.eci.oct.export.persistence" />
+	<context:annotation-config />
+
+
+	<bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="jdbc/oct" />
+		<!-- 'resourceRef:true' is required property for compatibility with tomcat 
+			and weblogic. Glassfish require further confing: check resuorce-ref in glassfish-web.xml 
+			public/admin -->
+		<property name="resourceRef" value="true" />
+	</bean>
+
+	<bean id="exportHistoryPersistenceDAO"
+		class="eu.europa.ec.eci.oct.export.persistence.ExportHistoryPersistenceHibernate" />
+	<import resource="batch-context.xml" />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop> -->
+<!-- 				<prop key="hibernate.dialect_resolvers">eu.europa.ec.eci.oct.jdbc.OCSDatabaseDialectResolver -->
+<!-- 				</prop> -->
+				<prop key="hibernate.order_updates">true</prop>
+				<prop key="hibernate.default_entity_mode">pojo</prop>
+				<!-- use bytea for blobs! -->
+				<prop key="hibernate.jdbc.use_streams_for_binary">true</prop>
+				<prop key="hibernate.c3p0.acquire_increment">1</prop>
+				<prop key="hibernate.c3p0.min_size">5</prop>
+				<prop key="hibernate.c3p0.max_size">12</prop>
+				<prop key="hibernate.c3p0.timeout">1000</prop>
+				<prop key="hibernate.c3p0.max_statements">50</prop>
+				<prop key="hibernate.c3p0.idle_test_period">1000</prop>
+				<prop key="hibernate.connection.isolation">8</prop>
+				<prop key="hibernate.id.new_generator_mappings">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">validate</prop>
+			</props>
+		</property>
+		<property name="packagesToScan"
+			value="eu.europa.ec.eci.oct.export.persistence" />
+		<property name="annotatedClasses">
+			<list>
+				<value>eu.europa.ec.eci.oct.entities.export.ExportHistory</value>
+			</list>
+		</property>
+	</bean>
+
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="transactionManagerBatch"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

@@ -1,0 +1,22 @@
+id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0;de;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+1;de;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{empty}
+10;de;PASS;NONE;Einstein;Albert;01/01/1915;Berlin;de;berlin east wall;10005;Berlin;de
+20;de;PASS;NONE;Einstein;Albert;01/01/1915;Berlin;xx;berlin east wall;10005;Berlin;de
+30;de;PASS;NONE;Einstein;Albert;01/01/1915;Berlin;de;berlin east wall;10005;Berlin;xx
+40;de;FAIL;rong country and nationality;Einstein;Albert;01/01/1915;Berlin;xx;berlin east wall;10005;Berlin;xx
+50;de;FAIL;wrong postal code;Einstein;Albert;01/01/1915;Berlin;de;berlin east wall;10005123;Berlin;de
+9001;de;PASS;DE with residence in AT;Einstein;Albert;01/01/1915;Berlin;de;Viennastraat;1234;Vienna;at
+9002;de;PASS;DE with residence in BE;Einstein;Albert;01/01/1915;Berlin;de;Rue neuve;1000;Bruxelles;be
+9003;de;PASS;DE with residence in DK;Einstein;Albert;01/01/1915;Berlin;de;laksegade street;1234;Copenhagen;dk
+9004;de;PASS;DE with residence in EE;Einstein;Albert;01/01/1915;Berlin;de;rue tallin;12345;Tallin;ee
+9005;de;PASS;DE with residence in FR;Einstein;Albert;01/01/1915;Berlin;de;rue de la concorde;12345;Paris;fr
+9006;de;PASS;DE with residence in HR;Einstein;Albert;01/01/1915;Berlin;de;croatia street;12345;Zadar;hr
+9007;de;PASS;DE with residence in IT;Einstein;Albert;01/01/1915;Berlin;de;Via dei matti;1234567azxcvgre;Milano;it
+9008;de;PASS;DE with residence in LU;Einstein;Albert;01/01/1915;Berlin;de;rue du lux;1234;Lux;lu
+9009;de;PASS;DE with residence in NL;Einstein;Albert;01/01/1915;Berlin;de;flatstraat;1123az;Rotterdam;nl
+9010;de;PASS;DE with residence in PL;Einstein;Albert;01/01/1915;Berlin;de;polosky straat;12345;Warsaw;pl
+9011;de;PASS;DE with residence in RO;Einstein;Albert;01/01/1915;Berlin;de;via chauchesku;123456;Bucaresti;ro
+9012;de;PASS;DE with residence in SK;Einstein;Albert;01/01/1915;Berlin;de;street Parickova;01234;Bratislava;sk
+9013;de;PASS;DE with residence in GB;Einstein;Albert;01/01/1915;Berlin;de;Oxford street;BD15 0HS;London;gb
+9014;de;PASS;DE with residence in IE;Einstein;Albert;01/01/1915;Berlin;de;beer street;1234AZ;Cork;ie

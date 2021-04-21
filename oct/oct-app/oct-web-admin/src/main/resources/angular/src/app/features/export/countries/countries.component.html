@@ -1,0 +1,84 @@
+<form [formGroup]="formExport">
+    <fieldset>
+        <legend class="ocs-element-hidden">{{'dashboard.export.select-dates' | translate}}</legend>
+        <div class="ux-u-font-bold mt-2 mb-2 font-size-16">{{'dashboard.export.select-dates' | translate}}</div>
+        <div class="row">
+            <div class="col-md-4">
+                <ux-form-group label="{{'dashboard.export.from' | translate}}" [isVertical]="true" >
+                    <!-- <ux-form-control [isDatepicker]="true" formControlName="exportDateFrom"></ux-form-control> -->
+                    <ux-datepicker formControlName="exportDateFrom"></ux-datepicker>
+                </ux-form-group>
+            </div>
+            <div class="col-md-4">
+                <ux-form-group label="{{'dashboard.export.to' | translate}}" [isVertical]="true">
+                    <!-- <ux-form-control [isDatepicker]="true" formControlName="exportDateTo"></ux-form-control> -->
+                    <ux-datepicker formControlName="exportDateTo"></ux-datepicker>
+                </ux-form-group>
+            </div>
+        </div>
+        <a class="mt-2 mb-2 ux-u-text-link ocs-font-18" href="javascript:void(0)" (click)="setInitiativeDates()">{{ 'dashboard.export.all-initiative-period' | translate }}</a>
+    </fieldset>
+</form>
+
+<div *ngIf="isProgressBar" class="mt-4 mb-2">
+    <ux-alert *ngIf="warning" typeClass="warning">{{ warning | translate }}</ux-alert>
+    <div class="mt-2 mb-2"><span class="progress-label ux-u-font-bold font-size-16">{{ alert?.label | translate }}</span></div>
+    <div class="progress col-md-10 ocs-padd-0" [ngClass]="{'in-progress': 'loadingExport = true'}">
+        <div id="exportProgressBar"
+            class="progress-bar active"
+            [ngClass]="progressbar.class"
+            [ngStyle]="{ 'width': progressbar?.width }"
+            role="progressbar"
+            [attr.aria-valuenow]="progressbar?.value"
+            aria-valuemin="0"
+            aria-valuemax="100">
+            <span id="current-progress"></span>
+        </div>
+    </div>
+</div>
+
+<div class="ocs-export-countries">
+    <ux-alert *ngIf="timeout" typeClass="warning" [isCloseable]="true">{{ 'dashboard.export.timeout-message' | translate }}</ux-alert>
+    <div class="ocs-export-box mt-3 mb-3 row">
+        <div class="col-md-7 ux-u-font-bold ux-u-color-grey-dark mt-2 font-size-16">{{ 'dashboard.export.select-all-countries' | translate }}
+
+        </div>
+        <div class="col-md-5 ocs-right">
+            {{'dashboard.export.total-selected'| translate:{ selected: totalSelectedLabel, total: totalCountLabel } }}
+            <ux-button [isDisabled]="isExportDisabled()" iconClass="fa fa-download" (click)="export()" styleClass="ml-3">{{ 'dashboard.export.export-button' | translate }}</ux-button>
+            <ux-button *ngIf="exportWritingStarted" (click)="stopExportConfirm()" typeClass="danger" styleClass="ml-3">{{ 'dashboard.export.stop' | translate }}"</ux-button>
+         </div>
+    </div>
+    <table class="table table-hover table-export-countries mt-4 mb-4">
+        <thead>
+            <tr>
+                <th id="checkall" class="ux-u-width-1">
+                    <input type="checkbox" (click)="checkAllCountries()" name="country_all" id="country_all" />
+                    <label for="country_all">{{ 'dashboard.export.select-all-countries'| translate }}</label>
+                </th>
+                <th id="country">{{'dashboard.export.country'| translate }}</th>
+                <th id="numberstatement">{{'dashboard.export.number-statements'| translate }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let country of countries">
+                <td headers="checkall">
+                    <input type="checkbox" id="country_{{country.id}}" name="country_{{country.id}}"
+                        [checked]="isCountryChecked(country.id)"
+                        (click)="onSelectCountry(country.id)"
+                        class="ux-u-width-1" />
+                    <label for="country_{{country.id}}">{{ 'dashboard.export.select-all-countries'| translate }}</label>
+                </td>
+                <td headers="country" class="ux-u-font-bold">{{ country.text }}</td>
+                <td headers="numberstatement">{{ getCountFormatted(country.id) | uxNumberFormat: '' :0: '.' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ux-message-box id="stopDialog"
+    titleLabel="{{ 'dashboard.export.stop-confirm-title'| translate }}"
+    acceptLabel="{{ 'common.confirm' | translate }}"
+    dismissLabel="{{ 'common.cancel' | translate }}" (clicked)="onClickStopDialog($event)">
+    <p>{{ 'dashboard.export.stop-confirm' | translate }}</p>
+</ux-message-box>

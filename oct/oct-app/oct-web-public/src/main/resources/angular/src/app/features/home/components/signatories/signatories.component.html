@@ -1,0 +1,44 @@
+<section class="ocs-box-padd">
+    <div *ngIf="progress" class="ocs-signature">
+        <div class="ocs-progress-bar">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <h3 class="ocs-title-label-inline"> {{ 'header.supporters' | translate }} </h3>
+            <div class="progress mb-2">
+                <div class="progress-bar" aria-live="polite" role="progressbar" attr.aria-valuenow="{{ progress.getPercent() }}"
+                     aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width':  progress.getPercent()  + '%'}">
+                </div>
+            </div>
+        </div>
+        <div class="ocs-progress-bar-data">
+            <div attr.aria-label="{{ 'header.current.supporters'| translate }} {{ progress?.signatureCount | uxNumberFormat: '' :0: '.' }}">
+                {{ progress?.signatureCount | uxNumberFormat: '' :0: '.' }}
+            </div> /
+            <div attr.aria-label="{{ 'header.total-supporters'| translate }} {{ progress?.goal | uxNumberFormat: '' :0: '.' }}">
+                {{ progress?.goal | uxNumberFormat: '' :0: '.' }}
+            </div>
+        </div>
+
+    </div>
+    <div class="ocs-signature">
+        <i class="fa fa-list-alt" aria-hidden="true"></i><span class="ocs-label"> {{ 'header.registration.number' | translate }}:</span>
+        <span class="ocs-font-16"> {{ initiative?.registrationNumber }}</span>
+    </div>
+    <div class="ocs-signature">
+        <i class="fa fa-calendar" aria-hidden="true"></i><span class="ocs-label"> {{ 'header.registration.date' | translate }}:</span>
+        <span class="ocs-font-16"> {{ initiative?.registrationDate}}</span>
+    </div>
+    <div class="ocs-signature">
+        <i class="fa fa-clock-o" aria-hidden="true"></i><span class="ocs-label"> {{ 'header.closing.date' | translate }}:</span>
+        <span class="ocs-font-16"> {{ initiative?.closingDate }}</span>
+    </div>
+    <div class="ocs-signature">
+        <div class="flex-container">
+            <a *ngIf="showFacebook" class="icon-facebook" href="{{ customisations.facebookUrl }}" title="{{ 'header.goto-facebook'| translate }}" target="_blank">
+                <img src="assets/img/icon-facebook.png" alt="Facebook">
+            </a>
+            <a *ngIf="showTwitter" class="icon-twitter" href="{{ customisations.twitterUrl }}" title="{{ 'header.goto-twitter'| translate }}" target="_blank">
+                <img src="assets/img/icon-twitter.png" alt="Twitter">
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;firstname;lastname;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0000;fr;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;fr;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+0010;fr;PASS;NONE;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0020;fr;PASS;NONE;12AZ12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0030;fr;FAIL;worng passport;12az12341x;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0040;fr;PASS;NONE;{skip};abcd567;Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0050;fr;PASS;NONE;{skip};ABCD567;Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0060;fr;FAIL;wrong id card;{skip};abcd56dada7;Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0070;fr;PASS;NONE;{skip};123456abcfbc;Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0080;fr;PASS;NONE;{skip};123456aBCFBC;Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+0090;fr;FAIL;wrong id card;{skip};hjhj;Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue de la guerre;12345;Ajaccio;fr
+9001;fr;PASS;FR with residence in AT;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Viennastraat;1234;Vienna;at
+9002;fr;PASS;FR with residence in DE;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;bundestagstraat;10005;Berlin;de
+9003;fr;PASS;FR with residence in BE;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Rue neuve;1000;Bruxelles;be
+9004;fr;PASS;FR with residence in DK;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;laksegade street;1234;Copenhagen;dk
+9005;fr;PASS;FR with residence in EE;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;rue tallin;12345;Tallin;ee
+9006;fr;PASS;FR with residence in HR;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;croatia street;12345;Zadar;hr
+9007;fr;PASS;FR with residence in IT;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Via dei matti;1234567azxcvgre;Milano;it
+9008;fr;PASS;FR with residence in LU;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;rue du lux;1234;Lux;lu
+9009;fr;PASS;FR with residence in NL;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;flatstraat;1123az;Rotterdam;nl
+9010;fr;PASS;FR with residence in PL;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;polosky straat;12345;Warsaw;pl
+9011;fr;PASS;FR with residence in RO;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;via chauchesku;123456;Bucaresti;ro
+9012;fr;PASS;FR with residence in SK;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;street Parickova;01234;Bratislava;sk
+9013;fr;PASS;FR with residence in GB;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;Oxford street;BD15 0HS;London;gb
+9014;fr;PASS;FR with residence in IE;12az12341;{skip};Bonaparte;Napoleone;17/08/1769;Ajaccio;fr;beer street;1234AZ;Cork;ie

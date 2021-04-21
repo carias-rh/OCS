@@ -1,0 +1,7 @@
+id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;date.of.birth;country;nationality;
+0000;fi;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};
+0001;fi;FAIL;null values;{null};{null};{null};{null};{null};
+0010;fi;PASS;NONE;Malalaaa;Kabakalala;09/09/1915;fi;fi;
+0020;fi;PASS;NONE;Malalaaa;Kabakalala;09/09/1915;mt;fi;
+0030;fi;PASS;NONE;Malalaaa;Kabakalala;09/09/1915;fi;mt;
+0040;fi;FAIL;wrong national and country;Malalaaa;Kabakalala;09/09/1915;it;mt;

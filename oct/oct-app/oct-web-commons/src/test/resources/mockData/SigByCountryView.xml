@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="at" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="be" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="bg" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="cy" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="cz" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="de" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="dk" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="ee" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="gr" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="es" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="fi" />
+	<SIGBYCOUNTRYVIEW sos="2" month="1" year="2020" code="fr" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="hr" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="hu" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="ie" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="it" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="lt" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="lu" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="lv" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="mt" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="nl" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="pl" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="pt" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="ro" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="se" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="si" />
+	<SIGBYCOUNTRYVIEW sos="0" month="0" year="0" code="sk" />
+	<SIGBYCOUNTRYVIEW sos="2" month="0" year="0" code="ALL" />
+</dataset>

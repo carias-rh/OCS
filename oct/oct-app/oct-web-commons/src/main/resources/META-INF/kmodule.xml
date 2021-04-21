@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.drools.org/xsd/kmodule">
+
+    <kbase name="commonKB" packages="rules.common">
+        <ksession name="commonKS"/>
+    </kbase>
+
+    <kbase name="atKB" includes="commonKB" packages="rules.at">
+        <ksession name="atKS"/>
+    </kbase>
+    <kbase name="beKB" includes="commonKB" packages="rules.be">
+        <ksession name="beKS"/>
+    </kbase>
+    <kbase name="bgKB" includes="commonKB" packages="rules.bg">
+        <ksession name="bgKS"/>
+    </kbase>
+    <kbase name="cyKB" includes="commonKB" packages="rules.cy">
+        <ksession name="cyKS"/>
+    </kbase>
+    <kbase name="czKB" includes="commonKB" packages="rules.cz">
+        <ksession name="czKS"/>
+    </kbase>
+    <kbase name="deKB" includes="commonKB" packages="rules.de">
+        <ksession name="deKS"/>
+    </kbase>
+    <kbase name="dkKB" includes="commonKB" packages="rules.dk">
+        <ksession name="dkKS"/>
+    </kbase>
+    <kbase name="eeKB" includes="commonKB" packages="rules.ee">
+        <ksession name="eeKS"/>
+    </kbase>
+    <kbase name="grKB" includes="commonKB" packages="rules.gr">
+        <ksession name="grKS"/>
+    </kbase>
+    <kbase name="esKB" includes="commonKB" packages="rules.es">
+        <ksession name="esKS"/>
+    </kbase>
+    <kbase name="fiKB" includes="commonKB" packages="rules.fi">
+        <ksession name="fiKS"/>
+    </kbase>
+    <kbase name="frKB" includes="commonKB" packages="rules.fr">
+        <ksession name="frKS"/>
+    </kbase>
+    <kbase name="ieKB" includes="commonKB" packages="rules.ie">
+        <ksession name="ieKS"/>
+    </kbase>
+    <kbase name="hrKB" includes="commonKB" packages="rules.hr">
+        <ksession name="hrKS"/>
+    </kbase>
+    <kbase name="huKB" includes="commonKB" packages="rules.hu">
+        <ksession name="huKS"/>
+    </kbase>
+    <kbase name="itKB" includes="commonKB" packages="rules.it">
+        <ksession name="itKS"/>
+    </kbase>
+    <kbase name="ltKB" includes="commonKB" packages="rules.lt">
+        <ksession name="ltKS"/>
+    </kbase>
+    <kbase name="lvKB" includes="commonKB" packages="rules.lv">
+        <ksession name="lvKS"/>
+    </kbase>
+    <kbase name="luKB" includes="commonKB" packages="rules.lu">
+        <ksession name="luKS"/>
+    </kbase>
+    <kbase name="mtKB" includes="commonKB" packages="rules.mt">
+        <ksession name="mtKS"/>
+    </kbase>
+    <kbase name="nlKB" includes="commonKB" packages="rules.nl">
+        <ksession name="nlKS"/>
+    </kbase>
+    <kbase name="plKB" includes="commonKB" packages="rules.pl">
+        <ksession name="plKS"/>
+    </kbase>
+    <kbase name="ptKB" includes="commonKB" packages="rules.pt">
+        <ksession name="ptKS"/>
+    </kbase>
+    <kbase name="roKB" includes="commonKB" packages="rules.ro">
+        <ksession name="roKS"/>
+    </kbase>
+    <kbase name="seKB" includes="commonKB" packages="rules.se">
+        <ksession name="seKS"/>
+    </kbase>
+    <kbase name="siKB" includes="commonKB" packages="rules.si">
+        <ksession name="siKS"/>
+    </kbase>
+    <kbase name="skKB" includes="commonKB" packages="rules.sk">
+        <ksession name="skKS"/>
+    </kbase>
+    <kbase name="grKB" includes="commonKB" packages="rules.gr">
+        <ksession name="grKS"/>
+    </kbase>
+
+</kmodule>

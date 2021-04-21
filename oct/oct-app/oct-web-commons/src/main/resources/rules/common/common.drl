@@ -1,0 +1,110 @@
+package eu.europa.ec.eci.oct.validation
+import java.util.Date
+import java.util.Calendar
+import java.text.SimpleDateFormat;
+global ValidationResult validationResult;
+global String countryOfResidence;
+global String nationality;
+
+rule "rule_oct.property.postal.code"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "postal.code", value == null || value.empty == true || value.length > 10)
+    then
+        validationResult.addValidationError("postal.code", "oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end
+rule "rule_oct.property.street"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "street",  value == null ||  value.empty == true )
+    then
+        validationResult.addValidationError("street","oct.empty.property", ValidationConstants.NOT_SKIPPABLE);
+end
+rule "rule_oct.property.street.number"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "street.number",  value == null || value.empty == true )
+    then
+        validationResult.addValidationError("street.number","oct.empty.property", ValidationConstants.NOT_SKIPPABLE);
+end
+rule "rule_oct.property.city"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "city",  value == null || value.empty == true )
+    then
+        validationResult.addValidationError("city","oct.empty.property", ValidationConstants.NOT_SKIPPABLE);
+end
+rule "rule_oct.property.family.names"
+    dialect "java"
+
+    when
+        v : ValidationProperty(key == "family.names", value == null || value.empty == true )
+    then
+        validationResult.addValidationError("family.names","oct.empty.property", ValidationConstants.NOT_SKIPPABLE);
+end
+rule "rule_oct.property.full.first.names"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "full.first.names",  value == null || value.empty == true )
+    then
+        validationResult.addValidationError("full.first.names","oct.empty.property", ValidationConstants.NOT_SKIPPABLE);
+end
+rule "rule_oct.property.country"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "country",  value == null || value.empty == true )
+    then
+        validationResult.addValidationError("country","oct.empty.property", ValidationConstants.NOT_SKIPPABLE);
+end
+
+rule "rule_oct.property.date.of.birth"
+    dialect "java"
+    when
+        v : ValidationProperty(
+                key == "date.of.birth",
+                (value == null || value.empty == true || !isAbleToVoteByMS(nationality, value)))
+    then
+        validationResult.addValidationError("date.of.birth","oct.error.invalidrange", ValidationConstants.NOT_SKIPPABLE);
+end
+
+function boolean isAbleToVoteByMS(String countryCode, String value){
+    boolean hasPassed = false;
+    switch (countryCode){
+        case "at":
+        case "mt":
+		case "lu":
+		case "ee":
+            hasPassed = isInRangeByDDMMYYY_date(16, value);
+            break;
+        case "gr":
+            hasPassed = isInRangeByYYYY_date(17, value);
+            break;
+        default:
+            hasPassed = isInRangeByDDMMYYY_date(18, value);
+            break;
+    }
+    return hasPassed;
+}
+
+function boolean isInRangeByDDMMYYY_date(int years, String value){
+    Long bDateTime = new SimpleDateFormat("dd/MM/yyyy").parse(value).getTime();
+    Date currentDate = new Date();
+    Calendar cal = Calendar.getInstance();
+    cal.setTime(currentDate);
+    cal.add(Calendar.YEAR, -years);
+    Date modifiedDate = cal.getTime();
+    return modifiedDate.getTime() >= bDateTime;
+}
+
+function boolean isInRangeByYYYY_date(int years, String value){
+    Calendar nimYear = Calendar.getInstance();
+    nimYear.setTime(new Date());
+    nimYear.add(Calendar.YEAR, -years);
+    Calendar userYear = Calendar.getInstance();
+    userYear.setTime(new SimpleDateFormat("dd/MM/yyyy").parse(value));
+    if((nimYear.get(Calendar.YEAR) - userYear.get(Calendar.YEAR)) >= 0){
+        return true;
+    }else{
+        return false;
+    }
+}

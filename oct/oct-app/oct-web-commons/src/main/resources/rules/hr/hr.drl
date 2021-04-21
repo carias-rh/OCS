@@ -1,0 +1,9 @@
+package eu.europa.ec.eci.oct.validation
+global ValidationResult validationResult;
+rule "rule_oct.property.personal.id"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "personal.id", value == null || value not matches "[0-9]{11}")
+    then
+        validationResult.addValidationError("personal.id","oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end

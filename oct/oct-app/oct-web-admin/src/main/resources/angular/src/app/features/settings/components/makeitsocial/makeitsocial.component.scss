@@ -1,0 +1,66 @@
+
+// @import '../../../../../assets/styles/variables';
+
+.ocs-action-button {
+    position: relative;
+    top: -1.5em;
+}
+
+.ocs-twitter-form,
+.ocs-action-form {
+    .ocs-action-button {
+        position: relative;
+        top: -0.5em;
+    }
+}
+
+.ocs-social-button {
+    position: relative;
+    top: 0.5em;
+}
+
+.has-danger {
+    .form-control {
+        border: 0.14em solid #da2130;
+    }
+}
+
+.eci-has-error {
+    .ux-c-control-feedback__message {
+        margin-left: 5em;
+    }
+}
+
+.ocs-twitter-form {
+    fieldset {
+        ux-form-group {
+            display: block;
+
+            & > .ux-form-group--vertical.ocs-padd-0 {
+                .ux-form-group__label-wrapper {
+                    span.ux-form-group__label {
+                        clip: rect(1px 1px 1px 1px);
+                        clip: rect(1px, 1px, 1px, 1px);
+                        height: 1px;
+                        overflow: hidden;
+                        position: absolute !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ocs-social {
+    ux-form-control {
+        span {
+            input::placeholder {
+                color: #757575 important;
+            }
+        }
+    }
+}
+
+input.form-control::placeholder {
+    color: #666 !important;
+}

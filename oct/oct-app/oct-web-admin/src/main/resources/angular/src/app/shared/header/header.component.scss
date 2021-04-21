@@ -1,0 +1,26 @@
+.ocs-header-manage {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    padding: 1.2rem 1.2em 0;
+
+    h2 {
+        &::first-letter {
+            text-transform: capitalize;
+        }
+
+        font-size: 1em;
+        text-transform: lowercase;
+    }
+
+    .ocs-item-header {
+        font-size: 1.1428em;
+        margin-bottom: 1em;
+    }
+
+    .collection-on {
+        color: green;
+    }
+
+    .collection-off {
+        color: red;
+    }
+}

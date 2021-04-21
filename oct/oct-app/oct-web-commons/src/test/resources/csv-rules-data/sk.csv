@@ -1,0 +1,24 @@
+id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;name.at.birth;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0000;sk;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;sk;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+0010;sk;PASS;NONE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;ruden strass;01234;Amsterdam;sk
+0011;sk;PASS;NONE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;ruden strass;81234;Amsterdam;sk
+0012;sk;PASS;NONE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;ruden strass;91234;Amsterdam;sk
+0013;sk;FAIL;wrong postal code;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;ruden strass;51234;Amsterdam;sk
+0020;sk;PASS;NONE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;fr;ruden strass;01234;Amsterdam;sk
+0021;sk;PASS;NONE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;ruden strass;01234;Amsterdam;fr
+0022;sk;FAIL;wrong country and nationality;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;it;ruden strass;01234;Amsterdam;fr
+9001;sk;PASS;SK with residence in AT;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;Viennastraat;1234;Vienna;at
+9002;sk;PASS;SK with residence in DE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;bundestagstraat;10005;Berlin;de
+9003;sk;PASS;SK with residence in BE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;Rue neuve;1000;Bruxelles;be
+9004;sk;PASS;SK with residence in DK;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;laksegade street;1234;Copenhagen;dk
+9005;sk;PASS;SK with residence in EE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;rue tallin;12345;Tallin;ee
+9006;sk;PASS;SK with residence in FR;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;rue de la concorde;12345;Paris;fr
+9007;sk;PASS;SK with residence in HR;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;croatia street;12345;Zadar;hr
+9008;sk;PASS;SK with residence in IT;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;Via dei matti;1234567azxcvgre;Milano;it
+9009;sk;PASS;SK with residence in NL;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;flatstraat;1123az;Rotterdam;nl
+9010;sk;PASS;SK with residence in PL;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;polosky straat;12345;Warsaw;pl
+9011;sk;PASS;SK with residence in RO;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;via chauchesku;123456;Bucaresti;ro
+9012;sk;PASS;SK with residence in LU;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;rue du lux;1234;Lux;lu
+9013;sk;PASS;SK with residence in GB;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;Oxford street;BD15 0HS;London;gb
+9014;sk;PASS;SK with residence in IE;Kocianova;Michaela;Kocy;01/01/1976;Amesterdam;sk;beer street;1234AZ;Cork;ie

@@ -1,0 +1,17 @@
+<div class="ocs-support-country">
+    <p><strong>{{ 'form.support-country' | translate }}</strong></p>
+    <input #supportCountry name="supportCountry" id="supportCountry" [checked]="false" type="checkbox" (change)="onSaveUsernameChanged(supportCountry.checked)">
+    <label for="supportCountry" [innerHTML]="'form.privacy-statement'| translate:{url: urlPrivacy(), urlRegister : getUrlRegister() }"></label>
+
+    <div class="ocs-support-buttons">
+        <ux-button styleClass="ux-u-width-10" [isDisabled]="activeButton" iconClass="fa fa-pencil-square-o" [isLineWrap]="true">
+            {{ 'form.fill-form' | translate }}
+        </ux-button>
+        <div class="separate-box">
+            <span>{{ 'form.or' | translate }}</span>
+        </div>
+        <ux-button styleClass="ux-u-width-10" [isDisabled]="activeButton" iconClass="fa fa-globe" [isLineWrap]="true">
+            {{ 'form.eID-form' | translate }}
+        </ux-button>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+id;countryToSignFor;expectedResult;expectedReason;id.card;residence.permit;firstname;lastname;date.of.birth;nationality
+0000;mt;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty}
+0000;mt;FAIL;null values;{null};{null};{null};{null};{null};{null}
+0010;mt;PASS;NONE;123456789;permit to stay;Lolaran;Charmaine;01/01/1985;mt
+0011;mt;PASS;NONE;adada243;permit to stay;Lolaran;Charmaine;01/01/1985;mt
+0012;mt;FAIL;wrong id card;234567876543456!!!;permit to stay;Lolaran;Charmaine;01/01/1985;mt
+0013;mt;PASS;NONE;adada243;permit to stay;Lolaran;Charmaine;01/10/2002;mt
+0014;mt;FAIL;wrong date of birth;adada243;permit to stay;Lolaran;Charmaine;01/10/2012;mt

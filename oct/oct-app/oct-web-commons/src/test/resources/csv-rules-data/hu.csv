@@ -1,0 +1,23 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;personal.number;firstname;lastname;nationality
+0000;hu;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty}
+0001;hu;FAIL;null values;{null};{null};{null};{null};{null};{null}
+0010;hu;PASS;NONE;az123456;{skip};{skip};Victor;Orban;hu
+0012;hu;PASS;NONE;AZ123456;{skip};{skip};Victor;Orban;hu
+0013;hu;FAIL;wrong passport case 1;a123456;{skip};{skip};Victor;Orban;hu
+0020;hu;PASS;NONE;az1234567;{skip};{skip};Victor;Orban;hu
+0021;hu;PASS;NONE;AZ1234567;{skip};{skip};Victor;Orban;hu
+0022;hu;FAIL;wrong passport case 2;a1234567;{skip};{skip};Victor;Orban;hu
+0030;hu;PASS;NONE;{skip};123456az;{skip};Victor;Orban;hu
+0031;hu;PASS;NONE;{skip};123456AZ;{skip};Victor;Orban;hu
+0032;hu;FAIL;wrong id card case 1;{skip};123456a;{skip};Victor;Orban;hu
+0033;hu;FAIL;wrong id card case 1;{skip};12223456az;{skip};Victor;Orban;hu
+0040;hu;PASS;NONE;{skip};azaz123456;{skip};Victor;Orban;hu
+0041;hu;PASS;NONE;{skip};AZAZ123456;{skip};Victor;Orban;hu
+0042;hu;FAIL;wrong id card case 2;{skip};azz1234;{skip};Victor;Orban;hu
+0043;hu;FAIL;wrong id card case 2;{skip};azz12344343;{skip};Victor;Orban;hu
+0050;hu;PASS;NONE;{skip};az123456;{skip};Victor;Orban;hu
+0051;hu;PASS;NONE;{skip};AZ123456;{skip};Victor;Orban;hu
+0052;hu;FAIL;wrong id card case 3;{skip};az1234567;{skip};Victor;Orban;hu
+0053;hu;FAIL;wrong id card case 3;{skip};a123456;{skip};Victor;Orban;hu
+0060;hu;PASS;NONE;{skip};{skip};11234561234;Victor;Orban;hu
+0061;hu;FAIL;wrong personal number;{skip};{skip};adh54r5rfb;Victor;Orban;hu

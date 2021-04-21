@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <OCT_AUTHENTICATION_LOCK username="admin" maxAttempts="3" lockPeriod="30" />
+</dataset>

@@ -1,0 +1,5 @@
+id;countryToSignFor;expectedResult;expectedReason;personal.number;firstname;lastname;nationality
+0000;lt;FAIL;empty values;{empty};{empty};{empty};{empty}
+0001;lt;FAIL;null values;{null};{null};{null};{null}
+0010;lt;PASS;NONE;12345678901;Svartiaicate;Jurate;lt
+0020;lt;FAIL;wrong personal number;123456789014343;Svartiaicate;Jurate;lt

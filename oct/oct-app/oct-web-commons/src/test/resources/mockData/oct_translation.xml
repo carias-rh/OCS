@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<OCT_TRANSLATION LANG_ID="6" tr_key="public.en.title" tr_description="Title of something" />
+	<OCT_TRANSLATION LANG_ID="8" tr_key="public.fr.title" tr_description="le title de la chanson" />
+</dataset>

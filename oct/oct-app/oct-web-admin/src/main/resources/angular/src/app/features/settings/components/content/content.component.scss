@@ -1,0 +1,72 @@
+$bg-info: #f5f5f5;
+$blue-text: #004494;
+$white: #fff;
+
+.ocs-info {
+    background: $bg-info;
+    padding: 1.071428em;
+}
+
+.ocs-languages {
+    span {
+        display: block;
+    }
+
+    .ocs-box-languages {
+        ul {
+            display: block;
+            // width: 70%;
+            max-width: 650px;
+
+            li {
+                display: inline-block;
+                margin-right: 1.5em;
+                width: 144px;
+
+                &.active,
+                &:focus {
+                    button {
+                        background: $blue-text;
+                        border: 0.071428em solid $blue-text;
+                        border-radius: 1.6em;
+                        color: $white;
+                        display: inline-block;
+                        height: 2.5em;
+                        justify-content: center;
+                        margin: 0.5em 0.5em 0 0;
+                        padding: 0.6em 0;
+                        text-align: center;
+                        vertical-align: middle;
+                        width: 10.28em;
+                    }
+                }
+
+                button {
+                    background: transparent;
+                    border: 0.071428em solid $blue-text;
+                    border-radius: 1.6em;
+                    color: $blue-text;
+                    display: inline-block;
+                    height: 2.5em;
+                    justify-content: center;
+                    margin: 0.5em 0.5em 0 0;
+                    padding: 0.6em 0;
+                    text-align: center;
+                    vertical-align: middle;
+                    width: 10.28em;
+                }
+            }
+        }
+    }
+}
+
+.ocs-organisers {
+    ul {
+        width: 100%;
+
+        li {
+            float: left;
+            width: 50%;
+        }
+    }
+}

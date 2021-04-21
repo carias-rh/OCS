@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<OCT_EMAIL id="1" emailAddress="test@test.com"
+		comunicationLanguage="en"
+		signatureIdentifier="f616d20d-f5b0-48f2-983a-12dd539fea60"
+		initiativeSubscription="0" />
+	<OCT_EMAIL id="2" emailAddress="test2@test.com"
+		comunicationLanguage="en"
+		signatureIdentifier="6cea7f4e-7b09-4e32-8aa7-865fc3e47338"
+		initiativeSubscription="0" />
+</dataset>

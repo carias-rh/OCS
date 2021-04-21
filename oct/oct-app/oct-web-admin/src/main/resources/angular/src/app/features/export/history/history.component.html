@@ -1,0 +1,28 @@
+<div class="ux-u-font-bold mt-4 mb-2">{{ 'dashboard.export.history.title' | translate }}</div>
+<div class="ocs-export-history table-history ux-u-z-depth-1">
+    <p-table [value]="data" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+            <tr>
+                <th id="date">{{ 'dashboard.export.history.table.date' | translate }}</th>
+                <th id="countries">{{ 'dashboard.export.history.table.countries' | translate }}</th>
+                <th id="daterange">{{ 'dashboard.export.history.table.dateRange' | translate }}</th>
+                <th id="durantion">{{ 'dashboard.export.history.table.duration' | translate }}</th>
+                <th id="status">{{ 'dashboard.export.history.table.status' | translate }}</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-data>
+            <tr>
+                <td headers="date">{{ data.exportDate }}</td>
+                <td headers="countries">{{ data.countriesParam }}</td>
+                <td headers="daterange">{{ data.dateRangeParam }}</td>
+                <td headers="durantion">{{ data.duration }}</td>
+                <td headers="status" [ngClass]="{
+                    'ocs-completed': data.batchStatus === 'COMPLETED',
+                    'ocs-ongoing': data.batchStatus === 'ONGOING',
+                    'ocs-failed': data.batchStatus === 'FAILED',
+                    'ocs-stopped': data.batchStatus === 'STOPPED'
+                }">{{ data.batchStatus | titlecase }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

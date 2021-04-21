@@ -1,0 +1,119 @@
+<div class="ocs-form-initiative">
+    <button *ngIf="backSelectCountry" (click)="SelectCountryAgain()" class="ocs-arrow-back">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> {{'map.back-form' | translate }}
+    </button>
+    <h2 id="initiativeTitle" class="ocs-form-initiative-title">{{ 'form.title' | translate }}</h2>
+
+    <!-- content that show when de user select with eID or whithout eID -->
+    <div *ngIf="countrySelected" class="ocs-country-selected">
+        <p>{{ 'form.support.country.selected' | translate}}</p>
+        <p class="highlighted">{{ 'common.country.' + selectedCountry | translate }}</p>
+    </div>
+    <ux-alert typeClass="danger" *ngIf="!isValidated() && !is500error()">{{'form.generic.error' | translate}}</ux-alert>
+    <ux-alert typeClass="danger" *ngIf="is500error()">{{'error500.info' | translate}}</ux-alert>
+    <form aria-labelledby="initiativeTitle">
+        <!-- select country -->
+        <fieldset class="ocs-form-country" *ngIf="showSelectCountry">
+            <legend class="hidden">{{ 'common.select_language' | translate }}</legend>
+            <ux-form-group id="country" label="{{ 'form.country.from' | translate }}" [isVertical]="true"  styleClass="mb-2 ocs-form-highlight">
+                <select id="country" class="form-control custom-select-1" name="country" [(ngModel)]="selectedCountry" (change)="onSelectCountry($event.target.value)">
+                    <option value="#">{{ 'common.select-nationality' | translate }}</option>
+                    <option *ngFor="let country of systemCountries" [value]="country.id">{{ country.name }}</option>
+                </select>
+            </ux-form-group>
+        </fieldset>
+
+        <p class="ocs-message-info" *ngIf="showFields" [innerHTML]="requirementsCountry"><p>
+        <p class="ocs-message-required" *ngIf="showFields">{{ 'form.all-required' | translate }}</p>
+
+        <!-- Block has Document Identificatiion -->
+        <fieldset class="mb-4 ocs-form-document" *ngIf="showFields && supportForm.hasDocumentsFields()">
+            <legend>{{ 'form.group-document' | translate }}</legend>
+            <app-document-property
+                [property]="supportForm.documentType"
+                [countryCode]="supportForm.countryCode"
+                [submitted]="submitted"
+                (propertyChange)="onDocumentChange($event)">
+            </app-document-property>
+        </fieldset>
+
+        <!-- Block PersonalFields -->
+        <fieldset class="mb-4 ocs-form-personal" *ngIf="showFields && supportForm.hasPersonalFields()">
+            <legend>{{ 'form.group-personal' | translate }}</legend>
+            <ng-container *ngFor="let property of supportForm.personalFields">
+                <app-property
+                    [property]="property"
+                    [submitted]="submitted"
+                    (propertyChange)="onPropertyChange($event)">
+                </app-property>
+            </ng-container>
+        </fieldset>
+
+        <!-- Block Address -->
+        <fieldset class="mb-4 ocs-form-address" *ngIf="showFields && supportForm.hasAddressFields()">
+            <legend>{{ 'form.group-address' | translate }}</legend>
+            <ng-container *ngFor="let property of supportForm.addressFields">
+                <app-property
+                    [property]="property"
+                    [submitted]="submitted"
+                    (propertyChange)="onPropertyChange($event)">
+                </app-property>
+            </ng-container>
+			<div class="ocs-form-support-legend mt-2" *ngIf="selectedCountry == 'de' && showFields">
+                {{ 'form.support-footerDE'  | translate}}
+            </div>
+        </fieldset>
+
+        <!-- Block Captcha -->
+        <fieldset class="mb-4" *ngIf="showFields">
+            <legend class="hidden">Captcha Information</legend>
+            <app-captcha-property
+                [property]="supportForm.captcha"
+                [submitted]="submitted"
+                (propertyChange)="onCaptchaChange($event)">
+            </app-captcha-property>
+        </fieldset>
+
+        <!-- Block legal -->
+        <fieldset class="mb-4 ocs-form-legal" *ngIf="showFields">
+            <legend class="hidden">Privacidad</legend>
+            <div class="form-group" [ngClass]="{'has-danger': supportForm.certify.error}">
+                <input id="certify" name="certify" type="checkbox" class="form-control" [(ngModel)]="supportForm.certify.value" (change)="OnChangeCertify($event)">
+                <label for="certify">{{ 'form.certify-info'| translate }}</label>
+                <ux-control-feedback *ngIf="supportForm.certify.error">{{ ('form.error.' + supportForm.certify.errorMessage) | translate }}</ux-control-feedback>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-danger': supportForm.privacy.error}">
+                <input id="privacy" name="privacy" type="checkbox" class="form-control" [(ngModel)]="supportForm.privacy.value" (change)="onChangePrivacy($event)">
+                <label for="privacy" [innerHTML]="'form.privacy-statement'| translate:{url: urlPrivacy(), urlRegister : getUrlRegister() }"></label>
+                <ux-control-feedback *ngIf="supportForm.privacy.error">{{ ('form.error.' + supportForm.privacy.errorMessage) | translate }}</ux-control-feedback>
+            </div>
+
+            <div *ngIf="showOptionalValidation()" class="form-group has-danger-code" aria-live="polite">
+                <input id="optionalValidation" name="optionalValidation" type="checkbox" class="form-control" [(ngModel)]="optionalValidationSelected">
+                <label class="form-control-label" for="optionalValidation">{{ 'form.optional-validacion-desc' | translate }}</label>
+                <ux-control-feedback>{{ 'form.optional-validacion-text' | translate }}</ux-control-feedback>
+            </div>
+            <div class="mb-5" *ngIf="supportCountry">
+                <ux-button [isLarge]="true" [isDisabled]="!showFields" styleClass="ocs-button-blue" (click)="onSubmit($event)">{{ 'form.support' | translate }}</ux-button>
+            </div>
+            <div class="ocs-form-support-legend mt-2">
+                {{ 'form.support-footer1' | translate }}<br />
+                {{ 'form.support-footer2' | translate }}<br />
+                {{ 'form.support-footer3' | translate }}<br />
+                &rarr;
+                <a id="eci-link"
+                    href="https://ec.europa.eu/citizens-initiative/public/how-to-signup"
+                    title="{{ 'form.link-support' | translate }}"
+                    target="_blank">
+                    {{ 'form.support-footer4' | translate }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'form.link-support' | translate }}"
+                        aria-labelledby="eci-link">
+                    </i>
+                </a>
+            </div>
+        </fieldset>
+    </form>
+</div>

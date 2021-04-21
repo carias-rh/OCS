@@ -1,0 +1,83 @@
+<app-title [hasInitiativeTitle]="true"></app-title>
+<div class="row">
+    <div class="col-md-5 padding-container ocs-container-left">
+        <div class="ocs-panel-style">
+            <app-initiative></app-initiative>
+        </div>
+        <app-signatories></app-signatories>
+        <app-carrousel></app-carrousel>
+        <app-recent></app-recent>
+    </div>
+    <div class="col-md-7 padding-container ocs-container-right">
+        <div class="ocs-table-contries">
+            <a class="ocs-arrow-back" [routerLink]="['../']" routerLinkActive="router-link-active" title="{{'map.back-form' | translate }}">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i> {{'map.back-form' | translate }}
+            </a>
+            <div class="ocs-title-section mt-2 mb-2">{{'map.statements-ocs' | translate }}</div>
+
+            <!-- Map -->
+            <div #map class="ocs-map" *ngIf="showMap"></div>
+
+            <div class="ux-u-font-bold mt-3 mb-1">{{'map.total' | translate }}: <span>{{ total.toLocaleString() }}</span></div>
+            <div>
+                <span class="ux-u-font-bold">{{'map.threshold' | translate }}:</span> {{'map.threshold-definition' | translate }}
+            </div>
+            <div class="ocs-legend-map mt-2" *ngIf="showLegend">
+                <p>
+                    <span class="legend-1"></span><span> {{'map.legend_reached' | translate }}</span>
+                </p>
+                <p>
+                    <span class="legend-2"></span><span> {{'map.legend_bellow' | translate }}</span>
+                </p>
+                <p>
+                    <span class="legend-3"></span><span> {{'map.legend_any' | translate }}</span>
+                </p>
+                <p>
+                    <span class="legend-4"></span><span> {{'map.legend-no-eu' | translate }}</span>
+                </p>
+            </div>
+
+            <table class="table" *ngIf="!isMobile">
+                <caption class="ocs-hideAccessible">{{'map.statements-ocs' | translate }}</caption>
+                <tr>
+                    <th id="countries" scope="col">{{'map.countries' | translate }}</th>
+                    <th id="support" scope="col">{{'map.statements-support' | translate }}</th>
+                    <th id="threshold" cope="col">{{'map.threshold' | translate }}</th>
+                    <th id="percentage" scope="col">{{'map.percentage' | translate }}</th>
+                </tr>
+                <tr *ngFor="let country of countryList">
+                    <td headers="countries">{{ country.label | translate }} <br /> <span class="ux-u-d-block mt-1">{{ labelStatus(country)| translate }}</span></td>
+                    <td headers="support">{{ country.count | uxNumberFormat: '' :0: '.' }}</td>
+                    <td headers="threshold">{{ country.treshold | uxNumberFormat: '' :0: '.' }}</td>
+                    <td headers="percentage">{{ country.percentage }}%</td>
+                </tr>
+            </table>
+
+            <table class="table-mobile" *ngIf="isMobile">
+                <caption class="ocs-hideAccessible">{{'map.statements-ocs' | translate }}</caption>
+                <tr>
+                    <th scope="col" colspan="2">{{'map.countries' | translate }}</th>
+                </tr>
+                <tr *ngFor="let country of countryList">
+                    <td>{{ country.label | translate }} </td>
+                    <td>
+                        <div class="ux-u-d-block mt-2">{{ labelStatus(country)| translate }}</div>
+                        <div class="ux-u-d-block mt-2 ocs-table-map">
+                            <span class="ux-u-display-inline-block ux-u-font-bold ux-u-text-align-right mr-3">{{'map.threshold' | translate }}</span>
+                            <span class="ux-u-display-inline-block ux-u-width-4"> {{ country.treshold | uxNumberFormat: '' :0: '.' }}</span>
+                        </div>
+                        <div class="ux-u-d-block mt-2 ocs-table-map">
+                            <span class="ux-u-display-inline-block ux-u-font-bold ux-u-text-align-right mr-3">{{'map.statements-support' | translate }}</span>
+                            <span class="ux-u-display-inline-block ux-u-width-4"> {{ country.count | uxNumberFormat: '' :0: '.' }}</span>
+                        </div>
+                        <div class="ux-u-d-block mt-2 ocs-table-map">
+                            <span class="ux-u-display-inline-block ux-u-font-bold ux-u-text-align-right mr-3">{{'map.percentage' | translate }}</span>
+                            <span class="ux-u-display-inline-block ux-u-width-4"> {{ country.percentage }}%</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<app-support></app-support>

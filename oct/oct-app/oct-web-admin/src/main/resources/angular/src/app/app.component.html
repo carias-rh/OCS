@@ -1,0 +1,40 @@
+<a (click)="skipLink()" href onclick="return false;"
+    class="sr-only sr-only-focusable btn btn-link ocs-element-hidden element-focusable"
+    accesskey="k">{{ 'common.skip-content' | translate }}</a>
+
+<ux-layout-app-shell
+    headerAppFullName="European citizens' initiative"
+    [isHeaderHideLogo]="true"
+    [hasNavBar]="true"
+    [hasSidebar]="hasSidebar"
+    [isSidebarInner]="hasSidebar"
+    [sidebarLinks]="sidebarLinks"
+    [isSidebarStateCloseWithIcons]="true"
+    [isFooterStyleInverse]="true">
+    <uxAppShellHeaderTitleContent>
+        <h1 class="full"><a [routerLink]="['/']" routerLinkActive="router-link-active" class="ocs-title-header">{{ 'common.page-title' | translate }}</a></h1>
+        <ux-message-box id="warningSession" titleLabel="{{ 'login.expire-title' | translate }}" (clicked)="onExtendsSession($event)">
+            <p>{{ 'login.expire-msg1'| translate:{ 'count': sessionCount } }} <br> {{ 'login.expire-msg2'| translate }}</p>
+        </ux-message-box>
+    </uxAppShellHeaderTitleContent>
+    <uxAppShellHeaderRightContent>
+        <div class="links">
+            <form [formGroup]="formLanguage">
+                <ux-form-group label="{{ 'common.select_language' | translate}}">
+                    <ux-form-control [isSelect]="true"
+                        formControlName="language"
+                        [selectOptions]="languages"
+                        (modelChange)="onLanguageChanged($event)"></ux-form-control>
+                </ux-form-group>
+            </form>
+        </div>
+        <div class="ocs-user-infos" *ngIf="isLogged">{{ username }} | <a class="ux-u-font-bold" (click)="onLogout()" href="javascript:void(0)">{{ 'header.sign-out' | translate }}</a></div>
+    </uxAppShellHeaderRightContent>
+    <uxAppShellFooterContent>
+        <ul>
+            <li>{{ 'footer.system.managed' | translate }}</li>
+            <li>{{ 'footer.ocs.version' | translate }} {{ apiVersion }}</li>
+        </ul>
+    </uxAppShellFooterContent>
+</ux-layout-app-shell>
+

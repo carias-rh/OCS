@@ -1,0 +1,192 @@
+<ng-container *ngIf="!signatore">
+    <div class="ocs-initiative" #main tabindex="-1">
+        <div class="default-logo">
+            <img id="main-logo" #imgLogo  src="" alt="" >
+        </div>
+        <div *ngIf="description && description.objectives" class="ocs-block-content mt-3">
+            <h3 class="ocs-label-content">
+                {{ 'initiative.objectives' | translate }}
+            </h3>
+            <div class="ocs-summary-content">
+                {{ description.objectives }}
+            </div>
+        </div>
+        <div *ngIf="partiallyRegistered" class="ocs-block-content mt-3">
+            <h3 class="ocs-label-content">
+                {{ 'initiative.partially-registered' | translate }}
+            </h3>
+            <div class="ocs-summary-content">
+                <a id="partial" href="{{ partialRegistration }}" title="{{ 'common.redirect' | translate }} {{ partialRegistration }}" #main tabindex="-1">
+                    {{ partialRegistration }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'common.redirect' | translate }} {{ partialRegistration }}"
+                        aria-labelledby="partial">
+                    </i>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="initiative && initiative.webpage" class="ocs-block-content">
+            <h3 class="ocs-label-content">
+                {{ 'initiative.register.webpage' | translate }}
+            </h3>
+            <div class="ocs-summary-content">
+                <a id="webpage" href="{{ initiative.webpage }}" title="{{ 'common.redirect' | translate }} {{ initiative.webpage }}" #main tabindex="-1">
+                    {{ initiative.webpage }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'common.redirect' | translate }} {{ initiative.webpage }}"
+                        aria-labelledby="webpage">
+                    </i>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="isShow" id="showedinfo" aria-live="polite">
+            <div *ngIf="description && description.url" class="ocs-block-content">
+                <div class="ocs-label-content">
+                    {{ 'initiative.public.webpage' | translate }}
+                </div>
+                <div class="ocs-summary-content">
+                    <a id="description-url" #descUrl href="{{ description.url }}" title="{{ 'common.redirect' | translate }} {{ description.url }}">
+                        {{ description.url }}
+                        <i class="fa fa-external-link"
+                            aria-hidden="true"
+                            attr.aria-label="{{ 'common.redirect' | translate }} {{ description.url }}"
+                            aria-labelledby="description-url">
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div *ngIf="contacts" class="ocs-block-content">
+                <div *ngIf="contacts.representative || contacts.substitute" class="ocs-label-content mb-2">
+                    {{ 'initiative.representative' | translate }}
+                </div>
+                <div *ngIf="contacts.representative" class="ocs-summary-content mb-3">
+                    <p>{{ contacts.representative.name }}</p>
+                    <a id="rep-email" href="mailto:{{ contacts.representative.email }}" title="{{ 'common.redirect' | translate }} {{ contacts.representative.email }}">
+                        {{ contacts.representative.email }}
+                        <i class="fa fa-external-link"
+                            aria-hidden="true"
+                            attr.aria-label="{{ 'common.redirect' | translate }} {{ contacts.representative.email }}"
+                            aria-labelledby="rep-email">
+                        </i>
+                    </a>
+                </div>
+                <div *ngIf="contacts.substitute" class="ocs-summary-content mb-3">
+                    <p>{{ contacts.substitute.name }}</p>
+                    <a id="sub-email" href="mailto:{{ contacts.substitute.email }}" title="{{ 'common.redirect' | translate }} {{ contacts.substitute.email }}">
+                        {{ contacts.substitute.email }}
+                        <i class="fa fa-external-link"
+                            aria-hidden="true"
+                            attr.aria-label="{{ 'common.redirect' | translate }} {{ contacts.substitute.email }}"
+                            aria-labelledby="sub-email">
+                        </i>
+                    </a>
+                </div>
+                <div *ngIf="contacts.entity" class="ocs-label-content mt-4">
+                    {{ 'initiative.legal-entity' | translate }}
+                </div>
+                <div *ngIf="contacts.entity" class="ocs-summary-content">
+                    <p class="mb-1">{{ contacts.entity.name }}</p>
+                    <p>{{ 'common.country.' + contacts.entity.country | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="ocs-block-show  mt-2">
+            <ux-button attr.aria-expanded="{{ isShow }}" attr.aria-controls="showedinfo" (click)="toggleMore()">
+                <span aria-hidden="true">{{(isShow ? '-' : '+')}}</span>{{ (isShow ? 'common.hide.info' : 'common.more.info') | translate}}
+            </ux-button>
+        </div>
+    </div>
+</ng-container>
+
+<!-- show data when the initiative has been signatored -->
+<ng-container *ngIf="signatore">
+    <div class="ocs-initiative " #main tabindex="-1">
+        <div class="default-logo">
+            <img #imgLogo src="" alt="" >
+        </div>
+        <div *ngIf="description && description.objectives" class="ocs-block-content mt-3">
+            <h3 class="ocs-label-content">
+                {{ 'initiative.objectives' | translate }}
+            </h3>
+            <div class="ocs-summary-content">
+                {{ description.objectives }}
+            </div>
+        </div>
+        <div *ngIf="partiallyRegistered">
+            <p><b>{{ 'initiative.partially-registered' | translate }}</b></p>
+        </div>
+        <div *ngIf="initiative && initiative.webpage" class="ocs-block-content">
+            <h3 class="ocs-label-content">
+                {{ 'initiative.register.webpage' | translate }}
+            </h3>
+            <div class="ocs-summary-content">
+                <a id="webpage" href="{{ initiative.webpage }}" title="{{ 'common.redirect' | translate }} {{ initiative.webpage }}" #main tabindex="-1">
+                    {{ initiative.webpage }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'common.redirect' | translate }} {{ initiative.webpage }}"
+                        aria-labelledby="webpage">
+                    </i>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="description && description.url" class="ocs-block-content" >
+            <div class="ocs-label-content">
+                {{ 'initiative.public.webpage' | translate }}
+            </div>
+            <div class="ocs-summary-content">
+                <a id="description-url" #descUrl href="{{ description.url }}" title="{{ 'common.redirect' | translate }} {{ description.url }}">
+                    {{ description.url }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'common.redirect' | translate }} {{ description.url }}"
+                        aria-labelledby="description-url">
+                    </i>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="contacts" class="ocs-block-content row">
+            <div class="col-md-6 ocs-padd-left">
+                <div *ngIf="contacts.representative || contacts.substitute" class="ocs-label-content mb-2 mt-1">
+                    {{ 'initiative.representative' | translate }}
+                </div>
+                <div *ngIf="contacts.representative" class="ocs-summary-content mb-3">
+                    <p>{{ contacts.representative.name }}</p>
+                    <a id="rep-email" href="mailto:{{ contacts.representative.email }}" title="{{ 'common.redirect' | translate }} {{ contacts.representative.email }}">
+                        {{ contacts.representative.email }}
+                        <i class="fa fa-external-link"
+                            aria-hidden="true"
+                            attr.aria-label="{{ 'common.redirect' | translate }} {{ contacts.representative.email }}"
+                            aria-labelledby="rep-email">
+                        </i>
+                    </a>
+                </div>
+                <div *ngIf="contacts.substitute" class="ocs-summary-content mb-3">
+                    <p>{{ contacts.substitute.name }}</p>
+                    <a id="sub-email" href="mailto:{{ contacts.substitute.email }}" title="{{ 'common.redirect' | translate }} {{ contacts.substitute.email }}">
+                        {{ contacts.substitute.email }}
+                        <i class="fa fa-external-link"
+                            aria-hidden="true"
+                            attr.aria-label="{{ 'common.redirect' | translate }} {{ contacts.substitute.email }}"
+                            aria-labelledby="sub-email">
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div *ngIf="contacts.entity" class="col-md-6">
+                <div class="ocs-label-content mt-1">
+                    {{ 'initiative.legal-entity' | translate }}
+                </div>
+                <div class="ocs-summary-content">
+                    <p class="mb-1">{{ contacts.entity.name }}</p>
+                    <p>{{ 'common.country.' + contacts.entity.country | translate }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+

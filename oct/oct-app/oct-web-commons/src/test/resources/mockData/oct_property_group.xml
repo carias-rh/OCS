@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<OCT_PROPERTY_GROUP id="1" multichoice="0" NAME="oct.group.general" priority="2" />
+	<OCT_PROPERTY_GROUP id="2" multichoice="0" NAME="oct.group.address" priority="3" />
+	<OCT_PROPERTY_GROUP id="3" multichoice="1" NAME="oct.group.id" priority="1" />
+</dataset>

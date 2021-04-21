@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:batch="http://www.springframework.org/schema/batch"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+		http://www.springframework.org/schema/batch/spring-batch-3.0.xsd
+	    http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- JobRepository and JobLauncher are configuration/setup classes -->
+	<bean id="jobRepository"
+		class="org.springframework.batch.core.repository.support.JobRepositoryFactoryBean">
+		<property name="validateTransactionState" value="false" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="transactionManager" ref="transactionManagerBatch" />
+		<property name="serializer" ref="batchDefaultSerializer" />
+		<property name="lobHandler" ref="lobHandler" />
+		<property name="isolationLevelForCreate" value="ISOLATION_READ_UNCOMMITTED" />
+	</bean>
+	<bean id="batchDefaultSerializer"
+		class="org.springframework.batch.core.repository.dao.DefaultExecutionContextSerializer" />
+	<bean id="lobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" />
+	<!-- create job-meta tables automatically -->
+	<!-- <jdbc:initialize-database data-source="dataSource" ignore-failures="ALL"> -->
+	<!-- <jdbc:script location="org/springframework/batch/core/schema-drop-oracle10g.sql" 
+		/> -->
+	<!-- <jdbc:script location="org/springframework/batch/core/schema-oracle10g.sql" 
+		/> -->
+	<!-- </jdbc:initialize-database> -->
+
+	<bean id="jobLauncher"
+		class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
+		<property name="jobRepository" ref="jobRepository" />
+	</bean>
+
+	<bean id="jobExplorer" name="jobExplorer"
+		class="org.springframework.batch.core.explore.support.JobExplorerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="serializer" ref="batchDefaultSerializer" />
+	</bean>
+
+	<bean id="contactReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+			<![CDATA[
+					SELECT	C1.FIRSTNAME AS FIRSTNAME,
+				          	C1.FAMILYNAME AS FAMILYNAME,
+							C1.EMAIL AS EMAIL,
+							C1.CONTACTROLE_ID AS ROLE_ID,
+							C2.CODE AS COUNTRY_CODE
+				  	FROM	OCT_CONTACT C1 JOIN OCT_COUNTRY C2
+				          	ON C1.COUNTRY_ID = C2.ID
+			]]></value>
+		</property>
+		<property name="rowMapper" ref="contactRowMapper" />
+	</bean>
+	<bean id="countryReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+			<![CDATA[
+					SELECT	ID AS ID,
+							CODE AS CODE
+					FROM	OCT_COUNTRY
+			]]></value>
+		</property>
+		<property name="rowMapper" ref="countryRowMapper" />
+	</bean>
+	<bean id="initiativeDataReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+				<![CDATA[
+					SELECT	S1.REGISTRATIONNUMBER AS REGISTRATIONNUMBER,
+							REGISTRATIONDATE AS REGISTRATIONDATE,
+							S1.DEADLINE AS CLOSINGDATE,
+							S1.COMMISSIONREGISTERURL AS URLONCOMMISSIONREGISTER,
+							S1.FILE_STORE AS FILESTORE
+					FROM 	OCT_SYSTEM_PREFS S1, OCT_STEP_STATE S2
+				]]></value>
+		</property>
+		<property name="rowMapper" ref="initiativeDataRowMapper" />
+	</bean>
+	<bean id="initiativeDescriptionReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+				<![CDATA[
+					SELECT	IND.ID AS ID,
+							IND.TITLE AS TITLE,
+							IND.OBJECTIVES AS OBJECTIVES,
+							IND.URL AS URL,
+							LAN.CODE AS LANGUAGE
+					FROM	OCT_INITIATIVE_DESC IND JOIN OCT_LANG LAN
+			 				ON IND.LANGUAGE_ID = LAN.ID
+			 		WHERE	IND.ISDEFAULT = 1
+				]]></value>
+		</property>
+		<property name="rowMapper" ref="initiativeDescriptionRowMapper" />
+	</bean>
+	<bean id="systemPreferencesReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+				<![CDATA[
+					SELECT	FILE_STORE AS FILESTORE,
+							COMMISSIONREGISTERURL AS COMMISSION_URL,
+							REGISTRATIONNUMBER AS REGISTRATION_NUMBER
+					FROM	OCT_SYSTEM_PREFS 
+				]]></value>
+		</property>
+		<property name="rowMapper" ref="systemPreferencesRowMapper" />
+	</bean>
+	<bean id="signaturesCountReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+			<![CDATA[
+						SELECT  	COU.CODE AS COUNTRYCODE,
+						        	COUNT(*) AS COUNT
+						FROM  		OCT_SIGNATURE SIG
+						      		JOIN OCT_COUNTRY COU ON SIG.COUNTRYTOSIGNFOR_ID = COU.ID
+						      		#{jobParameters['filterConditions']}
+						GROUP BY 	COU.CODE
+						
+			]]></value>
+		</property>
+		<property name="rowMapper" ref="signaturesCountRowMapper" />
+	</bean>
+	<bean id="signatureReader"
+		class="org.springframework.batch.item.database.JdbcCursorItemReader"
+		scope="step">
+		<property name="dataSource" ref="dataSource" />
+		<property name="sql">
+			<value>
+			<![CDATA[
+						SELECT  SIG.ID AS SIGNATURE_ID
+						FROM    OCT_SIGNATURE SIG JOIN 
+						        OCT_COUNTRY COU ON COU.ID = SIG.COUNTRYTOSIGNFOR_ID
+						#{jobParameters['filterConditions']}
+						ORDER BY COU.CODE
+			]]></value>
+		</property>
+		<property name="rowMapper" ref="signatureIdRowMapper" />
+	</bean>
+
+	<bean id="contactRowMapper" class="eu.europa.ec.eci.oct.export.rowMappers.ContactRowMapper" />
+	<bean id="contactWriter" class="eu.europa.ec.eci.oct.export.writers.ContactWriter" />
+	<bean id="countryRowMapper" class="eu.europa.ec.eci.oct.export.rowMappers.CountryRowMapper" />
+	<bean id="countryWriter" class="eu.europa.ec.eci.oct.export.writers.CountryWriter" />
+	<bean id="initiativeDescriptionRowMapper"
+		class="eu.europa.ec.eci.oct.export.rowMappers.InitiativeDescriptionRowMapper" />
+	<bean id="initiativeDescriptionWriter"
+		class="eu.europa.ec.eci.oct.export.writers.InitiativeDescriptionWriter" />
+	<bean id="initiativeDataRowMapper"
+		class="eu.europa.ec.eci.oct.export.rowMappers.InitiativeDataRowMapper" />
+	<bean id="initiativeDataWriter"
+		class="eu.europa.ec.eci.oct.export.writers.InitiativeDataWriter" />
+	<bean id="systemPreferencesRowMapper"
+		class="eu.europa.ec.eci.oct.export.rowMappers.SystemPreferencesRowMapper" />
+	<bean id="systemPreferencesWriter"
+		class="eu.europa.ec.eci.oct.export.writers.SystemPreferencesWriter" />
+	<bean id="signatureIdRowMapper"
+		class="eu.europa.ec.eci.oct.export.rowMappers.SignatureIdRowMapper" />
+	<bean id="signaturesCountRowMapper"
+		class="eu.europa.ec.eci.oct.export.rowMappers.SignaturesCountRowMapper" />
+	<bean id="signatureWriter" class="eu.europa.ec.eci.oct.export.writers.SignatureWriter" />
+	<bean id="signaturesCountWriter"
+		class="eu.europa.ec.eci.oct.export.writers.SignaturesCountWriter" />
+
+	<batch:job id="export">
+		<batch:step id="getContacts" next="getCountries">
+			<batch:tasklet>
+				<batch:chunk reader="contactReader" writer="contactWriter"
+					commit-interval="30" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="getCountries" next="getInitiativeData">
+			<batch:tasklet>
+				<batch:chunk reader="countryReader" writer="countryWriter"
+					commit-interval="30" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="getInitiativeData" next="getInitiativeDescriptions">
+			<batch:tasklet>
+				<batch:chunk reader="initiativeDataReader" writer="initiativeDataWriter"
+					commit-interval="1" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="getInitiativeDescriptions" next="getSystemPreferences">
+			<batch:tasklet>
+				<batch:chunk reader="initiativeDescriptionReader"
+					writer="initiativeDescriptionWriter" commit-interval="30" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="getSystemPreferences" next="countSignatures">
+			<batch:tasklet>
+				<batch:chunk reader="systemPreferencesReader" writer="systemPreferencesWriter"
+					commit-interval="1" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="countSignatures" next="getSignatures">
+			<batch:tasklet>
+				<batch:chunk reader="signaturesCountReader" writer="signaturesCountWriter"
+					commit-interval="30" />
+			</batch:tasklet>
+		</batch:step>
+		<batch:step id="getSignatures">
+			<batch:tasklet>
+				<batch:chunk reader="signatureReader" writer="signatureWriter"
+					commit-interval="1" />
+			</batch:tasklet>
+		</batch:step>
+	</batch:job>
+
+</beans> 

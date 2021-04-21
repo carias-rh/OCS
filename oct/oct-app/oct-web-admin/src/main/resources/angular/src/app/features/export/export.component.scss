@@ -1,0 +1,92 @@
+@import '../../../assets/style/variables';
+
+.ocs-export-countries {
+    .table-export-countries {
+        th {
+            border-bottom: 0;
+            font-family: 'eui-default';
+            font-weight: normal;
+            height: 3em;
+            padding-bottom: 1em;
+            padding-top: 0;
+
+            &:first-child {
+                label {
+                    position: relative;
+                    text-indent: -999999px;
+                    top: 0.6em;
+                    width: 2px;
+                }
+            }
+        }
+
+        tr {
+            &:nth-child(2n) {
+                background: $table-row;
+            }
+        }
+
+        td {
+            &:first-child {
+                label {
+                    position: relative;
+                    text-indent: -999999px;
+                    width: 2px;
+                }
+            }
+
+            border-top: 0;
+            padding: 0.5em 0.75em;
+        }
+    }
+}
+
+.progress-label {
+    &.warning {
+        color: $warning;
+    }
+}
+
+.progress {
+    &.in-progress {
+        background-color: $inprogress;
+    }
+
+    &.complete {
+        background-color: $completed;
+    }
+}
+
+.progress-bar {
+    &.progress-bar-info {
+        background-color: $inprogressInfo;
+    }
+
+    &.progress-bar-success {
+        background-color: $completed;
+    }
+
+    &.progress-bar-danger {
+        background-color: $inprogressDanger;
+    }
+}
+
+.ocs-completed {
+    color: $completed;
+    font-weight: bold;
+}
+
+.ocs-ongoing {
+    color: $inprogress;
+    font-weight: bold;
+}
+
+.ocs-failed {
+    color: $failed;
+    font-weight: bold;
+}
+
+.ocs-stopped {
+    color: $stopped;
+    font-weight: bold;
+}

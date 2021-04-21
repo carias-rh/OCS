@@ -1,0 +1,146 @@
+$white: #fff;
+$gray: #b3b4b7;
+$gray-dark: #555;
+$eui: #004791;
+$line-input:#7fa1c9;
+$table-bg: #f5f5f5;
+$eui-gray-line: #ddd;
+$text: #303030;
+
+$eui-status-published: #007e94;
+$eui-status-pendingapproval: #000;
+$eui-status-draft: #f8a726;
+
+.drag-drop {
+    height: 2.5em;
+
+    .col-md-8 {
+        padding-right: 0;
+        width: 80%;
+
+        file-drop {
+            div.ngx-file-drop__drop-zone {
+                border: 0.14em solid $line-input;
+                border-radius: 0;
+                height: 2.5rem;
+                margin: 0 0.7rem 0 0;
+                padding: 0.5em;
+
+                .ngx-file-drop__content {
+                    height: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .col-md-8 {
+        .has-error {
+            left: 0;
+            padding-left: 0;
+            top: 0.3rem;
+        }
+    }
+
+    .col-md-4 {
+        position: relative;
+        top: -0.45rem;
+
+        .ux-c-control-feedback {
+            margin-top: 0.2em;
+
+            small {
+                color: $gray-dark;
+                font-size: 0.84rem;
+                font-weight: 600;
+                position: relative;
+                top: 0;
+            }
+        }
+
+        button.btn-primary {
+            background-color: $eui;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+            margin-right: 0;
+            padding: 0.5em 2.5em 0.5em 1em;
+        }
+    }
+}
+
+.table-upload {
+    .table {
+        thead {
+            tr {
+                background: $table-bg;
+            }
+        }
+
+        tbody {
+            tr:nth-of-type(odd) {
+                background-color: transparent;
+                border-bottom: 0.1em solid $eui-gray-line;
+            }
+
+            tr:nth-of-type(even) {
+                background-color: $white;
+            }
+
+            tr {
+                td {
+                    border-top: 0;
+                    color: $text;
+                    padding: 0.9em 1.25em;
+
+                    &:last-child {
+                        text-align: right;
+                    }
+
+                    &.status-published {
+                        color: $eui-status-published;
+                        font-weight: 600;
+                    }
+
+                    &.status-pendingapproval {
+                        color: $eui-status-pendingapproval;
+                    }
+
+                    &.status-draft {
+                        color: $eui-status-draft;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ux-u-z-depth-1,
+.ux-u-z-depth-2 {
+    box-shadow: 0 0 0 rgba(126, 38, 38, 0.12), 0 0 0 rgba(0, 0, 0, 0.24);
+}
+
+.ux-u-z-depth-1,
+.ux-u-z-depth-2 {
+    .table {
+        tbody {
+            tr {
+                td {
+                    &:first-child {
+                        font-weight: bold;
+                        padding-left: 2.1em;
+                    }
+
+                    &.eci-filename,
+                    &.eci-filename a {
+                        color: $eui;
+                    }
+
+                    small {
+                        color: #6e6e6e;
+                        font-size: 0.98em;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+}

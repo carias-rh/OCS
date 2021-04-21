@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE foo [
+<!ENTITY a "1234567890" >
+<!ENTITY lol "lol">
+<!ENTITY lol2 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
+<!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
+<!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;">
+<!ENTITY lol5 "&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;">
+<!ENTITY lol6 "&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;">
+<!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;">
+<!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;">
+<!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
+]>
+	<initiative registrationNumber="str1234"
+                registrationDate="2012-12-13"
+                endOfTheCollectionPeriod="2020-12-01+01:00"
+		url="http://www.xsd2xml.com">
+		<organisers>
+			<organiser role="representative">
+				<firstName>&lol9;
+				</firstName>
+				<familyName>rrrr</familyName>
+				<email>str1234</email>
+			</organiser>
+		</organisers>
+		<languages>
+			<language code="fr" original="true">
+				<title>str1234</title>
+				<description>str1234</description>
+				<site>http://www.xsd2xml.com</site>
+			</language>
+		</languages>
+	</initiative>

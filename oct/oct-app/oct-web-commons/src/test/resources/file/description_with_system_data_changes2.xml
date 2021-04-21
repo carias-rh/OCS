@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initiative registrationNumber="#################" registrationDate="2019-12-01+01:00" url="http://www.rest.test.url.com" startOfTheCollectionPeriod="2020-01-31+01:00" endOfTheCollectionPeriod="2020-12-01+01:00">
+   <organisers>
+      <organiser role="substitute">
+         <firstName>Dug</firstName>
+         <familyName>Ross</familyName>
+         <email>dug_ross@testmail.com</email>
+      </organiser>
+      <organiser role="member">
+         <firstName>Kerry</firstName>
+         <familyName>Weaver</familyName>
+      </organiser>
+      <organiser role="member">
+         <firstName>John</firstName>
+         <familyName>Carter</familyName>
+      </organiser>
+      <organiser role="representative">
+         <firstName>Peter</firstName>
+         <familyName>Benton</familyName>
+         <email>peter_benton@testmail.com</email>
+      </organiser>
+      <organiser role="legal entity">
+         <firstName>Global Peace Foundation</firstName>
+         <familyName>Peace Boat</familyName>
+         <country>it</country>
+      </organiser>
+   </organisers>
+   <languages>
+      <language code="en" original="true">
+         <title>[EN]testTitle</title>
+         <description>[EN]testObjectives</description>
+         <site>http://www.rest.test.url.uk</site>
+         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+      </language>
+      <language code="it" original="false">
+         <title>[IT]testTitle</title>
+         <description>[IT]testObjectives</description>
+         <site>http://www.rest.test.url.it</site>
+         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+      </language>
+   </languages>
+</initiative>
+

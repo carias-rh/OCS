@@ -1,0 +1,16 @@
+package eu.europa.ec.eci.oct.validation
+global ValidationResult validationResult;
+rule "rule_oct.property.id.card"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "id.card", value == null || value not matches "[0-9]{7}|[0-9]{8}")
+    then
+        validationResult.addValidationError("id.card","oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end
+rule "rule_oct.property.passport"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "passport", value == null || value.toLowerCase() not matches "[a-z][0-9]{7,8}")
+    then
+        validationResult.addValidationError("passport","oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end

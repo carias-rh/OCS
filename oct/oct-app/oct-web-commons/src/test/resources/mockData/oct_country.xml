@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<OCT_COUNTRY id="1" CODE="pl" NAME="oct.country.pl" threshold="38301" category="B" />
+	<OCT_COUNTRY id="2" CODE="de" NAME="oct.country.de" threshold="72096" category="A" />
+	<OCT_COUNTRY id="4" CODE="fr" NAME="oct.country.fr" threshold="55574" category="A" />
+	<OCT_COUNTRY id="5" CODE="be" NAME="oct.country.be" threshold="15771" category="B" />
+	<OCT_COUNTRY id="6" CODE="ro" NAME="oct.country.ro" threshold="24032" category="B" />
+	<OCT_COUNTRY id="8" CODE="at" NAME="oct.country.at" threshold="13518" category="B" />
+	<OCT_COUNTRY id="9" CODE="lv" NAME="oct.country.lv" threshold="6008" category="B" />
+	<OCT_COUNTRY id="10" CODE="bg" NAME="oct.country.bg" threshold="12767" category="B" />
+	<OCT_COUNTRY id="11" CODE="cy" NAME="oct.country.cy" threshold="4506" category="B" />
+	<OCT_COUNTRY id="12" CODE="lt" NAME="oct.country.lt" threshold="8261" category="B" />
+	<OCT_COUNTRY id="13" CODE="lu" NAME="oct.country.lu" threshold="4506" category="A" />
+	<OCT_COUNTRY id="14" CODE="mt" NAME="oct.country.mt" threshold="4506" category="B" />
+	<OCT_COUNTRY id="15" CODE="nl" NAME="oct.country.nl" threshold="19526" category="A" />
+	<OCT_COUNTRY id="16" CODE="pt" NAME="oct.country.pt" threshold="15771" category="B" />
+	<OCT_COUNTRY id="17" CODE="sk" NAME="oct.country.sk" threshold="9763" category="A" />
+	<OCT_COUNTRY id="18" CODE="si" NAME="oct.country.si" threshold="6008" category="B" />
+	<OCT_COUNTRY id="19" CODE="cz" NAME="oct.country.cz" threshold="15771" category="B" />
+	<OCT_COUNTRY id="20" CODE="dk" NAME="oct.country.dk" threshold="9763" category="A" />
+	<OCT_COUNTRY id="21" CODE="ee" NAME="oct.country.ee" threshold="4506" category="B" />
+	<OCT_COUNTRY id="22" CODE="fi" NAME="oct.country.fi" threshold="9763" category="A" />
+	<OCT_COUNTRY id="23" CODE="gr" NAME="oct.country.gr" threshold="15771" category="A" />
+	<OCT_COUNTRY id="24" CODE="es" NAME="oct.country.es" threshold="40554" category="B" />
+	<OCT_COUNTRY id="25" CODE="hu" NAME="oct.country.hu" threshold="15771" category="B" />
+	<OCT_COUNTRY id="26" CODE="ie" NAME="oct.country.ie" threshold="8261" category="A" />
+	<OCT_COUNTRY id="27" CODE="se" NAME="oct.country.se" threshold="15020" category="B" />
+	<OCT_COUNTRY id="28" CODE="it" NAME="oct.country.it" threshold="54823" category="B" />
+	<OCT_COUNTRY id="29" CODE="hr" NAME="oct.country.hr" threshold="8261" category="B" />
+</dataset>

@@ -1,0 +1,123 @@
+<section class="ocs-content-settings">
+    <ux-alert *ngIf="alert" [typeClass]="alert.type" [isCloseable]="true">
+        <div aria-live="polite">{{ alert.label | translate }}</div>
+    </ux-alert>
+    <h4 class="mb-3">{{'sections.personalize' | translate}} ({{'personalize.optional' | translate}})</h4>
+    <div class="description">
+        {{'personalize.sidebar-text' | translate }}
+    </div>
+    <div class="ocs-customise">
+        <form [formGroup]="form">
+            <legend class="ocs-element-hidden">{{ 'personalize.legend-customize' | translate }}</legend>
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-12 mt-2 mb-5">
+                        <!-- Logo -->
+                        <div class="ocs-drop-drag mt-2 mb-2">
+                            <ocs-upload #upload label="{{ 'personalize.image-initiative' | translate }}"
+                                [showTable]="false"
+                                [allowedFiles]="['jpg','gif','png']"
+                                [isMultiple]="false"
+                                [required]="true"
+                                (newDocuments)="onUpload($event)">
+                            </ocs-upload>
+                            <div class="ocs-image-default" >
+                                <img #imgLogo src="" alt="{{ 'personalize.image-initiative-charge' | translate }}">
+                            </div>
+                        </div>
+                        <!-- Logo description -->
+                        <div class="ocs-customise-section">
+                            <ux-form-group label="{{ 'personalize.image-description' | translate }}" [isVertical]="true">
+                                <ux-form-control formControlName="description"
+                                    [isTextarea]="true"
+                                    [rows]="3"
+                                    placeholderLabel="{{ 'personalize.image-cover' | translate }}">
+                                </ux-form-control>
+                            </ux-form-group>
+                        </div>
+                        <!-- Select background -->
+                        <div class="ocs-customise-section ocs-padd-bt">
+                            <div class="ocs-background-select">
+                                <ux-form-group label="{{ 'personalize.select-background' | translate }}" styleClass="label">
+                                    <div class="col-md-12">
+                                        <ng-container *ngFor="let theme of [1, 2, 3, 4]">
+                                            <div class="col-md-2 mr-3" [ngClass]="'background' + theme">
+                                                <ux-form-control [id]="'background' + theme"
+                                                    [isRadio]="true"
+                                                    formControlName="background"
+                                                    [formControlValue]="theme">
+                                                </ux-form-control>
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <ng-container *ngFor="let theme of [5, 6, 7, 8]">
+                                            <div class="col-md-2 mr-3" [ngClass]="'background' + theme">
+                                                <ux-form-control [id]="'background' + theme"
+                                                    [isRadio]="true"
+                                                    formControlName="background"
+                                                    [formControlValue]="theme">
+                                                </ux-form-control>
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                </ux-form-group>
+                            </div>
+                        </div>
+                        <!-- Progress bar -->
+                        <div class="ocs-customise-section">
+                            <span class="ux-u-d-block ux-u-font-bold mt-3 mb-4" style="font-size: 1.1428em;">{{'personalize.show-progress-bar' | translate }}</span>
+                            <ux-switch formControlName="showProgressionBar"></ux-switch>
+                            <span class="ux-u-display-inline-block ml-2">{{'personalize.show-progress-bar-desc' | translate }}</span>
+                        </div>
+                        <!-- Signatures -->
+                        <div class="ocs-customise-section custom">
+                            <ux-form-group [isVertical]="true" label="{{'personalize.signatures-goal' | translate }}">
+                                <span class="mt-3 mb-1 ux-u-d-block">{{'personalize.signatures-goal-desc' | translate }}</span>
+                                <ux-form-control style="width: 250px; display: block;"
+                                    formControlName="signatureGoal"
+                                    thousandSeparator="."
+                                    [isNumber]="true"
+                                    [isNumberFormatPlaceholder]="false">
+                                </ux-form-control>
+                            </ux-form-group>
+                        </div>
+                        <!-- Distribution map -->
+                        <div class="ocs-customise-section">
+                            <span class="ux-u-d-block ux-u-font-bold mt-3 mb-4" style="font-size: 1.1428em;">{{'personalize.show-distribution-map' | translate }}</span>
+                            <ux-switch formControlName="showDistributionMap"></ux-switch>
+                            <span class="ux-u-display-inline-block ml-2">{{'personalize.show-distribution-map-desc' | translate }}</span>
+                        </div>
+                        <!-- Recent supporters -->
+                        <div class="ocs-customise-section">
+                            <span class="ux-u-d-block ux-u-font-bold mt-3 mb-4" style="font-size: 1.1428em;">{{'personalize.show-recent-supporters' | translate }}</span>
+                            <ux-switch formControlName="showRecentSupporters"></ux-switch>
+                            <span class="ux-u-display-inline-block ml-2">{{'personalize.show-recent-supporters-desc' | translate }}</span>
+                        </div>
+                        <!-- Callback URL -->
+                        <div class="ocs-customise-section custom">
+                            <ux-form-group [isVertical]="true" label="{{'personalize.callback-url' | translate }}">
+                                <span class="mt-3 mb-1 ux-u-d-block">{{'personalize.callback-url-desc' | translate }}</span>
+                                <ux-form-control formControlName="callbackUrl"></ux-form-control>
+                            </ux-form-group>
+                        </div>
+                        <!-- Validation rules -->
+                        <div class="ocs-customise-section">
+                            <span class="ux-u-d-block ux-u-font-bold mt-3 mb-4" style="font-size: 1.1428em;">{{'personalize.validation' | translate }}</span>
+                            <ux-switch formControlName="optionalValidation"></ux-switch>
+                            <span class="ux-u-display-inline-block ml-2">{{'personalize.validation-desc' | translate }}</span>
+                        </div>
+
+                        <!-- Save/cancel -->
+                        <div class="col-md-12 ocs-padd-0 mt-3">
+                            <div class="ocs-box-buttons col-md-6">
+                                <ux-button [isLarge]="true" styleClass="ocs-button-blue mr-2" (click)="onSave()">{{ 'common.save' | translate }}</ux-button>
+                                <ux-button [isLarge]="true" styleClass="ocs-button-white" (click)="onCancel()">{{ 'common.cancel' | translate }}</ux-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>

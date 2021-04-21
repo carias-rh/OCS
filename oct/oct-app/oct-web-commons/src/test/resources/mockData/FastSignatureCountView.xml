@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<FASTSIGNATURECOUNTVIEW countryId="4" count="2" threshold="55500" countrycode="fr"/>
+	<FASTSIGNATURECOUNTVIEW countryId="99" count="2" threshold="0" countrycode=""/>
+</dataset>

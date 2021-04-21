@@ -1,0 +1,9 @@
+<app-title title="footer.conformity-title"></app-title>
+<div class="ocs-conformity padding-container-static">
+    <pdf-viewer [src]="conformityCertificatePdf"
+        [page]="page"
+        [original-size]="true"
+        (error)="onError($event)"
+        style="display: block;">
+    </pdf-viewer>
+</div>

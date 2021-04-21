@@ -1,0 +1,8 @@
+<section class="ocs-shadow">
+    <h4>{{ 'dashboard.view.total' | translate }}</h4>
+    <div class="ocs-circle">
+        <ocs-circle-chart *ngIf="data" [count]="data.signatureCount" [threshold]="data.goal"></ocs-circle-chart>
+    </div>
+
+</section>
+

@@ -1,0 +1,39 @@
+<ux-block-content [isBlocked]="isBlocked">
+    <form *ngIf="!isSubmittedOK()" [formGroup]="form" class="dgtc-form">
+        <fieldset class="ocs-feedback-option">
+            <legend class="ocs-title-highlight"> <span class="ux-u-font-bold ocs-font-22">{{ 'feedback.how-experience' | translate }}</span>  {{ 'feedback.experience-initiative' | translate }}</legend>
+            <div class="ocs-box-badges">
+                <div *ngFor="let option of options" class="ocs-badge-radio" role="radiogroup">
+                    <input type="radio"
+                        id="satisfaction_{{option}}"
+                        [disabled]="feedbackSubmitted"
+                        formControlName="experience"
+                        [value]="option"
+                        class="ocs-badge-input">
+                    <label for="satisfaction_{{option}}" class="ocs-badge-label">{{('feedback.experience.' + option) | translate}}</label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="ocs-feedback-option">
+            <legend> <span class="ux-u-font-bold">{{ 'feedback.your-will-help-us' | translate }}</span></legend>
+            <div class="ocs-help">
+                <ux-form-group [isVertical]="true">
+                    <ux-form-control
+                        [isTextarea]="true"
+                        formControlName="message"
+                        styleClass="form-control mb-3 ocs-wd-100 ocs-normal-text"
+                        [rows]="5"
+                        [maxlength]="feedbackMaxLength"
+                        placeholderLabel="{{ 'feedback.write-your-feedback' | translate}}">
+                    </ux-form-control>
+                </ux-form-group>
+                <div class="ocs-box-button mt-4">
+                    <ux-button (click)="onSubmitFeedback()" styleClass="btn btn-primary btn-lg">{{ 'feedback.send-feedback' | translate }}</ux-button>
+                </div>
+                <ux-alert *ngIf="isSubmittedError()" typeClass="danger" styleClass="mt-4">{{'feedback.result-error' | translate}}</ux-alert>
+            </div>
+        </fieldset>
+    </form>
+</ux-block-content>
+<ux-alert *ngIf="isSubmittedOK()" typeClass="success">{{'feedback.result-ok' | translate}}</ux-alert>
+

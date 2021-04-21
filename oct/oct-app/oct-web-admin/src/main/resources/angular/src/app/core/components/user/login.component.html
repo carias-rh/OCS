@@ -1,0 +1,51 @@
+<div class="ocs-login padding-container-static">
+    <h2 class="ux-u-text-align-center mb-3 ocs-title-section">{{'login.sign-in' | translate }}</h2>
+    <form [formGroup]="form">
+        <div class="ocs-panel-style">
+            <ux-alert *ngIf="error" typeClass="danger">
+                <div aria-live="polite">
+                    <strong>{{ 'login.error' | translate }}:</strong>
+                    {{ 'login.error-msg' | translate }}
+                </div>
+            </ux-alert>
+            <fieldset>
+                <legend class="ocs-element-hidden">{{'login.sign-in' | translate }}</legend>
+                <ux-form-group label="{{'login.username' | translate }}" [isVertical]="true" styleClass="ocs-title-label">
+                    <ux-form-control styleClass="mb-2 ocs-wd-100"
+                        formControlName="username"
+                        [isInputText]="true"
+                        placeholderLabel="{{'login.username' | translate }}">
+                    </ux-form-control>
+                </ux-form-group>
+                <label for="password" class="ocs-title-label">{{'login.password' | translate }}</label>
+                <input name="password" formControlName="password" class="ocs-wd-100" type="password" id="password" placeholder="{{'login.password' | translate }}">
+            </fieldset>
+            <br/>
+            <fieldset>
+                <legend class="ocs-element-hidden">{{'login.challenge' | translate }}</legend>
+                <div class="ocs-login-challenge">
+                    <ux-form-group label="{{'login.challenge' | translate }}" [isVertical]="true" styleClass="ocs-title-label">
+                        <ux-form-control
+                            formControlName="challenge"
+                            [isTextarea]="true"
+                           [isReadOnly]="true"
+                            [rows]="12">
+                        </ux-form-control>
+                        <button class="ocs-copy" tabindex="0" type="button" (click)="onCopy()"><i class="fa fa-clipboard" aria-hidden="true"></i> {{'login.copy-text' | translate }}</button>
+                    </ux-form-group>
+                    <ux-form-group label="{{'login.challenge-result' | translate }}" [isVertical]="true" styleClass="">
+                        <ux-form-control styleClass="ocs-wd-100"
+                            formControlName="result"
+                            [isInputText]="true"
+                            placeholderLabel="{{'login.challenge-result' | translate }}">
+                        </ux-form-control>
+                    </ux-form-group>
+                </div>
+            </fieldset>
+            <div class="ocs-box-button mb-5">
+                <ux-button (click)="onLogin()" [isDisabled]="form.invalid" styleClass="btn btn-primary btn-lg" style="font-size: 1.3em; padding: 0.5em 4em;"> {{'login.sign-in' | translate }}</ux-button>
+            </div>
+        </div>
+    </form>
+</div>
+

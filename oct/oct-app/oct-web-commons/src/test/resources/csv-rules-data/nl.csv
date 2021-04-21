@@ -1,0 +1,22 @@
+id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;name.at.birth;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0000;nl;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;nl;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+0010;nl;PASS;NONE;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;ruden strass;1123az;Amsterdam;nl
+0011;nl;FAIL;wrong postal code;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;ruden strass;11232323z;Amsterdam;nl
+0020;nl;PASS;NONE;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;fr;ruden strass;1123az;Amsterdam;nl
+0021;nl;PASS;NONE;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;ruden strass;12345;Amsterdam;fr
+0022;nl;FAIL;wrong country and nationality;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;it;ruden strass;1123az;Amsterdam;fr
+9001;nl;PASS;NL with residence in AT;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;Viennastraat;1234;Vienna;at
+9002;nl;PASS;NL with residence in DE;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;bundestagstraat;10005;Berlin;de
+9003;nl;PASS;NL with residence in BE;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;Rue neuve;1000;Bruxelles;be
+9004;nl;PASS;NL with residence in DK;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;laksegade street;1234;Copenhagen;dk
+9005;nl;PASS;NL with residence in EE;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;rue tallin;12345;Tallin;ee
+9006;nl;PASS;NL with residence in FR;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;rue de la concorde;12345;Paris;fr
+9007;nl;PASS;NL with residence in HR;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;croatia street;12345;Zadar;hr
+9008;nl;PASS;NL with residence in IT;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;Via dei matti;1234567azxcvgre;Milano;it
+9009;nl;PASS;NL with residence in LU;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;rue du lux;1234;Lux;lu
+9010;nl;PASS;NL with residence in PL;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;polosky straat;12345;Warsaw;pl
+9011;nl;PASS;NL with residence in RO;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;via chauchesku;123456;Bucaresti;ro
+9012;nl;PASS;NL with residence in SK;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;street Parickova;01234;Bratislava;sk
+9013;nl;PASS;NL with residence in GB;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;Oxford street;BD15 0HS;London;gb
+9014;nl;PASS;NL with residence in IE;Gullit;Ruud;Rudy;01/01/1976;Amesterdam;nl;beer street;1234AZ;Cork;ie

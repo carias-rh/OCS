@@ -1,0 +1,130 @@
+<section class="ocs-content-settings">
+    <h4 class="mb-3">{{'sections.social' | translate}} ({{'personalize.optional' | translate}})</h4>
+    <div class="description">
+        {{ 'personalize.sidebar-text' | translate }}<br /><br />
+        {{ 'social.callforaction-message' | translate}}
+    </div>
+    <div class="ocs-makeitsocial mt-2">
+        <form [formGroup]="formAction" class="ocs-action-form">
+            <legend class="ocs-element-hidden">{{ 'personalize.structure-desc' | translate }}</legend>
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-12 ocs-padd-0">
+                        <ux-alert *ngIf="alertAction" [isCloseable]="true" [typeClass]="alertAction.type" (close)="alertAction === null">
+                            <div aria-live="polite">{{ alertAction.label | translate }}</div>
+                        </ux-alert>
+                        <div class="col-md-5 mb-5 ux-u-d-block">
+                            <ux-form-group [isVertical]="true" label="{{ 'common.language' | translate }}">
+                                <ux-form-control [isSelect]="true"
+                                    formControlName="languageCode"
+                                    styleClass="col-md-5"
+                                    (modelChange)="onSelectActionLanguage($event)">
+                                    <option *ngFor="let language of languages" value="{{language.id}}">{{ language.value }}</option>
+                                </ux-form-control>
+                            </ux-form-group>
+                        </div>
+                        <div class="col-md-12 ocs-social-friends">
+                            <ux-form-group label="{{ 'social.tell-friends' | translate }}" [isVertical]="true">
+                                <ux-form-control
+                                    [isTextarea]="true"
+                                    styleClass="ocs-element-hidden"
+                                    [rows]="5"
+                                    [maxlength]="280"
+                                    placeholderLabel="{{ 'social.tell-friends' | translate }}"
+                                    formControlName="message">
+                                </ux-form-control>
+                            </ux-form-group>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ocs-padd-0 ocs-action-button">
+                        <div class="ocs-box-buttons col-md-6 ocs-right ocs-padd-0">
+                            <ux-button [isLarge]="true" styleClass="ocs-button-blue mt-2 mr-2 ocs-wd-auto" (click)="onSaveAction()">{{ 'social.save-message' | translate }}</ux-button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+        </form>
+        <hr>
+        <form [formGroup]="formSocial" class="ocs-social-form">
+            <legend class="ocs-element-hidden">{{ 'social.legend-makeitsocial-social' | translate }}</legend>
+            <fieldset>
+                <div class="ocs-social ocs-padd-0 mt-3  col-md-12">
+                    <ux-alert *ngIf="alertSocial" [isCloseable]="true" [typeClass]="alertSocial.type" (close)="alertSocial === null">
+                        <div aria-live="polite">{{ alertSocial.label | translate }}</div>
+                    </ux-alert>
+                    <div class="description ml-1 mb-2">
+                        {{ 'social.networks-title' | translate }}
+                    </div>
+                    <ux-form-group label="{{ 'social.facebook' | translate }}" styleClass="ocs-social-box">
+                        <div class="ux-u-d-block mt-1">
+                            <ux-a-icon iconClass="fa fa-facebook-square" [isLarge]="true" [isRounded]="false" typeClass="primary"></ux-a-icon>
+                            <ux-form-control
+                            styleClass="col-md-8"
+                            formControlName="facebookUrl"
+                            placeholderLabel=""
+                            ></ux-form-control>
+                            <ux-control-feedback *ngIf="!facebookUrl.valid"  styleClass="eci-has-error" typeClass="danger">
+                               {{ 'social.url-valid' | translate }}
+                            </ux-control-feedback>
+                        </div>
+                    </ux-form-group>
+                    <ux-form-group label="{{ 'social.twitter' | translate }}" styleClass="ocs-social-box">
+                        <div class="ux-u-d-block mt-1">
+                            <ux-a-icon iconClass="fa fa-twitter-square" [isLarge]="true" [isRounded]="false" typeClass="primary"></ux-a-icon>
+                            <ux-form-control
+                            formControlName="twitterUrl"
+                            placeholderLabel=""></ux-form-control>
+                            <ux-control-feedback *ngIf="!twitterUrl.valid"  styleClass="eci-has-error" typeClass="danger">
+                                {{ 'social.url-valid' | translate }}
+                             </ux-control-feedback>
+                        </div>
+                    </ux-form-group>
+                    <div class="col-md-12 ocs-padd-0 ocs-social-button">
+                            <div class="ocs-box-buttons col-md-6 ocs-right ocs-padd-0">
+                                <ux-button [isLarge]="true" styleClass="ocs-button-blue mt-2 mr-2 ocs-width-auto" (click)="onSaveSocial()">{{ 'social.save-addresses' | translate }}</ux-button>
+                            </div>
+                        </div>
+                </div>
+            </fieldset>
+
+        </form>
+        <hr>
+        <form [formGroup]="formTwitter" class="ocs-twitter-form">
+                <legend class="ocs-element-hidden">{{ 'personalize.legend-makeitsocial-twitter' | translate }}</legend>
+            <fieldset>
+                <ux-alert *ngIf="alertTwitter" [isCloseable]="true" [typeClass]="alertTwitter.type" (close)="alertTwitter === null">
+                    <div aria-live="polite">{{ alertTwitter.label | translate }}</div>
+                </ux-alert>
+                <div class="description font-size-14">{{ 'social.twitter-message' | translate }}</div>
+                <ux-form-group label="{{ 'common.language' | translate }}" [isVertical]="true" styleClass="col-md-5 mb-4 ocs-padd-0">
+                    <ux-form-control formControlName="languageCode"
+                        [isSelect]="true"
+                        (modelChange)="onSelectTwitterLanguage($event)">
+                            <option *ngFor="let language of languages" value="{{language.id}}">{{ language.value }}</option>
+                    </ux-form-control>
+                </ux-form-group>
+                <ux-form-group styleClass="ocs-no-label" [isVertical]="true" label="{{ 'social.twitter-message' | translate }}">
+                    <ux-form-control [isTextarea]="true"
+                        formControlName="message"
+                        [maxlength]="280"
+                        [rows]="5">
+                    </ux-form-control>
+                </ux-form-group>
+                    <div class="col-md-12 ocs-padd-0 ocs-action-button">
+                        <div class="ocs-box-buttons col-md-6 ocs-right ocs-padd-0">
+                            <ux-button [isLarge]="true" styleClass="ocs-button-blue mt-2 ocs-wd-auto" (click)="onSaveTwitter()">{{ 'social.save-message' | translate }}</ux-button>
+                        </div>
+                    </div>
+            </fieldset>
+        </form>
+        <hr class="mt-2 mb-2">
+        <div class="col-md-12 ocs-padd-0">
+            <div class="ocs-box-buttons col-md-6 ocs-left ocs-padd-0">
+                <ux-button [isLarge]="true" styleClass="ocs-button-white mt-2 mr-2 ocs-wd-auto" (click)="onCancel()">{{ 'common.cancel' | translate }}</ux-button>
+            </div>
+        </div>
+    </div>
+</section>
+
+

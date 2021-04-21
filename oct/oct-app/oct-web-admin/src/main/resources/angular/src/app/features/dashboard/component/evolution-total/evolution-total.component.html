@@ -1,0 +1,27 @@
+<section class="ocs-shadow">
+    <h4>{{ 'dashboard.view.evolution-countries' | translate }}</h4>
+
+    <ux-button-group [isRadioButtons]="true" typeClass="secondary" (clicked)="onButtonClicked($event)">
+        <ux-button-group-item id="chart" iconClass="fa fa-th-large" [isActive]="showChart"></ux-button-group-item>
+        <ux-button-group-item id="table" iconClass="fa fa-list" [isActive]="!showChart"></ux-button-group-item>
+    </ux-button-group>
+
+    <ocs-evolution-chart *ngIf="showChart" [data]="data"></ocs-evolution-chart>
+
+    <table *ngIf="!showChart" class="table">
+        <caption class="ocs-element-hidden">{{ 'dashboard.view.evolution-countries.caption' | translate }}</caption>
+        <summary class="ocs-element-hidden">{{ 'dashboard.view.evolution-countries.summary' | translate }}</summary>
+        <thead>
+            <tr>
+                <th id="month">{{ 'dashboard.view.month' | translate }}</th>
+                <th class="ux-u-text-align-right" id="support">{{ 'dashboard.view.support' | translate }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td headers="month">{{ ('dashboard.view.' + item.month) | translate }} {{ item.year }}</td>
+                <td class="ux-u-text-align-right" header="support">{{ item.count | uxNumberFormat: '' :0: '.' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

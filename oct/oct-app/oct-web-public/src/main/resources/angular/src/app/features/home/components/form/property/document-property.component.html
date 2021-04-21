@@ -1,0 +1,12 @@
+<ux-form-group id="documentType" label="{{'form.document-type' | translate}}" [isVertical]="true">
+    <ux-form-control
+        [isSelect]="true"
+        [(ngModel)]="documentType"
+        (modelChange)="onSelectDocumentType($event)">
+        <option *ngFor="let option of property.options" [value]="option.id">{{ option.value }}</option>
+    </ux-form-control>
+</ux-form-group>
+<ux-form-group id="document" label="{{'form.document-number' | translate}}" [isVertical]="true" [feedbackTypeClass]="feedbackClass" [isValid]="!isError">
+    <input [textMask]="{mask: mask}" type="text" [(ngModel)]="property.value" (focusout)="onBlur()" (ngModelChange)="onChange()">
+    <ux-control-feedback *ngIf="property.error">{{ ('form.error.' + property.errorMessage) | translate }}</ux-control-feedback>
+</ux-form-group>

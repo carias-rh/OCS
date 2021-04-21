@@ -1,0 +1,20 @@
+id;countryToSignFor;expectedResult;expectedReason;national.id.number;firstname;lastname;nationality;address;postal.code;city;country
+0000;pl;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;pl;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null}
+0010;pl;PASS;NONE;12345678901;Marta Żmuda;Trzebiatowska;pl;place polish;12345;Krakow;pl
+0011;pl;FAIL;wrong national id;123456789011221;Marta Żmuda;Trzebiatowska;pl;place polish;12345;Krakow;pl
+0012;pl;FAIL;wrong postal code;123456789011221;Marta Żmuda;Trzebiatowska;pl;place polish;12345e232;Krakow;pl
+9001;pl;PASS;PL with residence in AT;12345678901;Marta Żmuda;Trzebiatowska;pl;Viennastraat;1234;Vienna;at
+9002;pl;PASS;PL with residence in DE;12345678901;Marta Żmuda;Trzebiatowska;pl;bundestagstraat;10005;Berlin;de
+9003;pl;PASS;PL with residence in BE;12345678901;Marta Żmuda;Trzebiatowska;pl;Rue neuve;1000;Bruxelles;be
+9004;pl;PASS;PL with residence in DK;12345678901;Marta Żmuda;Trzebiatowska;pl;laksegade street;1234;Copenhagen;dk
+9005;pl;PASS;PL with residence in EE;12345678901;Marta Żmuda;Trzebiatowska;pl;rue tallin;12345;Tallin;ee
+9006;pl;PASS;PL with residence in FR;12345678901;Marta Żmuda;Trzebiatowska;pl;rue de la concorde;12345;Paris;fr
+9007;pl;PASS;PL with residence in HR;12345678901;Marta Żmuda;Trzebiatowska;pl;croatia street;12345;Zadar;hr
+9008;pl;PASS;PL with residence in IT;12345678901;Marta Żmuda;Trzebiatowska;pl;Via dei matti;1234567azxcvgre;Milano;it
+9009;pl;PASS;PL with residence in NL;12345678901;Marta Żmuda;Trzebiatowska;pl;flatstraat;1123az;Rotterdam;nl
+9010;pl;PASS;PL with residence in LU;12345678901;Marta Żmuda;Trzebiatowska;pl;rue du lux;1234;Lux;lu
+9011;pl;PASS;PL with residence in RO;12345678901;Marta Żmuda;Trzebiatowska;pl;via chauchesku;123456;Bucaresti;ro
+9012;pl;PASS;PL with residence in SK;12345678901;Marta Żmuda;Trzebiatowska;pl;street Parickova;01234;Bratislava;sk
+9013;pl;PASS;PL with residence in GB;12345678901;Marta Żmuda;Trzebiatowska;pl;Oxford street;BD15 0HS;London;gb
+9014;pl;PASS;PL with residence in IE;12345678901;Marta Żmuda;Trzebiatowska;pl;beer street;1234AZ;Cork;ie

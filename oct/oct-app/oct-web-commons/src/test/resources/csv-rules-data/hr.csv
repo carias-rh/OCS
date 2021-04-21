@@ -1,0 +1,20 @@
+id;countryToSignFor;expectedResult;expectedReason;personal.id;firstname;lastname;nationality;address;postal.code;city;country
+0000;hr;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;hr;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null}
+0010;hr;PASS;NONE;12345678901;Nataša;Janjić;hr;whatever street;12345;Zagreb;hr
+0020;hr;FAIL;wrong personal id;asdfgh;Nataša;Janjić;hr;whatever street;12345;Zagreb;hr
+0030;hr;FAIL;wrong postal code;12345678901;Nataša;Janjić;hr;whatever street;12cdf;Zagreb;hr
+9001;hr;PASS;HR with residence in AT;12345678901;Nataša;Janjić;hr;Viennastraat;1234;Vienna;at
+9002;hr;PASS;HR with residence in DE;12345678901;Nataša;Janjić;hr;bundestagstraat;10005;Berlin;de
+9003;hr;PASS;HR with residence in BE;12345678901;Nataša;Janjić;hr;Rue neuve;1000;Bruxelles;be
+9004;hr;PASS;HR with residence in DK;12345678901;Nataša;Janjić;hr;laksegade street;1234;Copenhagen;dk
+9005;hr;PASS;HR with residence in EE;12345678901;Nataša;Janjić;hr;rue tallin;12345;Tallin;ee
+9006;hr;PASS;HR with residence in FR;12345678901;Nataša;Janjić;hr;rue de la concorde;12345;Paris;fr
+9007;hr;PASS;HR with residence in IT;12345678901;Nataša;Janjić;hr;Via dei matti;1234567azxcvgre;Milano;it
+9008;hr;PASS;HR with residence in LU;12345678901;Nataša;Janjić;hr;rue du lux;1234;Lux;lu
+9009;hr;PASS;HR with residence in NL;12345678901;Nataša;Janjić;hr;flatstraat;1123az;Rotterdam;nl
+9010;hr;PASS;HR with residence in PL;12345678901;Nataša;Janjić;hr;polosky straat;12345;Warsaw;pl
+9011;hr;PASS;HR with residence in RO;12345678901;Nataša;Janjić;hr;via chauchesku;123456;Bucaresti;ro
+9012;hr;PASS;HR with residence in SK;12345678901;Nataša;Janjić;hr;street Parickova;01234;Bratislava;sk
+9013;hr;PASS;HR with residence in GB;12345678901;Nataša;Janjić;hr;Oxford street;BD15 0HS;London;gb
+9014;hr;PASS;HR with residence in IE;12345678901;Nataša;Janjić;hr;beer street;1234AZ;Cork;ie

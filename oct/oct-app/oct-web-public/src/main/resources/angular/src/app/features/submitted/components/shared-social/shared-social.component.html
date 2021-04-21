@@ -1,0 +1,61 @@
+<div class="ocs-share">
+    <div class="ocs-title-section mt-2 mb-5"> "{{ callForActionMessage }}" </div>
+    <div class="ocs-title-highlight"> <span class="ux-u-font-bold">{{ 'congratulations.share-this-initiative' | translate }}</span>  {{ 'congratulations.and-make-change' | translate }}</div>
+    <div class="ocs-share-social">
+        <div>
+            <a id="facebook"
+                title="{{ 'common.redirect-facebook' | translate }}"
+                class="social-facebook"
+                href="https://www.facebook.com/sharer/sharer.php?u={{ locationURL }}"
+                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600'); return false;"
+                target="_blank">
+                <span>
+                    {{ 'feedback.share-on-facebook' | translate }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'common.redirect-facebook' | translate }}"
+                        aria-labelledby="facebook">
+                    </i>
+                </span>
+            </a>
+        </div>
+        <div>
+            <a id="twitter"
+                title="{{ 'common.redirect-twitter' | translate }}"
+                class="social-twitter"
+                href="https://twitter.com/intent/tweet?text={{ twitterEncodedMessage }}"
+                target="_blank">
+                <span>
+                    {{ 'feedback.tweet-it' | translate }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'common.redirect-twitter' | translate }}"
+                        aria-labelledby="twitter">
+                    </i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+<div *ngIf="callbackUrl" class="mb-5">
+    <div class="ocs-title-highlight-2">{{ 'congratulations.return-website-title' | translate }}</div>
+    <div class="ocs-share-social">
+        <div>
+            <a id="callbackurl"
+                title="{{ 'common.redirect' | translate }} {{ callbackUrl }}"
+                class="social-share"
+                href="{{ callbackUrl }}"
+                target="_blank">
+                <span>
+                    {{ callbackUrl }}
+                    <i class="fa fa-external-link"
+                        aria-hidden="true"
+                        attr.aria-label="{{ 'common.redirect' | translate }} {{ callbackUrl }}"
+                        aria-labelledby="callbackurl">
+                    </i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+

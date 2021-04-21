@@ -1,0 +1,10 @@
+package eu.europa.ec.eci.oct.validation
+global ValidationResult validationResult;
+
+rule "rule_oct.property.postal.code_nl"
+    dialect "java"
+    when
+        v : ValidationProperty(key == "postal.code", value == null || value.toLowerCase() not matches "[1-9][0-9]{3}[a-z]{2}")
+    then
+        validationResult.addValidationError("postal.code", "oct.error.propertytypemismatch", ValidationConstants.SKIPPABLE);
+end

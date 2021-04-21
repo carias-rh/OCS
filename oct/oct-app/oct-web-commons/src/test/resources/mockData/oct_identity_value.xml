@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<OCT_IDENTITY_VALUE id="1" countrycode="fr"
+		propertyId="15" identityValue="blabla1" />
+	<OCT_IDENTITY_VALUE id="2" countrycode="fr"
+		propertyId="15" identityValue="blabla2" />
+</dataset>

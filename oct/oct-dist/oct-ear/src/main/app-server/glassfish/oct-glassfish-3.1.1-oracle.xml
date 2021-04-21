@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC
+	"-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions //EN"
+	"http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+	
+<!--
+====================================================
+This file defines a GlassFish domain configuration
+with all JEE items required for running the
+Online Collection Software.
+
+Underlying database engine: Oracle.
+
+Tested on GlassFish 3.1.1.
+ 
+Prerequisites:
+
+- a running installation of the GlassFish application
+  server, with(!) an Oracle JDBC driver added to its
+  classpath
+
+Usage:
+
+- customise this file by replacing all placeholders ($ABC)
+  in the *** CUSTOMISE *** section of this file with the
+  actual values
+- launch the GlassFish administration tool with the
+  option to create resources based on this file:
+  > GLASSFISH_HOME/bin/asadmin [connection-params]
+      add-resources <PATH_TO_THIS_SCRIPT>
+  where [connection-params] is:
+  -H GLASSFISH_HOST -p GLASSFISH_PORT -u GLASSFISH_ADMIN_USER
+====================================================
+--> 	
+	
+<resources>
+	<!-- JDBC DataSource -->	
+	<jdbc-connection-pool driver-classname="" validation-table-name="DUAL" pool-resize-quantity="5" datasource-classname="oracle.jdbc.xa.client.OracleXADataSource" max-pool-size="15" res-type="javax.sql.XADataSource" steady-pool-size="5" name="OctJdbcConnectionPool" is-connection-validation-required="true" idle-timeout-in-seconds="15">
+		<!-- *** CUSTOMISE START *** -->
+    	<property name="user" value="$DB_USER"></property>
+      	<property name="password" value="$DB_PASS"></property>
+      	<property name="url" value="jdbc:oracle:thin:@$DB_HOST:$DB_PORT:$DB_NAME"></property>
+      	<!-- *** CUSTOMISE END *** -->
+    </jdbc-connection-pool>           
+    <jdbc-resource pool-name="OctJdbcConnectionPool" jndi-name="jdbc/oct"></jdbc-resource>
+
+	<!-- JMS ConnectionFactory -->
+    <connector-connection-pool pool-resize-quantity="10" max-pool-size="256" resource-adapter-name="jmsra" name="OctExportQueueConnectionFactory" connection-definition-name="javax.jms.QueueConnectionFactory"></connector-connection-pool>
+    <connector-resource pool-name="OctExportQueueConnectionFactory" jndi-name="OctExportQueueConnectionFactory"></connector-resource>    
+    
+    <!-- JMS Queue (Export) -->
+    <admin-object-resource res-type="javax.jms.Queue" res-adapter="jmsra" jndi-name="OctExportQueue">
+      <property name="Name" value="OctExportQueueDest"></property>
+    </admin-object-resource>
+    
+    <!-- JMS Queue (ExportDispatcher) -->
+    <admin-object-resource res-type="javax.jms.Queue" res-adapter="jmsra" jndi-name="OctExportDispatcherQueue">
+      <property name="Name" value="OctExportDispatcherQueueDest"></property>
+    </admin-object-resource>
+
+</resources>	

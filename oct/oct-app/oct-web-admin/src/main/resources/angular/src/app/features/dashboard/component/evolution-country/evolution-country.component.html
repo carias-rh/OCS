@@ -1,0 +1,50 @@
+
+<section class="ocs-shadow">
+    <h4>{{ 'dashboard.view.evolution-country' | translate }}</h4>
+    <ux-button-group [isRadioButtons]="true" typeClass="secondary" (clicked)="onButtonClicked($event)">
+        <ux-button-group-item id="chart" iconClass="fa fa-th-large" [isActive]="showChart"></ux-button-group-item>
+        <ux-button-group-item id="table" iconClass="fa fa-list" [isActive]="!showChart"></ux-button-group-item>
+    </ux-button-group>
+    <div class="row mb-3 ocs-pos-top">
+        <div class="col-md-4">
+            <form [formGroup]="form">
+                <ux-form-group label="{{ 'dashboard.view.select-country'| translate }}" [isVertical]="true">
+                    <ux-form-control
+                        [isSelect]="true"
+                        formControlName="country"
+                        (modelChange)="onSelectCountry($event)">
+                        <option *ngFor="let country of countries" [value]="country.id"> {{ ('country.' + country.id) | translate }}</option>
+                    </ux-form-control>
+                </ux-form-group>
+            </form>
+            <br />
+            <i class="fa fa-user ux-u-font-size-h6" aria-hidden="true"></i>
+            <span class="label ux-u-font-bold ux-u-font-size-h6 ux-u-color-grey-dark"> {{ 'dashboard.view.signatories' | translate }} </span> <br/>
+            <div *ngIf="countryInfo" class="col-md-5 ux-u-display-inline-block mt-2" style="border-right: 1px solid #000; height: 50px;">
+                <span class="ocs-total-support ux-u-font-size-h5">{{ 'dashboard.view.total' | translate }}</span>
+                <span class="ocs-total-mont ux-u-font-size-h5 mt-2 ux-u-d-block">{{ countryInfo.totalSupporters | uxNumberFormat: '' :0: '.' }}</span>
+            </div>
+            <div *ngIf="countryInfo" class="col-md-6 ux-u-display-inline-block  mt-2">
+                <span class="ocs-total-support ux-u-font-size-h5">{{ 'dashboard.view.most-active-month' | translate }} </span>
+                <span class="ocs-total-mont ux-u-font-size-h5 ux-u-d-block mt-2">{{ countryInfo.mostActiveMonth }}</span>
+            </div>
+        </div>
+    </div>
+
+    <ocs-evolution-chart *ngIf="showChart && countryData" [data]="countryData"></ocs-evolution-chart>
+
+    <table *ngIf="!showChart" class="table">
+        <caption class="ocs-element-hidden">{{ 'dashboard.view.evolution-country-caption' | translate }}</caption>
+        <summary class="ocs-element-hidden">{{ 'dashboard.view.evolution-country-summary' | translate }}</summary>
+        <thead>
+            <tr><th>{{ 'dashboard.view.month' | translate }}</th><th class="ux-u-text-align-right">{{ 'dashboard.view.support' | translate }}</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of countryData">
+                <td>{{ ('dashboard.view.' + item.month) | translate}} {{ item.year }}</td>
+                <td class="ux-u-text-align-right">{{ item.count | uxNumberFormat: '' :0: '.' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

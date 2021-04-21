@@ -1,0 +1,12 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;personal.id;firstname;lastname;date.of.birth;nationality;
+0000;es;FAIL;empty values;{empty};{empty};{empty};{empty};{empty}{empty};{empty};{empty};
+0001;es;FAIL;null values;{null};{null};{null};{null};{null}{null};{null};{null};
+0010;es;PASS;NONE;aaaabbb000111;{skip};{skip};Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0020;es;PASS;NONE;AAAABBB000111;{skip};{skip};Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0030;es;FAIL;wrong passport;!!!!;{skip};{skip};Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0040;es;PASS;NONE;{skip};12345678a;{skip};Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0050;es;PASS;NONE;{skip};12345678A;{skip};Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0060;es;FAIL;wrong id card;{skip};12345678av;{skip};Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0070;es;PASS;NONE;{skip};{skip};x1234567a;Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0080;es;PASS;NONE;{skip};{skip};X1234567A;Marcos salo;Gonzales de Valencia;01/01/1990;es;
+0090;es;FAIL;wrong personal id;{skip};{skip};a1234567a;Marcos salo;Gonzales de Valencia;01/01/1990;es;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<OCT_SETTINGS param="callback_url" VALUE="callbackUrl" />
+	<OCT_SETTINGS param="facebook_url" VALUE="facebookUrl" />
+	<OCT_SETTINGS param="google_url" VALUE="googleUrl" />
+	<OCT_SETTINGS param="optional_validation" VALUE="false" />
+	<OCT_SETTINGS param="remote_services" VALUE="true" />
+	<OCT_SETTINGS param="show_distribution_map" VALUE="true" />
+	<OCT_SETTINGS param="show_facebook" VALUE="true" />
+	<OCT_SETTINGS param="show_google" VALUE="true" />
+	<OCT_SETTINGS param="show_progression_bar" VALUE="true" />
+	<OCT_SETTINGS param="show_social_media" VALUE="false" />
+	<OCT_SETTINGS param="show_tweeter" VALUE="true" />
+	<OCT_SETTINGS param="signature_goal" VALUE="1000000" />
+	<OCT_SETTINGS param="twitter_url" VALUE="twitterUrl" />
+	<OCT_SETTINGS param="color_picker" VALUE="#FF0000" />
+</dataset>

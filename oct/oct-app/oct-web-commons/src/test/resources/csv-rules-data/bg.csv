@@ -1,0 +1,5 @@
+id;countryToSignFor;expectedResult;expectedReason;personal.number;firstname;lastname;fathers.name;nationality
+0000;bg;FAIL;empty;{empty};{empty};{empty};{empty};{empty}
+0010;bg;FAIL;null;{null};{null};{null};{null};{null};{null}
+0020;bg;PASS;NONE;0123456789;Popov Dimitriov;Popov;Bolshoy Dimitrovich;bg
+0030;bg;FAIL;personal number wrong;12345;Popov Dimitriov;Popov;Bolshoy Dimitrovich;bg

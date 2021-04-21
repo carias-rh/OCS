@@ -1,0 +1,44 @@
+<!-- <div id="skip-link"><a href="#content" class="ocs-element-hidden element-focusable">Skip Content</a></div> -->
+<a (click)="skipLink()" href onclick="return false;"
+    class="sr-only sr-only-focusable btn btn-link ocs-element-hidden element-focusable"
+    accesskey="k">
+    {{ 'common.skip-content' | translate }}
+</a>
+
+<ux-layout-app-shell *ngIf="initialized"
+    [isScrollHandlerActive]="true"
+    [styleClass]="themeClass"
+    [isHeaderHideLogo]="true"
+    [hasNavBar]="false"
+    [hasHeader]="true"
+    [headerLanguageCodes]="languages"
+    [headerSelectedLanguage]="selectedLanguage"
+    [isFooterStyleInverse]="true"
+    (headerLanguageChanged)="onLanguageChanged($event)">
+
+    <uxAppShellHeaderTitleContent>
+    </uxAppShellHeaderTitleContent>
+
+    <uxAppShellHeaderRightContent>
+        <ux-language-selector
+            (languageChanged)="onLanguageChanged($event)"
+            [languageCodes]="languages"
+            [selectedLanguage]="selectedLanguage">
+        </ux-language-selector>
+    </uxAppShellHeaderRightContent>
+
+    <uxAppShellFooterContent>
+        <ul>
+            <li>
+                <a [innerHTML]="'footer.privacy-title' | translate" [routerLink]="['/screen/privacy']" routerLinkActive="router-link-active"></a>
+            </li>
+            <li>
+                <a [innerHTML]="'footer.conformity-title' | translate" [routerLink]="['/screen/conformity']" routerLinkActive="router-link-active"></a>
+            </li>
+            <li>
+                {{ 'footer.ocs.version' | translate }} {{ apiVersion }}
+            </li>
+        </ul>
+    </uxAppShellFooterContent>
+
+</ux-layout-app-shell>

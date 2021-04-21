@@ -1,0 +1,2289 @@
+
+@import '../src/assets/styles/variables';
+
+/* You can add global styles to this file, and also import other style files */
+
+/* ----------------------------------- general styles -------------------------------- */
+body {
+    background-color: $white;
+    color: $text-dark;
+    line-height: 1.42857;
+}
+
+#main {
+    background-color: $white;
+}
+
+#app-wrapper {
+    margin: 0 auto;
+    max-width: 73.16rem;
+    width: 100%;
+}
+
+#main-content {
+    padding: 0;
+    @media screen and (max-width: 47em) {
+        padding: 1.25em 0 0 0;
+    }
+}
+
+.padding-container {
+    padding: 0 1.2rem 1rem;
+}
+
+.padding-container-static {
+    padding: 1.5em 11rem 5em;
+    @media screen and (max-width: 47em) {
+        padding: 1.5em 3em 7em;
+    }
+}
+
+.row {
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* focus section */
+
+a:focus {
+    background-color: $focus !important;
+    color: $focus-color !important;
+    font-weight: bold;
+    outline: 0.21428em solid $focus;
+}
+
+a:link,
+a:visited {
+    border-bottom: 0.071428em solid $link-decoration;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    border: 0 !important;
+    outline: 0.21428em solid $focus !important;
+    outline-offset: 0;
+}
+
+label[role="radio"]:focus {
+    outline: 0.21428em solid $focus !important;
+    outline-offset: 0;
+}
+
+input[type="checkbox"] + label:focus,
+input[type="radio"] + label:focus {
+    outline: 0.21428em solid $focus !important;
+    outline-offset: 0;
+}
+
+select {
+    option:checked {
+        background: $blue-text;
+        color: $white;
+    }
+}
+
+.ecl-link:hover {
+    color: $blue-text;
+}
+
+/* ocs styles */
+.ocs-normal-text {
+    font-size: 0.875em;
+    font-weight: normal;
+}
+
+.ocs-without-shadow {
+    box-shadow: none;
+}
+
+.ocs-padd-left {
+    padding-left: 0;
+}
+
+.ocs-hideme {
+    border: none;
+    float: left;
+    height: 0;
+}
+
+.ocs-wd-100 {
+    width: 100%;
+}
+
+.ocs-wd-75 {
+    width: 75%;
+}
+
+.ocs-wd-80 {
+    width: 80%;
+}
+
+.ocs-wd-25 {
+    width: 25%;
+}
+
+.ocs-noborder {
+    border: 0;
+}
+
+.ocs-element-hidden {
+    clip: rect(0.071428em 0.071428em 0.071428em 0.071428em);
+    clip: rect(0.071428em, 0.071428em, 0.071428em, 0.071428em);
+    height: 0.071428em;
+    overflow: hidden;
+    position: absolute !important;
+}
+
+.ocs-element-hidden.element-focusable:active,
+.ocs-element-hidden.element-focusable:focus {
+    clip: auto;
+    height: auto;
+    overflow: visible;
+    position: static !important;
+}
+
+.ocs-hideAccessible {
+    left: -9999em;
+    position: absolute;
+}
+
+a.ocs-arrow-back {
+    color: $blue-text;
+    font-size: 0.875em;
+}
+
+.ocs-box-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ocs-button-blue {
+    background-color: $blue-text;
+    border-radius: 0.21428em;
+    color: $white;
+    font-size: 1.2em;
+    padding: 0.5em 2.5em;
+}
+
+.ocs-button-white {
+    background-color: $white;
+    border-radius: 0.1428em;
+    box-shadow: 0 0.071428em 0.21428 0 rgba(0, 0, 0, 0.3);
+    color: $text;
+    width: 8.1428em;
+}
+
+/* ---------------------------------- signature page ------------------------------ */
+.signature-check {
+    background: url(assets/img/check_title.svg) top left no-repeat;
+    display: block;
+    height: 2.85em;
+    margin: 0 auto;
+    text-align: center;
+    width: 2.85em;
+    @media screen and (max-width: 20em) {
+        margin-bottom: 1em;
+    }
+}
+
+.signature-close {
+    background: url(assets/img/close_title.svg) top left no-repeat;
+    display: block;
+    height: 2.85em;
+    margin: 0 auto;
+    text-align: center;
+    width: 2.85em;
+    @media screen and (max-width: 20em) {
+        margin-bottom: 1em;
+    }
+}
+
+.signature-center {
+    display: block;
+    text-align: center;
+}
+
+.signature-bottom {
+    box-shadow: 0 0.3125em 0.3125em -0.3125em #333;
+    margin-bottom: 1.5em;
+    position: relative;
+    top: 0.5em;
+}
+
+.signature-left {
+    text-align: left;
+}
+
+/* ----------------------------------- app-title -------------------------------- */
+app-title {
+    .ux-panel-item {
+        box-shadow: none;
+        min-height: auto;
+
+        .ux-panel-content {
+            background-color: transparent;
+            color: $white;
+            font-family: 'eui-default';
+            width: 100%;
+
+            h2 {
+                font-size: 2.3em;
+                line-height: 1.4em;
+                max-width: 23em;
+                padding: 1em 0 1em 2em;
+            }
+        }
+    }
+
+    &.ocs-icon-subtitle {
+        text-align: center;
+
+        .ux-panel-content {
+            margin-top: 0 !important;
+            padding: 1em;
+            @media screen and (max-width: 47em) {
+                margin-top: 3.5714em !important;
+            }
+
+            .title-check {
+                background: url(assets/img/check_title.svg) top left no-repeat;
+                display: block;
+                height: 2.85em;
+                margin: 0 auto;
+                text-align: center;
+                width: 2.85em;
+            }
+
+            .title-close {
+                background: url(assets/img/close_title.svg) top left no-repeat;
+                display: block;
+                height: 2.85em;
+                margin: 0 auto;
+                text-align: center;
+                width: 2.85em;
+            }
+
+            .title-hand {
+                background: url(assets/img/thumbsup_title.svg) top left no-repeat;
+                display: block;
+                height: 2.85em;
+                margin: 0 auto;
+                text-align: center;
+                width: 2.85em;
+            }
+
+            h2 {
+                font-family: 'eui-bold';
+                font-size: 1.57em;
+                max-width: 100%;
+                padding: 0.5em 1em 0 !important;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+        }
+    }
+}
+
+h1 {
+    font-size: 1.2857rem;
+    padding-left: 0.7142rem;
+}
+
+#app-header {
+    height: 50px;
+    @media screen and (max-width: 48em) {
+        background-color: #fff;
+        border-bottom: none;
+        height: 40px;
+
+        .right-content {
+            display: block !important;
+        }
+    }
+}
+
+.links {
+    position: relative;
+}
+
+.ecl-link {
+    font-weight: 700;
+}
+
+/* ---------------------------------- choose colour ------------------------------ */
+.theme1 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-dark-blue.svg) top left no-repeat;
+        background-size: cover;
+    }
+
+    .ux-panel-content {
+        h2,
+        h3 {
+            color: $white;
+            fill: $white;
+        }
+
+        .title-check {
+            background: url(assets/img/check_title_white.svg) top left no-repeat !important;
+        }
+
+        .title-close {
+            background: url(assets/img/close_title_white.svg) top left no-repeat !important;
+        }
+
+        .title-hand {
+            background: url(assets/img/thumbsup_title_white.svg) top left no-repeat !important;
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme1-light;
+            border: 0.0714em solid $theme1;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme1;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme1;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme1 !important;
+        }
+    }
+
+    .progress {
+        background-color: $theme1-light;
+        border: 0.0714em solid $theme1;
+
+        .progress-bar {
+            background-color: $theme1;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative.ocs-button-blue {
+                form {
+                    .mb-5 {
+                        button {
+                            background-color: $theme1;
+                            border-color: $theme1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme2 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-dark-green.svg) top left no-repeat;
+        background-size: cover;
+
+        .ux-panel-content {
+            .title-check,
+            h2,
+            h3 {
+                color: $black;
+                fill: $black;
+            }
+        }
+    }
+
+    .progress {
+        background-color: $theme2-light;
+        border: 0.0714em solid $theme2;
+
+        .progress-bar {
+            background-color: $theme2;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme2-light;
+            border: 0.0714em solid $theme2;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme2;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme2;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme2 !important;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative {
+                form {
+                    .mb-5 {
+                        button.ocs-button-blue {
+                            background-color: $theme2;
+                            border-color: $theme2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme3 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-red.svg) top left no-repeat;
+        background-size: cover;
+    }
+
+    .ux-panel-content {
+        .title-check,
+        h2,
+        h3 {
+            color: $black;
+            fill: $black;
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme3-light;
+            border: 0.0714em solid $theme3;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme3;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme3;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme3 !important;
+        }
+    }
+
+    .progress {
+        background-color: $theme3-light;
+        border: 0.0714em solid $theme3;
+
+        .progress-bar {
+            background-color: $theme3;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative {
+                form {
+                    .mb-5 {
+                        button.ocs-button-blue {
+                            background-color: $theme3;
+                            border-color: $theme3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme4 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-dark-orange.svg) top left no-repeat;
+        background-size: cover;
+    }
+
+    .ux-panel-content {
+        h2,
+        h3 {
+            color: $black;
+            fill: $black;
+        }
+
+        .title-check {
+            background: url(assets/img/check_title.svg) top left no-repeat;
+            display: block;
+            height: 2.85em;
+            margin: 0 auto;
+            text-align: center;
+            width: 2.85em;
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme4-light;
+            border: 0.0714em solid $theme4;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme4;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme4;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme4 !important;
+        }
+    }
+
+    .progress {
+        background-color: $theme4-light;
+        border: 0.0714em solid $theme4;
+
+        .progress-bar {
+            background-color: $theme4;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative {
+                form {
+                    .mb-5 {
+                        button.ocs-button-blue {
+                            background-color: $theme4;
+                            border-color: $theme4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme5 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-light-blue.svg) top left no-repeat;
+        background-size: cover;
+
+        .ux-panel-content {
+            h2,
+            h3 {
+                color: $black;
+                fill: $black;
+            }
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme5-light;
+            border: 0.0714em solid $theme5;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme5;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme5;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme5 !important;
+        }
+    }
+
+    .progress {
+        background-color: $theme5-light;
+        border: 0.0714em solid $theme5;
+
+        .progress-bar {
+            background-color: $theme5;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative {
+                form {
+                    .mb-5 {
+                        button.ocs-button-blue {
+                            background-color: $theme5-light;
+                            border-color: $theme5;
+
+                            span {
+                                color: $theme5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme6 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-light-green.svg) top left no-repeat;
+        background-size: cover;
+    }
+
+    .ux-panel-content {
+        .title-check,
+        h2,
+        h3 {
+            color: $black;
+            fill: $black;
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme6-light;
+            border: 0.0714em solid $theme6;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme6;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme6;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme6 !important;
+        }
+    }
+
+    .progress {
+        background-color: $theme6-light;
+        border: 0.0714em solid $theme6;
+
+        .progress-bar {
+            background-color: $theme6;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative {
+                form {
+                    .mb-5 {
+                        button.ocs-button-blue {
+                            background-color: $theme6-light;
+                            border-color: $theme6;
+
+                            span {
+                                color: $theme6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme7 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-pink.svg) top left no-repeat;
+        background-size: cover;
+    }
+
+    .ux-panel-content {
+        .title-check,
+        h2,
+        h3 {
+            color: $black;
+            fill: $black;
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme7-light;
+            border: 0.0714em solid $theme7;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme7;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme7;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme7 !important;
+        }
+    }
+
+    .progress {
+        background-color: $theme7-light;
+        border: 0.0714em solid $theme7;
+
+        .progress-bar {
+            background-color: $theme7;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative {
+                form {
+                    .mb-5 {
+                        button.ocs-button-blue {
+                            background-color: $theme7-light;
+                            border-color: $theme7;
+
+                            span {
+                                color: $theme7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.theme8 {
+    .ux-panel-item {
+        background: url(assets/img/headers/bg-light-orange.svg) top left no-repeat;
+        background-size: cover;
+    }
+
+    .ux-panel-content {
+        .title-check,
+        h2,
+        h3 {
+            color: $black;
+            fill: $black;
+            font-weight: bold;
+        }
+    }
+
+    .ux-progress-circle {
+        &::before {
+            background-color: $theme8-light;
+            border: 0.0714em solid $theme8;
+        }
+
+        &::after {
+            border: 0.0714em solid $theme8;
+        }
+
+        .ux-progress-circle__value-bar {
+            border: 0.78947rem solid $theme8;
+        }
+
+        .ux-progress-circle__first50-bar {
+            background-color: $theme8 !important;
+        }
+    }
+
+    .progress {
+        background-color: $theme8-light;
+        border: 0.0714em solid $theme8;
+
+        .progress-bar {
+            background-color: $theme8;
+            border-radius: 0.5em;
+        }
+    }
+
+    .ocs-container-right {
+        app-form {
+            .ocs-form-initiative {
+                form {
+                    .mb-5 {
+                        button.ocs-button-blue {
+                            background-color: $theme8-light;
+                            border-color: $theme8;
+
+                            span {
+                                color: $theme8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ocs-title-label {
+    color: $text-medium;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.ocs-title-label-inline {
+    color: $text-medium;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.ocs-title-section {
+    color: $text-dark;
+    font-size: 2.214em;
+    @media screen and (max-width: 47em) {
+        font-size: 1.5em;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.ocs-title-highlight {
+    font-size: 1.57em;
+    width: 75%;
+    @media screen and (max-width: 47em) {
+        width: 100%;
+    }
+}
+
+.ocs-title-highlight-2 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/* ----------------------------------- end app-title -------------------------------- */
+
+/* ----------------------------------- initiative -------------------------------- */
+.ocs-initiative {
+    img {
+        display: flex;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .ocs-select-languages {
+        label {
+            span {
+                font-size: 1.15em;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .ocs-block-content {
+        padding: 0.5em 0;
+
+        .ocs-label-content {
+            font-family: 'eui-default';
+            font-size: 1em;
+            font-weight: 600;
+            line-height: 1.4em;
+            margin-bottom: 0.3em;
+        }
+
+        .ocs-summary-content {
+            a {
+                color: $blue;
+                word-wrap: break-word;
+            }
+
+            p {
+                font-size: 1em;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+        }
+    }
+
+    .ocs-block-show {
+        margin-top: 0.5em;
+
+        button {
+            background: none;
+            border: 0;
+            box-shadow: none;
+            color: $blue;
+            padding: 0;
+            text-decoration: underline;
+        }
+    }
+}
+
+.ocs-select-languages {
+    select:not(.ng-pristine) {
+        font-size: 1.15em;
+        font-weight: bold !important;
+        margin-bottom: 0.5em;
+    }
+
+    select.ng-pristine {
+        font-size: 1.15em;
+        line-height: 1.2;
+        margin-bottom: 0.5em;
+    }
+}
+
+/* ----------------------------------- end initiative -------------------------------- */
+
+/* ----------------------------------- forms -------------------------------- */
+.ocs-form-initiative {
+    width: 85%;
+
+    form {
+        font-size: 1.1em;
+
+        .ocs-form-highlight {
+            display: block;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 0.8em;
+        }
+
+        legend {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        select:not(.ng-pristine) {
+            font-weight: 600 !important;
+        }
+
+        ux-form-group {
+            display: block;
+            font-family: 'eui-default';
+            margin-bottom: 1.5em;
+
+            p-calendar {
+                &:not(.ng-pristine) {
+                    span {
+                        input {
+                            font-size: 1.025em;
+                            font-weight: bold !important;
+                            width: 14.28em !important;
+                        }
+                    }
+                }
+
+                &.ng-pristine {
+                    span {
+                        input {
+                            font-size: 1.025em;
+                            font-weight: normal !important;
+                            width: 14.28em !important;
+                        }
+                    }
+                }
+
+                span {
+                    input {
+                        font-size: 1.025em;
+                        font-weight: normal !important;
+                        width: 14.28em !important;
+                    }
+
+                    button.ui-calendar-button {
+                        background-color: $table-row !important;
+                        border-color: #b3b4b7 !important;
+                        height: 2.75em;
+                        left: 16em;
+                        padding: 0.6em 1.2em;
+
+                        .fa-calendar {
+                            &::before {
+                                color: $text-medium;
+                            }
+                        }
+                    }
+                }
+            }
+
+            legend {
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+
+            label {
+                color: $text;
+                font-size: 1.071428em;
+                font-weight: normal;
+                margin-bottom: 0.3em;
+
+                span {
+                    color: $text;
+                    display: block;
+                    font-size: 1em;
+                    margin-bottom: 0.3em;
+                }
+            }
+
+            input {
+                border: 0.071428em solid #b3b4b7;
+                border-radius: 0.1428em;
+                color: $text-dark;
+                font-size: 1.05em;
+                font-weight: 600 !important;
+                height: 2.45em;
+                margin-bottom: 0.8em;
+                padding: 0 1.0714em;
+                width: 100%;
+            }
+
+            ux-datepicker {
+                input {
+                    height: 2.3em;
+                    width: 50% !important;
+                }
+            }
+
+            select {
+                line-height: 1.2;
+                margin-bottom: 0.8em;
+                width: 66%;
+            }
+
+            select.custom-select-1 {
+                font-size: 0.8em;
+                font-weight: normal !important;
+                line-height: 1.2;
+                margin-bottom: 2em;
+            }
+
+            input[type="checkbox"] + label::before,
+            input[type="checkbox"] + label::before,
+            input[type="radio"] + label::before,
+            input[type="radio"] + label::before,
+            input[type="checkbox"] + label::after,
+            input[type="checkbox"] + label::after {
+                top: 20%;
+            }
+
+            .ocs-message-required {
+                margin-bottom: 1em;
+                margin-top: 0;
+                position: relative;
+                top: 0;
+            }
+        }
+    }
+
+    ux-control-feedback {
+        .ux-c-control-feedback {
+            color: $legend-3;
+            font-size: 1.2em !important;
+            position: relative;
+            top: -0.5em;
+        }
+    }
+
+    .ocs-message-info {
+        margin-bottom: 1em;
+        margin-top: 0;
+        position: relative;
+        top: 0;
+    }
+
+    .ocs-form-initiative-title {
+        color: $text-dark;
+        font-size: 2.214em;
+        margin: 0.3em 0 0.5em;
+        width: 75%;
+    }
+
+    .ocs-country-selected {
+        p {
+            font-family: 'eui-default';
+            font-size: 0.875em;
+            font-weight: 600;
+        }
+
+        p.highlighted {
+            font-size: 1em;
+            font-weight: bold;
+            position: relative;
+            top: -0.8em;
+        }
+    }
+
+    button.ocs-arrow-back {
+        background: transparent;
+        border: 0;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 rgba(0, 0, 0, 0.24);
+        color: $blue-text;
+        font-size: 0.875em;
+    }
+}
+
+.ocs-form-country {
+    label {
+        span {
+            font-size: 0.75em !important;
+            font-weight: bold;
+        }
+    }
+}
+
+.ocs-form-legal {
+    label {
+        font-size: 1em;
+
+        &::before {
+            position: relative;
+            top: 1em;
+        }
+    }
+
+    input[type="checkbox"] + label::before {
+        top: 1em;
+    }
+
+    input[type="checkbox"] + label::after {
+        top: 1em;
+    }
+
+    ux-control-feedback {
+        .ux-c-control-feedback {
+            left: 1.7em;
+            top: -0.3em;
+        }
+    }
+}
+
+.ocs-form-address,
+.ocs-form-document,
+.ocs-form-personal {
+    select.custom-select {
+        font-size: 1.05em !important;
+        padding: 0 1.0714em;
+    }
+}
+
+.ocs-label {
+    display: inline-block;
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+.ocs-font-16 {
+    font-size: 1.15em;
+}
+
+.ocs-form-support-legend {
+    color: #474745;
+    font-size: 1em;
+    line-height: 1.21428em;
+
+    a {
+        color: $blue;
+    }
+}
+
+select:not(.ng-pristine) {
+    font-size: 0.875em;
+}
+
+.ocs-support-country {
+    border-top: 0.125em solid $line-form;
+    margin: 0.5em 0;
+    padding-top: 1em;
+
+    .ocs-support-buttons {
+        ux-button {
+            button {
+                box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.31);
+                width: 10.414em;
+                @media screen and (max-width: 63.375em) and (min-width: 47.0625em) {
+                    margin-bottom: 1em;
+                }
+                @media screen and (max-width: 37.5em) and (min-width: 24.375em) {
+                    margin-bottom: 1em;
+                }
+
+                .ux-button__content {
+                    display: block;
+                    font-weight: 600;
+                    margin-top: 1em;
+                }
+
+                &.ux-u-width-10 {
+                    width: 12.5rem !important;
+                }
+
+                .fa-pencil-square-o,
+                .fa-user {
+                    &::before {
+                        font-size: 2.5em;
+                    }
+                }
+            }
+        }
+
+        .separate-box {
+            background: transparent;
+            display: inline-block;
+            @media screen and (max-width: 24.375em) {
+                display: block;
+            }
+
+            margin: 0 1em;
+            position: relative;
+
+            span {
+                background: transparent;
+                display: inline-block;
+                padding: 0.5em 0;
+                position: relative;
+                right: 0.1em;
+                z-index: 100;
+            }
+
+            &::before {
+                border-left: 0.1em solid $line-form;
+                content: '';
+                display: inline-block;
+                left: 50%;
+                position: relative;
+                top: 3.5em;
+            }
+        }
+    }
+}
+
+/* validation */
+.has-danger {
+    input {
+        border: 0.1em solid $legend-3 !important;
+    }
+
+    .ux-c-control-feedback__message {
+        color: $legend-3;
+        font-size: 0.75em;
+        position: relative;
+        top: -0.3em;
+    }
+
+    select {
+        border: 0.1428em solid $legend-3 !important;
+    }
+
+    label {
+        &::before {
+            border: 0.1428em solid $legend-3 !important;
+        }
+    }
+
+    input[type="checkbox"] + label::before {
+        top: 1em;
+    }
+
+    input[type="checkbox"] + label::after {
+        top: 1em;
+    }
+}
+
+.alert {
+    padding: 1.25rem;
+}
+
+.alert.alert-danger {
+    background-color: $bg-danger;
+    border-color: $color-danger;
+    color: $color-danger;
+}
+
+.alert.alert-warning {
+    background-color: $bg-warning;
+    border-color: $color-warning;
+    color: $color-warning;
+}
+
+.has-danger-code {
+    ux-control-feedback {
+        .ux-c-control-feedback {
+            color: $legend-3;
+            font-size: 1.2em !important;
+            position: relative;
+            top: -0.5em;
+        }
+    }
+
+    label {
+        color: $color-danger;
+    }
+
+    input {
+        border: 0.1em solid $legend-3 !important;
+    }
+
+    input[type="checkbox"] + label::before {
+        border: 0.1428em solid $legend-3 !important;
+        top: 1em;
+    }
+
+    input[type="checkbox"] + label::after {
+        top: 1em;
+    }
+}
+
+/* ----------------------------------- end forms -------------------------------- */
+
+/* ----------------------------------- panels -------------------------------- */
+.ocs-panel-style {
+    box-shadow: 0 0.1428em 0.285712em 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5em;
+    padding: 1.25em 2em 2em;
+}
+
+.ocs-box-padd {
+    box-shadow: 0 0.1428em 0.285712em 0 rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    padding: 1.25em;
+}
+
+.ux-panel-content {
+    padding: 0;
+
+    img {
+        margin: 0 auto;
+        max-width: 100%;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* ----------------------------------- end panels -------------------------------- */
+
+/* ----------------------------------- tables  -------------------------------- */
+caption {
+    caption-side: top;
+}
+
+.table {
+    th {
+        border-bottom: 0;
+        padding: 0;
+    }
+}
+
+/* statements of support collected */
+
+.ocs-table-contries {
+    margin-top: 1em;
+
+    .table,
+    .table-mobile {
+        box-shadow: 0 0.1428em 0.285712em 0 rgba(0, 0, 0, 0.5);
+        margin-top: 2.3em;
+
+        tr {
+            &:nth-child(2n+1) {
+                background: $table-row;
+            }
+
+            th {
+                background: #ebebeb;
+                border-top: 0;
+                color: $text;
+                font-weight: 600;
+                padding: 0.75em 1em;
+                text-align: right;
+
+                &:first-child {
+                    text-align: left;
+                }
+            }
+
+            td {
+                border-right: 0.1428em solid  $table-row;
+                border-top: 0;
+                padding: 0.75em 1em;
+                text-align: right;
+                vertical-align: top;
+
+                &:first-child {
+                    border-right: 0;
+                    text-align: left;
+                }
+
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+        }
+    }
+
+    .table-mobile {
+        width: 100%;
+
+        tbody {
+            tr {
+                td:first-child {
+                    padding: 0.75em 0 0.75em 1em;
+                }
+
+                td:last-child {
+                    padding: 0.75em 0.5em 0.75em 0;
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------------------- end tables  -------------------------------- */
+
+/* ----------------------------------- map ---------------------------------------- */
+.ocs-map {
+    // height: 35.71em;
+    height: 35.71em;
+    max-height: 100%;
+    width: 100%;
+    @media screen and (max-width: 47em) {
+        position: relative;
+        top: -2em;
+        z-index: 1;
+    }
+}
+
+.ocs-legend-map {
+    p {
+        font-size: 1em;
+        margin: 0;
+        padding: 0.1em 0;
+    }
+
+    span {
+        position: relative;
+        top: -0.5em;
+    }
+
+    .legend-1 {
+        background: $legend-1;
+        display: inline-block;
+        height: 1.7857em;
+        margin-right: 0.5em;
+        top: 0;
+        width: 1.7857em;
+    }
+
+    .legend-2 {
+        background: $legend-2;
+        display: inline-block;
+        height: 1.7857em;
+        margin-right: 0.5em;
+        top: 0;
+        width: 1.7857em;
+    }
+
+    .legend-3 {
+        background: $legend-3;
+        display: inline-block;
+        height: 1.7857em;
+        margin-right: 0.5em;
+        top: 0;
+        width: 1.7857em;
+    }
+
+    .legend-4 {
+        background: $legend-4;
+        display: inline-block;
+        height: 1.7857em;
+        margin-right: 0.5em;
+        top: 0;
+        width: 1.7857em;
+    }
+}
+
+.jqvmap-label {
+    background: #1278bb;
+    border: 0;
+    border-radius: 0.3571em;
+    box-shadow: 0;
+    color: $white;
+    display: block;
+    font-size: 100%;
+    line-height: 1rem;
+    padding: 0;
+}
+
+.jqvmap-label {
+    .ocs-maps-tip {
+        padding: 0 0.975rem;
+    }
+
+    .ocs-maps-tip--title {
+        display: block;
+        font-size: 120%;
+        line-height: 1.375rem;
+        margin: 0.75rem 0 1.75em;
+    }
+}
+
+/* -----------------------------------end map ------------------------------------- */
+
+/* ----------------------------------- footer  -------------------------------- */
+.ocs-prefooter {
+    background: $bg-footer;
+    border-top: 0.285712em solid #0371cf;
+    min-height: 14.428em;
+    padding: 2em 0 6em;
+
+    .ocs-prefooter-content {
+        display: flex;
+        margin: 0 auto;
+        max-width: 46.48em;
+        text-align: center;
+        width: 100%;
+
+        .ocs-footer-block {
+            a {
+                border-bottom: 0;
+                color: $line-footer;
+                display: block;
+                margin: 0 auto;
+
+                .ocs-icon-first-link {
+                    border: 0.3517em solid #0371cf;
+                    border-radius: 3.5714em;
+                    height: 7.1428em;
+                    margin: 0 auto;
+                    width: 7.1428em;
+
+                    &::before {
+                        background: url(assets/img/get-iformed.svg) top center no-repeat;
+                        content: '';
+                        display: block;
+                        height: 6.4278em;
+                        position: relative;
+                        width: 6.4278em;
+                    }
+                }
+
+                .ocs-icon-second-link {
+                    border: 0.3517em solid #0371cf;
+                    border-radius: 3.5714em;
+                    height: 7.1428em;
+                    margin: 0 auto;
+                    width: 7.1428em;
+
+                    &::before {
+                        background: url(assets/img/group.svg) top center no-repeat;
+                        content: '';
+                        display: block;
+                        height: 6.4278em;
+                        position: relative;
+                        width: 6.4278em;
+                    }
+                }
+
+                .ocs-icon-last-link {
+                    border: 0.3517em solid #0371cf;
+                    border-radius: 3.5714em;
+                    height: 7.1428em;
+                    margin: 0 auto;
+                    width: 7.1428em;
+
+                    &::before {
+                        background: url(assets/img/what-happens-next.svg) top center no-repeat;
+                        content: '';
+                        display: block;
+                        height: 6.4278em;
+                        position: relative;
+                        width: 6.4278em;
+                    }
+                }
+            }
+
+            p {
+                color: $line-footer;
+                margin: 1em auto;
+                text-align: center;
+                width: 85%;
+                @media screen and (max-width: 47em) {
+                    width: 30%;
+                }
+                @media screen and (max-width: 30em) {
+                    width: 40%;
+                }
+
+                &:first-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                }
+
+                &:last-child {
+                    margin-top: 0;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+#app-footer {
+    ul {
+        li {
+            color: $white;
+            font-size: 0.875em;
+
+            &:first-child {
+                &::before {
+                    display: none;
+                }
+            }
+
+            a,
+            a:hover {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &.compact {
+        height: auto;
+    }
+}
+
+/* ----------------------------------- end footer  -------------------------------- */
+
+/* ----------------------------------- pages error -------------------------------- */
+
+.ocs-error {
+    align-content: center;
+    align-items: center;
+    border-top: 2.78em solid $blue-text;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 39.2854em;
+
+    img {
+        display: block;
+        height: 13em;
+        margin: 5em auto 0;
+        text-align: center;
+    }
+
+    .ocs-error-title {
+        font-family: 'eui-bold';
+        font-size: 2.2em;
+        margin: 0.5em 0 0.3em;
+        text-align: center;
+        width: 45%;
+    }
+
+    .ocs-error-subtitle {
+        border-bottom: 0.1428em solid #e5e5e5;
+        color: $text-medium;
+        font-size: 1.5em;
+        line-height: 2.6428em;
+        padding-bottom: 1.9285;
+        position: relative;
+        text-align: center;
+        width: 45%;
+
+        &::after {
+            background: $white;
+            border-bottom: 0.071428em solid #e5e5e5;
+            border-right: 0.071428em solid #e5e5e5;
+            bottom: -0.375rem;
+            content: '';
+            display: block;
+            height: 0.625rem;
+            position: absolute;
+            right: 50%;
+            -moz-transform: rotate(-315deg);
+            -webkit-transform: rotate(-315deg);
+            transform: rotate(-315deg);
+            width: 0.625rem;
+        }
+    }
+
+    .ocs-error-info {
+        font-size: 1.2em;
+        line-height: 1.7857em;
+        margin: 1.0714em 0 0 0;
+        text-align: center;
+        width: 45%;
+    }
+}
+
+/* ---------------------------------- page thank you ------------------------------ */
+
+/* ---------------------------------- page privacy -------------------------------- */
+
+/* ---------------------------------- page conformity -------------------------------- */
+app-privacy,
+app-login {
+    app-title {
+        ux-panel {
+            .ux-panel-item {
+                align-content: center;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                min-height: 4.6428em;
+
+                .ux-panel-content {
+                    h2 {
+                        font-family: 'eui-bold';
+                        font-size: 1.5em;
+                        margin: 0;
+                        max-width: 100%;
+                        padding: 0;
+                        position: relative;
+                        text-align: center;
+                        @media screen and (max-width: 47em) {
+                            top: -1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ocs-privacy {
+    color: $text;
+}
+
+/* -------------------------------- end page privacy ----------------------------- */
+
+/* -------------------------------- page login ----------------------------- */
+
+.ocs-login {
+    margin: 0 0 0.9375rem;
+    position: relative;
+
+    label {
+        color: #222;
+        display: block;
+        margin: 0 0 0.3125rem;
+        position: relative;
+
+        span.ux-form-group__label {
+            font-size: 1em;
+        }
+
+        textarea {
+            background-color: #eee;
+            border: 0.0625rem solid #bbb;
+            border-radius: 0;
+            color: #555;
+            display: inline-block;
+            font-size: 0.875rem;
+            height: auto;
+            line-height: 1rem;
+            margin: 0 auto;
+            opacity: 1;
+            padding: 1.5rem 13.625rem 0.5rem 0.625rem;
+            text-align: left;
+            text-overflow: ellipsis;
+            vertical-align: text-top;
+            width: 100%;
+        }
+    }
+
+    a {
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        border-left: 0.071428em solid #bbb;
+        box-shadow: none;
+        color: $line-footer;
+        display: flex;
+        font-size: 1rem;
+        font-weight: 700;
+        height: 14rem;
+        padding: 0.875rem 0.9375rem;
+        position: absolute;
+        right: 0;
+        text-align: left;
+        text-transform: uppercase;
+        top: 1.6em;
+        width: 10rem;
+        z-index: 1;
+    }
+}
+
+/* -------------------------------- end page login ----------------------------- */
+
+.ocs-sg-identifier-date {
+    font-size: 1.15em;
+    margin: 0 0 1.1em;
+}
+
+.ocs-sg-button {
+    align-content: center;
+    border-bottom: 0.071428em solid $blue-text !important;
+    display: block;
+    margin: 1.5em auto 0;
+    text-align: center;
+}
+
+.ocs-share-social {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em;
+    @media screen and (max-width: 47em) {
+        display: block;
+    }
+
+    div {
+        width: 50%;
+        @media screen and (max-width: 47em) {
+            width: 100%;
+        }
+    }
+
+    a.social-facebook {
+        background: url(assets/img/social/Facebook.svg) top left no-repeat;
+        border-bottom: 0;
+        display: inline-block;
+        flex: 1 0 35%;
+        height: 2.7142em;
+        line-height: 1.3em;
+        margin-bottom: 1.5em;
+        @media screen and (max-width: 47em) {
+            flex: 1 0 100%;
+        }
+
+        span {
+            padding: 0 0 0 3.5714em;
+            position: relative;
+            text-decoration: underline;
+            top: 0.5em;
+        }
+    }
+
+    a.social-twitter {
+        background: url(assets/img/social/Twitter.svg) top left no-repeat;
+        border-bottom: 0;
+        display: inline-block;
+        flex: 1 0 35%;
+        height: 2.7142em;
+        line-height: 1.3em;
+        margin-bottom: 1.5em;
+        @media screen and (max-width: 47em) {
+            flex: 1 0 100%;
+        }
+
+        span {
+            padding: 0 0 0 3.5714em;
+            position: relative;
+            text-decoration: underline;
+            top: 0.5em;
+        }
+    }
+
+    a.social-googleplus {
+        background: url(assets/img/social/Google.svg) top left no-repeat;
+        border-bottom: 0;
+        display: inline-block;
+        flex: 1 0 35%;
+        height: 2.7142em;
+        line-height: 1.3em;
+        margin-bottom: 1.5em;
+        @media screen and (max-width: 47em) {
+            flex: 1 0 100%;
+        }
+
+        span {
+            padding: 0 0 0 3.5714em;
+            position: relative;
+            text-decoration: underline;
+            top: 0.5em;
+        }
+    }
+
+    a.social-share {
+        background: url(assets/img/social/Link.svg) top left no-repeat;
+        border-bottom: 0;
+        display: inline-block;
+        flex: 1 0 35%;
+        height: 2.7142em;
+        line-height: 1.3em;
+        margin-bottom: 1.5em;
+
+        span {
+            display: inline-block;
+            padding: 0 0 0 3.5714em;
+            position: relative;
+            text-decoration: underline;
+            top: 0.5em;
+            word-break: break-all;
+        }
+    }
+}
+
+.ocs-feedback-option {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 100%;
+
+    legend {
+        span {
+            font-size: 1em;
+        }
+    }
+
+    .ocs-box-badges {
+        display: block;
+        width: 100%;
+
+        div.ocs-badge-radio {
+            display: inline-block;
+            vertical-align: middle;
+            width: auto;
+
+            input[type="radio"]:focus {
+                height: 3.2142em;
+                min-width: 7.1428em;
+                outline: -webkit-focus-ring-color auto 0.3517em;
+                outline-offset: -0.1428em;
+            }
+
+            .ocs-badge-input:checked + .ocs-badge-label {
+                background: $blue-text;
+                color: $white;
+            }
+
+            label.ocs-badge-label {
+                border: 0.071428em solid $blue-text;
+                border-radius: 1.60713em;
+                color: $blue-text;
+                font-weight: 600;
+                height: 3.2142em;
+                margin: 1.4285em 1.8571em 1.4285em 0;
+                min-width: 7.1428em;
+                padding: 1rem 1rem;
+                text-align: center;
+                text-transform: uppercase;
+
+                &::before,
+                &::after {
+                    background: transparent;
+                    border: 0;
+                    box-shadow: none;
+                    height: 3.2142em;
+                    min-width: 7.1428em;
+                    top: 0.5em;
+                }
+            }
+        }
+    }
+
+    .ocs-help {
+        label {
+            line-height: 1.2em;
+
+            span {
+                display: block;
+                font-size: 1em;
+                font-weight: normal;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}
+
+/* ---------------------------------- page thank you ------------------------------ */
+
+/* ----------------------------------- custom styles -------------------------------- */
+
+.padd0 {
+    padding: 0;
+}
+
+/* ----------------------------------- end custom styles -------------------------------- */
+
+/* ----------------------------------- Progress circle -------------------------------- */
+
+.ux-progress-circle {
+    box-shadow: none;
+    left: 1.75rem;
+
+    &::before {
+        background: #ebebeb;
+        border: 0.071428em solid $theme1;
+        border-radius: 50%;
+        content: " ";
+        display: block;
+        height: 6rem;
+        position: absolute;
+        text-align: center;
+        width: 6rem;
+    }
+
+    &::after {
+        border: 0.071428rem solid $theme1;
+        border-radius: 53%;
+        color: $blue-text;
+    }
+
+    .ux-progress-circle__value-bar {
+        border: 0.78947rem solid $theme1;
+    }
+
+    .ux-progress-circle__first50-bar {
+        background-color: $theme1 !important;
+    }
+}
+
+.ocs-circle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    margin-top: 0.5em;
+
+    ocs-circle-chart {
+        .mb-2 {
+            margin-bottom: 1.5em !important;
+        }
+    }
+}
+
+.ux-progress-circle__bottom-label {
+    width: 12em;
+}
+
+.ocs-carousel-line {
+    border-top: 0.071428em solid #ccc;
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+    padding: 1.25rem 0 0;
+    text-align: center;
+}
+
+.ocs-title-carousel {
+    border-bottom: 0.071428em solid #ccc;
+    font-weight: 600;
+    margin: 0 auto 1.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    width: 11em;
+}
+
+/* ----------------------------------- end Progress circle -------------------------------- */
+
+/* ---------------------------------- stay informed ----------------------------------------- */
+.ocs-panel-stay {
+    h3 {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1em;
+        text-align: left;
+    }
+
+    form {
+        label.hide-label {
+            position: absolute;
+            text-indent: -999999em;
+        }
+
+        input {
+            height: 3.125em;
+            padding: 0 1em;
+            width: 100%;
+        }
+
+        .ocs-error,
+        .ocs-error-email {
+            color: $color-danger;
+        }
+    }
+
+    .ocs-box-button {
+        margin-top: 1em;
+
+        button {
+            display: block;
+            font-weight: bold;
+            margin: 1em auto 0;
+            padding: 0.5rem 1.5rem;
+            position: relative;
+            text-align: center;
+        }
+    }
+}
+
+.ocs-panel-stay-ok {
+    h3 {
+        font-family: 'eui-bold';
+        font-size: 1.9em;
+        text-align: center;
+    }
+
+    padding: 2.5em 2em 1.5em;
+}
+
+/* ---------------------------------- end stay informed  ----------------------------------------- */
+
+/* ----------------------------------------------------------------------------------
+                                     BREAK-POINTS
+----------------------------------------------------------------------------------- */
+@media screen and (max-width: 990.071428em) and (min-width: 54.856em) {
+    #app-wrapper.sidebar-state-close-with-icons #main-content {
+        margin-left: 0 !important;
+    }
+}
+@media screen and (max-width: 76.5em) {
+    /* footer */
+    #app-footer {
+        display: block;
+    }
+
+    /* title */
+    app-title {
+        .ux-panel-item {
+            height: auto;
+
+            .ux-panel-content {
+                h2 {
+                    max-width: 100%;
+                    padding: 1em;
+                    @media screen and (max-width: 25em) {
+                        font-size: 1.15em;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 48em) { // 767
+    app-title {
+        .ux-panel-item {
+            padding-top: 1.5rem;
+        }
+    }
+
+    /* all countries */
+    .ocs-container-left {
+        order: 2;
+        position: relative;
+    }
+
+    .ocs-container-right {
+        order: 1;
+        position: relative;
+    }
+
+    .ocs-prefooter {
+        .ocs-prefooter-content {
+            display: block;
+            max-width: 100%;
+
+            div.ocs-footer-block {
+                margin-bottom: 3em;
+                width: 100%;
+            }
+        }
+    }
+
+    // initiative
+    .ocs-form-initiative {
+        .ocs-form-initiative-title {
+            font-size: 1.5em;
+            width: 100%;
+        }
+    }
+
+    // select initiative
+    .ocs-form-initiative {
+        form {
+            ux-form-group {
+                select {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------------------- end breakpoints -------------------------------------- */
+
+/* --------------------------------------------- title responsive ---------------------------- */
+@media screen and (max-width: 25em) {
+    .ocs-recents-signatories {
+        table {
+            tbody {
+                tr {
+                    td:first-child,
+                    td:last-child {
+                        display: none;
+                    }
+                }
+
+                tr {
+                    td {
+                        padding: 0.5em !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ---------------------------------- captcha ---------------------------------------------- */
+
+.captcha-img {
+    border: 0.0625em solid #b3b3b3;
+    padding-bottom: 1em;
+    width: 100%;
+}
+
+.captcha-center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.col-icons-captcha {
+    flex: 0 0 13.33333%;
+    max-width: 13.33333%;
+    @media screen and (max-width: 48em) {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    ux-button {
+        display: block;
+    }
+}
+
+/* ---------------------------------- eID ---------------------------------- */
+.eid-button {
+    background: url(assets/img/logo-eid-white.png) top left no-repeat;
+}

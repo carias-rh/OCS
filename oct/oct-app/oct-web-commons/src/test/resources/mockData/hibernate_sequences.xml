@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<HIBERNATE_SEQUENCES sequence_name="signature_id" sequence_next_hi_value="3" />
+	<HIBERNATE_SEQUENCES sequence_name="initiative_description_id" sequence_next_hi_value="3" />
+	<HIBERNATE_SEQUENCES sequence_name="feedback_id" sequence_next_hi_value="8" />
+	<HIBERNATE_SEQUENCES sequence_name="property_value_id" sequence_next_hi_value="19" />
+	<HIBERNATE_SEQUENCES sequence_name="account_id" sequence_next_hi_value="2" />
+	<HIBERNATE_SEQUENCES sequence_name="contact_id" sequence_next_hi_value="6" />
+	<HIBERNATE_SEQUENCES sequence_name="social_media_message_id" sequence_next_hi_value="49" />
+	<HIBERNATE_SEQUENCES sequence_name="identity_value_id" sequence_next_hi_value="3" />
+</dataset>

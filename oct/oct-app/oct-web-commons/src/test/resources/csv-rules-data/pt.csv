@@ -1,0 +1,9 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;citizens.card;firstname;lastname;date.of.birth;nationality
+0000;pt;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;pt;FAIL;null values;{null};{null};{null};{null};{null};{null};{null}
+0010;pt;PASS;NONE;a123456;{skip};{skip};De azevedo;toto bien;01/10/1950;pt
+0011;pt;FAIL;wrong passport;a123456434;{skip};{skip};De azevedo;toto bien;01/10/1950;pt
+0020;pt;PASS;NONE;{skip};12345678;{skip};De azevedo;toto bien;01/10/1950;pt
+0021;pt;FAIL;wrong id card;{skip};123456781234;{skip};De azevedo;toto bien;01/10/1950;pt
+0030;pt;PASS;NONE;{skip};{skip};123456789az1;De azevedo;toto bien;01/10/1950;pt
+0031;pt;FAIL;wrong citizen card;{skip};123456789az1111;{skip};De azevedo;toto bien;01/10/1950;pt

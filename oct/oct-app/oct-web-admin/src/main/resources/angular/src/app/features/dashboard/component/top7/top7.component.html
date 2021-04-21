@@ -1,0 +1,14 @@
+<section class="ocs-shadow">
+    <h4>{{ 'dashboard.view.top7-total' | translate }}</h4>
+    <div *ngIf="first">
+        <div class="ocs-circle">
+            <ocs-circle-chart [label]="first.label"  styleClass="mt-2" [count]="first.count" [threshold]="first.threshold"></ocs-circle-chart>
+        </div>
+    </div>
+    <div *ngFor="let country of data" class="ocs-circle7">
+        <div >
+            <ocs-circle-chart [label]="country.label" styleClass="mt-2" [count]="country.count" [threshold]="country.threshold"></ocs-circle-chart>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,18 @@
+<app-title></app-title>
+<div class="ocs-error">
+    <img src="assets/img/decorative-image-error500.svg" alt="" aria-hidden="true">
+    <br/>
+    <div class="ocs-error-title">
+        {{ 'error500.title' | translate }}
+    </div>
+    <div class="ocs-error-subtitle">
+        {{ 'error500.subtitle' | translate }}
+    </div>
+    <div class="ocs-error-info">
+        {{ 'error500.info' | translate }}
+    </div>
+    <div *ngIf="errorRef" class="ocs-error-info">
+        {{ 'error500.ref' | translate }} {{ errorRef }}
+    </div>
+</div>
+

@@ -1,0 +1,49 @@
+id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;date.of.birth;nationality;address;postal.code;city;country
+0;gb;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+1;gb;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null}
+10;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;ch4 9hd;London;gb
+11;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;WN3 6EA;London;gb
+12;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;TR26 3JA;London;gb
+13;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;SE18 6RS;London;gb
+14;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;SE9 3AU;London;gb
+15;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;SE16 4BF;London;gb
+16;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;OL16 1HR;London;gb
+17;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;AB51 0XL;London;gb
+18;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;AL2 2HE;London;gb
+19;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;B4 7UP;London;gb
+20;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BA3 4EW;London;gb
+21;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BB4 9LA;London;gb
+22;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BD15 0HS;London;gb
+23;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BH11 9BW;London;gb
+24;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BL1 6RS;London;gb
+25;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BN27 2AP;London;gb
+26;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BR5 3RJ;London;gb
+27;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;BS26 2EA;London;gb
+28;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CA14 1QY;London;gb
+29;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CB2 3BJ;London;gb
+30;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CF14 5LL;London;gb
+31;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CH43 0UA;London;gb
+32;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CM20 2SU;London;gb
+33;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CO14 8DE;London;gb
+34;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CT16 1EP;London;gb
+35;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CR0 7BR;London;gb
+36;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CT4 5QE;London;gb
+37;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CV1 2BQ;London;gb
+38;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;CW12 1LG;London;gb
+39;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;LU7 4TG;London;gb
+40;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;L12 5JH;London;gb
+41;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;MK18 3BJ;London;gb
+42;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;NG19 0AS;London;gb
+43;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;SP2 0BB;London;gb
+44;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;TQ14 9QZ;London;gb
+45;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;W1S 2RE;London;gb
+46;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;YO30 7DY;London;gb
+47;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;ZE2 9JN;London;gb
+48;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;SE16 5RL;London;gb
+49;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;OX2 6PY;London;gb
+50;gb;PASS;NONE;Mr Bean;John;09/09/1915;gb;Oxford street;OX3 9DT;London;gb
+60;gb;FAIL;wrong postal.code;Mr Bean;John;09/09/1915;gb;Oxford street;ch49hd;London;gb
+61;gb;FAIL;wrong postal.code;Mr Bean;John;09/09/1915;gb;Oxford street;ch hd;London;gb
+62;gb;FAIL;wrong postal.code;Mr Bean;John;09/09/1915;gb;Oxford street;123 456a;London;gb
+80;gb;FAIL;wrong country;Mr Bean;John;09/09/1915;fr;Oxford street;dadada;London;fr
+90;gb;FAIL;wrong date of birth;Mr Bean;John;09/09/2016;gb;Oxford street;2345676543;London;gb

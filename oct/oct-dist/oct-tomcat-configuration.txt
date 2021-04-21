@@ -1,0 +1,131 @@
+
+This simple configuration guide is based on Apache-tomcat-8.5.20 version
+
+##############################################################################
+###################  TOMCAT CONFIGURATION  ###################################
+##############################################################################
+
+ADD ${CATALINA_HOME}/conf/context.xml the following :
+
+ <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+	
+	<ResourceLink global="jdbc/oct" name="jdbc/oct" type="javax.sql.DataSource"/>
+	
+	
+ADD ${CATALINA_HOME}/conf/server.xml the following :
+####################################################  MYSQL ####################################################
+<Resource
+	name="jdbc/oct" auth="Container"
+	type="javax.sql.DataSource"
+	maxTotal="100"
+	maxIdle="30"
+	maxWaitMillis="10000"
+	username="_your_MySQL_uid_"
+	password="_your_MySQL_pwd_"
+	driverClassName="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost:3306/oct"
+/>
+
+####################################################  ORACLE ####################################################
+<Resource name="jdbc/oct"
+          auth="Container"
+          type="javax.sql.DataSource"
+          username="______________"
+          password="______________"
+          url="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)
+            (HOST=_________________)(PORT=__________))(CONNECT_DATA=
+            (SERVICE_NAME=_________________)))"
+          driverClassName="oracle.jdbc.OracleDriver"
+          maxTotal="150"
+          maxIdle="50"
+          maxWaitMillis="15000"
+/>
+
+
+EDIT ${CATALINA_HOME}/conf/tomcat-users.xml with the following (OFC it's just an example):
+just add the manager-* roles to the user you want.
+
+...
+<role rolename="tomcat"/>
+<role rolename="role1"/>
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+
+<user username="tomcat" password="tomcat" roles="tomcat,manager-gui,manager-script,manager-jmx"/>
+<user username="both" password="tomcat" roles="tomcat,role1"/>
+<user username="role1" password="tomcat" roles="role1"/>
+...
+
+
+
+##############################################################################
+###################  REQUIRED LIBS  ##########################################
+##############################################################################
+
+ADD in ${CATALINA_HOME}/lib/ the mysql connnection java
+
+The last version I used was mysql-connector-java-5.1.43-bin.jar and was working
+
+
+
+##############################################################################
+################### (OPTIONAL) TOMCAT MEMORY INCREASE ########################
+##############################################################################
+
+for performance issues (ex:PermGem) try to create the file setenv.bat in ${CATALINA_HOME}/bin
+with the following entry:
+
+set JAVA_OPTS=-Xms1024m -Xmx1024m -XX:PermSize=512m  -XX:MaxPermSize=512m
+
+then start the server with ${CATALINA_HOME}/bin/catalina.bat start
+
+
+##############################################################################
+################### (OPTIONAL) AUTOMATIC DEPLOYMENT  #########################
+##############################################################################
+To enable autodeploy during building process insert in your maven setting.xml:
+
+
+ADD to the servers:
+<servers>
+..
+<server>
+  <id>tomcat-server</id>
+  <username>_yout_tomcat_manager_uid_</username>
+  <password>_yout_tomcat_manager_pwd_</password>
+</server>
+..
+<servers>
+
+and comment-out from poms oct-tomcat-*-war the excecution task:
+
+# oct-tomcat-public-war/pom.xml
+<execution>
+    <id>deploy-public</id>
+    <phase>package</phase>
+    <goals>
+        <goal>deploy</goal>
+    </goals>
+    <configuration>
+        <url>http://localhost:8080/manager/text</url>
+        <server>tomcat-server</server>
+        <path>/oct-web-public</path>
+    </configuration>
+</execution>
+
+# oct-tomcat-admin-war/pom.xml
+<execution>
+    <id>deploy-admin</id>
+    <phase>package</phase>
+    <goals>
+        <goal>deploy</goal>
+    </goals>
+    <configuration>
+        <url>http://localhost:8080/manager/text</url>
+        <server>tomcat-server</server>
+        <path>/oct-web-admin</path>
+    </configuration>
+</execution>

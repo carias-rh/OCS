@@ -1,0 +1,29 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;firstname;lastname;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0000;at;FAIL;empty;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;at;FAIL;empty;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0002;at;FAIL;null;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+0010;at;PASS;NONE;z1234567;{skip};Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0011;at;PASS;NONE;a12345678;{skip};Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0012;at;PASS;NONE;A12345678;{skip};Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0013;at;FAIL;passport is null;{null};{skip};Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0014;at;FAIL;wrong passport;az12348;{skip};Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0020;at;PASS;NONE;{skip};1234567;Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0021;at;FAIL;wrong id card case 1;{skip};123;Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0030;at;PASS;NONE;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0031;at;FAIL;wrong id card case 2;{skip};123456785uyd;Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;1234;Vienna;at
+0040;at;FAIL;wrong postal code;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;viennastraat;456435s;Vienna;at
+9001;at;PASS;AT with residence in DE;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;Bundestagstraat;12345;Berlin;de
+9002;at;PASS;AT with residence in BE;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;Rue neuve;1000;Bruxelles;be
+9003;at;PASS;AT with residence in DK;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;laksegade street;1234;Copenhagen;dk
+9004;at;PASS;AT with residence in EE;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;rue tallin;12345;Tallin;ee
+9005;at;PASS;AT with residence in FR;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;rue de la concorde;12345;Paris;fr
+9006;at;PASS;AT with residence in HR;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;croatia street;12345;Zadar;hr
+9007;at;PASS;AT with residence in IT;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;Via dei matti;1234567azxcvgre;Milano;it
+9008;at;PASS;AT with residence in LU;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;rue du lux;1234;Lux;lu
+9009;at;PASS;AT with residence in NL;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;flatstraat;1123az;Rotterdam;nl
+9010;at;PASS;AT with residence in PL;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;polosky straat;12345;Warsaw;pl
+9011;at;PASS;AT with residence in RO;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;via chauchesku;123456;Bucaresti;ro
+9012;at;PASS;AT with residence in SK;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;street Parickova;01234;Bratislava;sk
+9013;at;PASS;AT with residence in GB;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;Oxford street;BD15 0HS;London;gb
+9014;at;PASS;AT with residence in IE;{skip};12345678;Michael;Schumacher;1/01/1950;Vienna;at;beer street;1234AZ;Cork;ie
+9014;at;PASS;AT with residence in IE;{skip};12345678;Michael;Schumacher;1/01/2002;Vienna;at;beer street;1234AZ;Cork;ie

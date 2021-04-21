@@ -1,0 +1,33 @@
+<app-header></app-header>
+<section id="ocs-delete">
+    <h3 class="ocs-title-section">{{ 'dashboard.menu.withdraw' | translate }}</h3>
+    <ux-alert *ngIf="alert" [typeClass]="alert.type" [isCloseable]="true" (close)="onCloseAlert()">
+            <div aria-live="polite">
+                    {{ alert.label | translate }}
+            </div>
+    </ux-alert>
+    <form [formGroup]="form">
+        <fieldset formArrayName="sig">
+            <div *ngFor="let control of getRows(); let i=index">
+                <ux-form-group styleClass="ocs-line-row" [isVertical]="true" [isValid]="!isError(i)" label="{{'dashboard.withdraw.identifier-signature' | translate }}">
+                    <ux-form-control formControlName="{{ i }}"></ux-form-control>
+                    <ux-button *ngIf="rows > 1" (click)="onDeleteRow(i)" iconClass="fa fa-trash">{{ 'dashboard.withdraw.remove-button' | translate}}</ux-button>
+                </ux-form-group>
+                <ux-control-feedback *ngIf="isError(i)" typeClass="danger">{{ getError(i) }}</ux-control-feedback>
+            </div>
+        </fieldset>
+        <div class="col-md-12 ocs-padd-0">
+            <div class="ocs-add-row mt-1">
+                <a role="button" (click)="onAddRow()"><span class="icon-add" aria-hidden="true"></span>{{ 'dashboard.withdraw.add-new-row' | translate }}</a>
+            </div>
+        </div>
+        <div class="col-md-12 ocs-padd-0">
+            <div class="ocs-box-button mt-5">
+                <ux-button [isLarge]="true" [isDisabled]="deleting" styleClass="ocs-button-white ocs-width-auto mr-2" (click)="onReset()">{{ 'dashboard.withdraw.reset' | translate }}</ux-button>
+                <ux-button [isLarge]="true" [isDisabled]="deleting" styleClass="ocs-button-blue ocs-width-auto" (click)="onDeleteAll()">{{ 'dashboard.withdraw.remove' | translate }}</ux-button>
+            </div>
+        </div>
+
+
+    </form>
+</section>

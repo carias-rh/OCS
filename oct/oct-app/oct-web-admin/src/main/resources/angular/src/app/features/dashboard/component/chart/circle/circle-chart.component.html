@@ -1,0 +1,28 @@
+<div *ngIf="label" class="mb-2 ux-u-font-bold ux-u-text-align-center ux-u-d-block ux-u-font-size-h5">{{ label | translate }}</div>
+<div *ngIf="initialized">
+    <ux-progress-circle
+        [value]="percentage"
+        [isLarge]="true"
+        attr.aria-label="{{ labelValue | translate: {
+            percentage: percentage,
+            label: label | translate,
+            count: count ? (count | uxNumberFormat: '' :0: '.') : 0,
+            threshold: threshold ? (threshold | uxNumberFormat: '' :0: '.') : 0
+        } }}"
+        emptyLabel="{{ labelValue | translate: {
+            percentage: percentage,
+            label: label | translate,
+            count: count ? (count | uxNumberFormat: '' :0: '.') : 0,
+            threshold: threshold ? (threshold | uxNumberFormat: '' :0: '.') : 0
+        } }}"
+        valueLabel="{{ labelValue | translate: {
+            percentage: percentage,
+            label: label| translate,
+            count: count ? (count | uxNumberFormat: '' :0: '.') : 0,
+            threshold: threshold ? (threshold | uxNumberFormat: '' :0: '.') : 0
+        } }}">
+    </ux-progress-circle>
+</div>
+
+
+

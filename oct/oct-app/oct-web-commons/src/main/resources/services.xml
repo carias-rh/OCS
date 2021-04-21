@@ -1,0 +1,143 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<import resource="daoContext.xml" />
+	<import resource="apiContext.xml" />
+	<import resource="captcha-services.xml" />
+
+	<context:component-scan
+		base-package="eu.europa.ec.eci.oct.webcommons.services" />
+	<context:annotation-config />
+
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	<bean id="initiativeService"
+		class="eu.europa.ec.eci.oct.webcommons.services.initiative.InitiativeServiceImpl" />
+	<bean id="systemManager"
+		class="eu.europa.ec.eci.oct.webcommons.services.system.SystemManagerImpl" />
+	<bean id="signatureService"
+		class="eu.europa.ec.eci.oct.webcommons.services.signature.SignatureServiceImpl" />
+	<bean id="reportingService"
+		class="eu.europa.ec.eci.oct.webcommons.services.reporting.ReportingServiceImpl" />
+	<bean id="contactService"
+		class="eu.europa.ec.eci.oct.webcommons.services.contact.ContactServiceImpl" />
+	<bean id="configurationService"
+		class="eu.europa.ec.eci.oct.webcommons.services.configuration.ConfigurationServiceImpl" />
+	<bean id="translationService"
+		class="eu.europa.ec.eci.oct.webcommons.services.translations.TranslationServiceImpl" />
+	<bean id="ruleService"
+		class="eu.europa.ec.eci.oct.webcommons.services.validation.RuleServiceImpl"
+		init-method="initialize">
+		<constructor-arg name="preloadRules" value="true"
+			type="java.lang.Boolean" />
+	</bean>
+	<bean id="requestTokenService"
+		class="eu.europa.ec.eci.oct.webcommons.services.security.RequestTokenService"
+		init-method="initialize">
+		<constructor-arg name="tokenExpireTime" value="120"
+			type="java.lang.Long" /> <!-- 120 seconds -->
+		<constructor-arg name="cacheMaxSize" value="100000"
+			type="java.lang.Long" />
+		<constructor-arg name="concurrencyLevel" value="4"
+			type="java.lang.Integer" />
+	</bean>
+
+	<bean id="datasource"
+		class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="jdbc/oct" />
+		<!-- 'resourceRef:true' is required property for compatibility with tomcat 
+			and weblogic. Glassfish require further confing: check resuorce-ref in glassfish-web.xml 
+			public/admin -->
+		<property name="resourceRef" value="true" />
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="datasource" />
+		<property name="hibernateProperties">
+			<props>
+<!-- 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+<!-- 				<prop key="hibernate.dialect_resolvers">eu.europa.ec.eci.oct.jdbc.OCSDatabaseDialectResolver</prop> -->
+				<prop key="hibernate.order_updates">true</prop>
+				<prop key="hibernate.default_entity_mode">pojo</prop>
+
+				<!-- use bytea for blobs! -->
+				<prop key="hibernate.jdbc.use_streams_for_binary">true</prop>
+				<prop key="hibernate.c3p0.acquire_increment">1</prop>
+				<prop key="hibernate.c3p0.min_size">5</prop>
+				<prop key="hibernate.c3p0.max_size">12</prop>
+				<prop key="hibernate.c3p0.timeout">1000</prop>
+				<prop key="hibernate.c3p0.max_statements">50</prop>
+				<prop key="hibernate.c3p0.idle_test_period">1000</prop>
+				<prop key="hibernate.connection.isolation">8</prop>
+				<prop key="hibernate.id.new_generator_mappings">false</prop>
+				<!-- <prop key="hibernate.connection.pool_size">3</prop> -->
+				<!-- <prop key="log4j.logger.org.hibernate">debug</prop> -->
+				<prop key="hibernate.hbm2ddl.auto">validate</prop>
+				<!-- <prop key="hibernate.show_sql">true</prop> -->
+				<!-- <prop key="hibernate.format_sql">true</prop> -->
+
+			</props>
+		</property>
+		<property name="packagesToScan"
+			value="eu.europa.ec.eci.oct.webcommons.services.persistence" />
+		<property name="annotatedClasses">
+			<list>
+				<value>eu.europa.ec.eci.oct.entities.admin.Contact</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.ContactRole</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.Account</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.InitiativeDescription
+				</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.SystemPreferences</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.SocialMedia</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.SocialMediaMessage
+				</value>
+				<value>eu.europa.ec.eci.oct.entities.system.Country</value>
+				<value>eu.europa.ec.eci.oct.entities.system.CountryRule</value>
+				<value>eu.europa.ec.eci.oct.entities.system.Language</value>
+				<value>eu.europa.ec.eci.oct.entities.signature.Signature</value>
+				<value>eu.europa.ec.eci.oct.entities.CountryProperty</value>
+				<value>eu.europa.ec.eci.oct.entities.Property</value>
+				<value>eu.europa.ec.eci.oct.entities.PropertyGroup</value>
+				<value>eu.europa.ec.eci.oct.entities.ConfigurationParameter</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.Feedback</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.FeedbackRange</value>
+				<value>eu.europa.ec.eci.oct.entities.admin.StepState</value>
+				<value>eu.europa.ec.eci.oct.entities.views.LastSignatures</value>
+				<value>eu.europa.ec.eci.oct.entities.views.EvolutionMapByCountry
+				</value>
+				<value>eu.europa.ec.eci.oct.entities.views.FastSignatureCount
+				</value>
+				<value>eu.europa.ec.eci.oct.entities.translations.Translation
+				</value>
+				<value>eu.europa.ec.eci.oct.entities.AuthenticationLock</value>
+				<value>eu.europa.ec.eci.oct.entities.HibernateSequences</value>
+				<value>eu.europa.ec.eci.oct.entities.export.ExportHistory</value>
+				<value>eu.europa.ec.eci.oct.entities.signature.IdentityValue</value>
+				<value>eu.europa.ec.eci.oct.entities.email.Email</value>
+			</list>
+		</property>
+	</bean>
+
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+
+</beans>

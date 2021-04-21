@@ -1,0 +1,28 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;registration.certificate;permanent.residence;personal.id;firstname;lastname;date.of.birth;nationality;address;postal.code;city;country
+0000;ro;FAIL;empty values;{empty};{empty};{empty};{empty};{empty}};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+0001;ro;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+0010;ro;PASS;NONE;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0011;ro;FAIL;wrong passport;adz1234!-567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0020;ro;PASS;NONE;{skip};az123456;{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0021;ro;FAIL;wrong id card;{skip};azx123456;{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0030;ro;PASS;NONE;{skip};{skip};1234567890123;{skip};{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0031;ro;FAIL;wrong registration certificate;{skip};{skip};123456789012345;{skip};{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0040;ro;PASS;NONE;{skip};{skip};{skip};1234567890123;{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0041;ro;FAIL;wrong permanent residence;{skip};{skip};{skip};123456789012345;{skip};Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0050;ro;PASS;NONE;{skip};{skip};{skip};{skip};1234567890123;Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0051;ro;FAIL;wrong permanent residence;{skip};{skip};{skip};{skip};1234567890123234;Alisa;Manulescu;01/11/1987;ro;strada bella romania;123456;Bucaresti;ro
+0060;ro;FAIL;wrong postal code;{skip};{skip};{skip};{skip};1234567890123;Alisa;Manulescu;01/11/1987;ro;strada bella romania;12345667;Bucaresti;ro
+9001;ro;PASS;RO with residence in AT;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;Viennastraat;1234;Vienna;at
+9002;ro;PASS;RO with residence in DE;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;bundestagstraat;10005;Berlin;de
+9003;ro;PASS;RO with residence in BE;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;Rue neuve;1000;Bruxelles;be
+9004;ro;PASS;RO with residence in DK;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;laksegade street;1234;Copenhagen;dk
+9005;ro;PASS;RO with residence in EE;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;rue tallin;12345;Tallin;ee
+9006;ro;PASS;RO with residence in FR;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;rue de la concorde;12345;Paris;fr
+9007;ro;PASS;RO with residence in HR;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;croatia street;12345;Zadar;hr
+9008;ro;PASS;RO with residence in IT;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;Via dei matti;1234567azxcvgre;Milano;it
+9009;ro;PASS;RO with residence in NL;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;flatstraat;1123az;Rotterdam;nl
+9010;ro;PASS;RO with residence in PL;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;polosky straat;12345;Warsaw;pl
+9011;ro;PASS;RO with residence in LU;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;rue du lux;1234;Lux;lu
+9012;ro;PASS;RO with residence in SK;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;street Parickova;01234;Bratislava;sk
+9013;ro;PASS;RO with residence in GB;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;Oxford street;BD15 0HS;London;gb
+9014;ro;PASS;RO with residence in IE;az1234567;{skip};{skip};{skip};{skip};Alisa;Manulescu;01/11/1987;ro;beer street;1234AZ;Cork;ie

@@ -1,0 +1,22 @@
+id;countryToSignFor;expectedResult;expectedReason;firstname;lastname;date.of.birth;place.of.birth;nationality;address;postal.code;city;country
+0;ee;FAIL;empty values;{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty};{empty}
+1;ee;FAIL;null values;{null};{null};{null};{null};{null};{null};{null};{null};{null};{null}
+10;ee;PASS;NONE;Krass;Carmen;01/01/1986;Tallin;ee;whatever street;12345;Tallin;ee
+20;ee;PASS;NONE;Krass;Carmen;01/01/1986;Tallin;ee;whatever street;12345;Tallin;it
+30;ee;PASS;NONE;Krass;Carmen;01/01/1986;Tallin;it;whatever street;12345;Tallin;ee
+40;ee;FAIL;wrong country and nationality;Krass;Carmen;01/01/1986;Tallin;it;whatever street;12345;Tallin;fr
+50;ee;FAIL;wrong postal code;Krass;Carmen;01/01/1986;Tallin;it;whatever street;12;Tallin;fr
+9001;ee;PASS;EE with residence in AT;Krass;Carmen;01/01/1986;Tallin;ee;Viennastraat;1234;Vienna;at
+9002;ee;PASS;EE with residence in DE;Krass;Carmen;01/01/1986;Tallin;ee;bundestagstraat;10005;Berlin;de
+9004;ee;PASS;EE with residence in DK;Krass;Carmen;01/01/1986;Tallin;ee;laksegade street;1234;Copenhagen;dk
+9003;ee;PASS;EE with residence in BE;Krass;Carmen;01/01/1986;Tallin;ee;Rue neuve;1000;Bruxelles;be
+9005;ee;PASS;EE with residence in FR;Krass;Carmen;01/01/1986;Tallin;ee;rue de la concorde;12345;Paris;fr
+9006;ee;PASS;EE with residence in HR;Krass;Carmen;01/01/1986;Tallin;ee;croatia street;12345;Zadar;hr
+9007;ee;PASS;EE with residence in IT;Krass;Carmen;01/01/1986;Tallin;ee;Via dei matti;1234567azxcvgre;Milano;it
+9008;ee;PASS;EE with residence in LU;Krass;Carmen;01/01/1986;Tallin;ee;rue du lux;1234;Lux;lu
+9009;ee;PASS;EE with residence in NL;Krass;Carmen;01/01/1986;Tallin;ee;flatstraat;1123az;Rotterdam;nl
+9010;ee;PASS;EE with residence in PL;Krass;Carmen;01/01/1986;Tallin;ee;polosky straat;12345;Warsaw;pl
+9011;ee;PASS;EE with residence in RO;Krass;Carmen;01/01/1986;Tallin;ee;via chauchesku;123456;Bucaresti;ro
+9012;ee;PASS;EE with residence in SK;Krass;Carmen;01/01/1986;Tallin;ee;street Parickova;01234;Bratislava;sk
+9013;ee;PASS;EE with residence in GB;Krass;Carmen;01/01/1986;Tallin;ee;Oxford street;BD15 0HS;London;gb
+9014;ee;PASS;EE with residence in IE;Krass;Carmen;01/01/1986;Tallin;ee;beer street;1234AZ;Cork;ie

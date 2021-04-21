@@ -1,0 +1,60 @@
+@import '../../../assets/style/variables';
+@import './components/makeitsocial/makeitsocial.component.scss';
+
+#ocs-settings {
+    padding: 2.1428em;
+
+    .ocs-menu {
+        nav {
+            left: -1.071428em;
+            position: relative;
+
+            ul {
+                li {
+                    align-items: center;
+                    border-bottom: 0.071428em solid $line-gray;
+                    display: flex;
+                    height: 42px;
+
+                    &:first-child {
+                        border-top: 0.071428em solid $line-gray;
+                    }
+
+                    &.active {
+                        border-bottom: 0.071428em solid $blue-text;
+                        border-left: 0.21428em solid $blue-text;
+
+                        a {
+                            color: $blue-text;
+                            font-weight: bold;
+
+                            &:focus {
+                                background: transparent !important;
+                                outline: 0.1428em solid $focus !important;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: $text;
+                        padding: 0.75em;
+                        width: 100%;
+
+                        &:focus {
+                            background: transparent !important;
+                            outline: 0.1428em solid $focus !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ocs-content-settings {
+    .ocs-drop-drag {
+        .mb-1 {
+            display: none;
+        }
+    }
+}

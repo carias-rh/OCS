@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<initiative registrationNumber="ECI(2020)000000" registrationDate="2020-01-01+01:00" url="http://www.rest.test.url.com" startOfTheCollectionPeriod="2020-01-01+01:00" endOfTheCollectionPeriod="2021-01-01+01:00">
+   <organisers>
+      <organiser role="substitute">
+         <firstName>Dug</firstName>
+         <familyName>Ross</familyName>
+         <email>dug_ross@testmail.com</email>
+      </organiser>
+      <organiser role="member">
+         <firstName>Kerry</firstName>
+         <familyName>Weaver</familyName>
+      </organiser>
+      <organiser role="member">
+         <firstName>John</firstName>
+         <familyName>Carter</familyName>
+      </organiser>
+      <organiser role="representative">
+         <firstName>Peter</firstName>
+         <familyName>Benton</familyName>
+         <email>peter_benton@testmail.com</email>
+      </organiser>
+      <organiser role="legal entity">
+         <firstName>Global Peace Foundation</firstName>
+         <familyName>Peace Boat</familyName>
+         <country>it</country>
+      </organiser>
+   </organisers>
+   <languages>
+            <language code="bg" original="false">
+                <title>Наслов - BG - Наслов - BG - Наслов - BG - Наслов - BG - Наслов - BG - Наслов - BG</title>
+    
+                <description>Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG - Основни цели - BG</description>
+                <site>http://www.my-campaign-site.bg</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="cs" original="false">
+                <title>Název - CS - Název - CS - Název - CS - Název - CS - Název - CS - Název - CS - Název - CS</title>
+               
+                <description>Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS - Hlavní cíle - CS</description>
+                <site>http://www.my-campaign-site.cs</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="da" original="false">
+                <title>Titel - DA - Titel - DA - Titel - DA - Titel - DA - Titel - DA - Titel - DA - Titel - DA</title>
+                
+                <description>Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA - Vigtigste målsætninger - DA</description>
+                <site>http://www.my-campaign-site.da</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="de" original="false">
+                <title>Titel - DE - Titel - DE - Titel - DE - Titel - DE - Titel - DE - Titel - DE</title>
+                
+                <description>Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE - Wichtigste Ziele - DE</description>
+                <site>http://www.my-campaign-site.de</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="et" original="false">
+                <title>Pealkiri - ET - Pealkiri - ET - Pealkiri - ET - Pealkiri - ET - Pealkiri - ET - Pealkiri - ET</title>
+                
+                <description>Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET - Peamised eesmärgid - ET</description>
+                <site>http://www.my-campaign-site.da</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="el" original="false">
+                <title>Τίτλος - EL - Τίτλος - EL - Τίτλος - EL - Τίτλος - EL - Τίτλος - EL</title>
+                
+                <description>Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL - Βασικοί στόχοι - EL</description>
+                <site>http://www.my-campaign-site.el</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="en" original="true">
+                <title>Title - EN - Title - EN - Title - EN Title - EN</title>
+                
+                <description>Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN - Main objectives - EN</description>
+                <site>http://www.my-campaign-site.en</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="es" original="false">
+                <title>Título - ES - Título - ES - Título - ES - Título - ES - Título - ES</title>
+                
+                <description>Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES - Objetivos principales - ES</description>
+                <site>http://www.my-campaign-site.es</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="fr" original="false">
+                <title>Intitulé - FR - Intitulé - FR - Intitulé - FR - Intitulé - FR</title>
+               
+                <description>Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR - Principaux objectifs - FR</description>
+                <site>http://www.my-campaign-site.fr</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="ga" original="false">
+                <title>Teideal - GA - Teideal - GA - Teideal - GA - Teideal - GA - Teideal - GA - Teideal - GA</title>
+                
+                <description>Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA - Príomhchuspóirí - GA</description>
+                <site>http://www.my-campaign-site.ga</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="hr" original="false">
+                <title>Naslov - HR - Naslov - HR - Naslov - HR - Naslov - HR - Naslov - HR - Naslov - HR - Naslov - HR</title>
+                
+                <description>Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR - Glavni ciljevi - HR</description>
+                <site>http://www.my-campaign-site.hr</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="it" original="false">
+                <title>Titolo - IT - Titolo - IT - Titolo - IT - Titolo - IT - Titolo - IT</title>
+                
+                <description>Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT - Obiettivi principali - IT</description>
+                <site>http://www.my-campaign-site.it</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="lv" original="false">
+                <title>Nosaukums - LV - Nosaukums - LV - Nosaukums - LV - Nosaukums - LV - Nosaukums - LV</title>
+                
+                <description>Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV - Galvenie mērķi - LV</description>
+                <site>http://www.my-campaign-site.lv</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="lt" original="false">
+                <title>Pavadinimas - LT - Pavadinimas - LT - Pavadinimas - LT - Pavadinimas - LT - Pavadinimas - LT</title>
+                
+                <description>Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT - Pagrindiniai tikslai - LT</description>
+                <site>http://www.my-campaign-site.lt</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="hu" original="false">
+                <title>Cím - HU - Cím - HU - Cím - HU - Cím - HU - Cím - HU - Cím - HU - Cím - HU - Cím - HU</title>
+                
+                <description>Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU - Fő célok - HU</description>
+                <site>http://www.my-campaign-site.hu</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="mt" original="false">
+                <title>Titlu - MT - Titlu - MT - Titlu - MT - Titlu - MT - Titlu - MT - Titlu - MT - Titlu - MT - Titlu - MT - Titlu - MT</title>
+                
+                <description>Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT - Għanijiet ewlenin - MT</description>
+                <site>http://www.my-campaign-site.mt</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="nl" original="false">
+                <title>Titel - NL - Titel - NL - Titel - NL - Titel - NL - Titel - NL - Titel - NL - Titel - NL - Titel - NL - Titel - NL - Titel - NL - Titel - NL</title>
+               
+                <description>Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL - Belangrijkste doelen - NL</description>
+                <site>http://www.my-campaign-site.nl</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="pl" original="false">
+                <title>Tytuł - PL - Tytuł - PL - Tytuł - PL - Tytuł - PL - Tytuł - PL - Tytuł - PL</title>
+               
+                <description>Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL - Główne cele - PL</description>
+                <site>http://www.my-campaign-site.pl</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="pt" original="false">
+                <title>Título - PT - Título - PT - Título - PT - Título - PT - Título - PT - Título - PT - Título - PT - Título - PT</title>
+               
+                <description>Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT - Objetivos principais - PT</description>
+                <site>http://www.my-campaign-site.pt</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="ro" original="false">
+                <title>Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO - Titlu - RO</title>
+               
+                <description>Obiective principale - RO - Obiective principale - RO - Obiective principale - RO - Obiective principale - RO - Obiective principale - RO - Obiective principale - RO</description>
+                <site>http://www.my-campaign-site.ro</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="sk" original="false">
+                <title>Názov - SK - Názov - SK - Názov - SK - Názov - SK - Názov - SK - Názov - SK - Názov - SK - Názov - SK - Názov - SK</title>
+               
+                <description>Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK - Hlavné ciele - SK</description>
+                <site>http://www.my-campaign-site.sk</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="sl" original="false">
+                <title>Naslov - SL - Naslov - SL - Naslov - SL - Naslov - SL - Naslov - SL - Naslov - SL - Naslov - SL - Naslov - SL - Naslov - SL</title>
+               
+                <description>Glavni cilji - SL - Glavni cilji - SL - Glavni cilji - SL - Glavni cilji - SL - Glavni cilji - SL - Glavni cilji - SL - Glavni cilji - SL - Glavni cilji</description>
+                <site>http://www.my-campaign-site.sl</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="fi" original="false">
+                <title>Nimi - FI - Nimi - FI - Nimi - FI - Nimi - FI - Nimi - FI - Nimi - FI</title>
+               
+                <description>Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI - Päätavoitteet - FI</description>
+                <site>http://www.my-campaign-site.fi</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+            <language code="sv" original="false">
+                <title>Titel - SV - Titel - SV - Titel - SV - Titel - SV - Titel - SV - Titel - SV</title>
+               
+                <description>Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV - Viktigaste mål - SV</description>
+                <site>http://www.my-campaign-site.sv</site>
+				         <partialRegistration>http://ec.europa.eu/citizens-initiativecore/api/register/document/4830</partialRegistration>
+
+            </language>
+        </languages>
+</initiative>
+

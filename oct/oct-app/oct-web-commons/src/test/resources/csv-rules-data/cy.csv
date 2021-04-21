@@ -1,0 +1,12 @@
+id;countryToSignFor;expectedResult;expectedReason;passport;id.card;firstname;lastname;nationality
+0000;cy;FAIL;NONE;{empty};{empty};{empty};{empty};{empty}
+0001;cy;FAIL;NONE;{null};{null};{null};{null};{null}
+0010;cy;PASS;NONE;b123456;{skip};Apollonia;Afroditi;cy
+0011;cy;PASS;NONE;c123456;{skip};Apollonia;Afroditi;cy
+0012;cy;PASS;NONE;e123456;{skip};Apollonia;Afroditi;cy
+0013;cy;PASS;NONE;j123456;{skip};Apollonia;Afroditi;cy
+0014;cy;FAIL;wrong passport case 1;o123456;{skip};Apollonia;Afroditi;cy
+0020;cy;PASS;NONE;k12345678;{skip};Apollonia;Afroditi;cy
+0021;cy;FAIL;wrong passport case 2;k1234567899;{skip};Apollonia;Afroditi;cy
+0030;cy;PASS;NONE;dp1234567;{skip};Apollonia;Afroditi;cy
+0031;cy;FAIL;wrong passport case 3;dp123ds4567;{skip};Apollonia;Afroditi;cy

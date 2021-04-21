@@ -1,0 +1,27 @@
+<div class="ocs-panel-style padd0">
+    <div class="ocs-recents-signatories">
+        <table class="table">
+            <caption class="ocs-title-label ux-u-text-align-center">{{ 'header.recent.supporters'| translate }}</caption>
+            <thead>
+            <tr class="ocs-hideme">
+               <td id="1"></td>
+                <th scope="col" class="ocs-noborder" id="2"><span class="ocs-element-hidden">User</span></th>
+                <th scope="col" class="ocs-noborder" id="3"><span class="ocs-element-hidden">From</span></th>
+                <th scope="col" class="ocs-noborder" id="4"><span class="ocs-element-hidden">Country</span></th>
+                <th scope="col" class="ocs-noborder" id="5"><span class="ocs-element-hidden">Date</span></th>
+                <td id="6"></td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let supporter of supporters">
+                    <td headers="1"></td>
+                    <td headers="2"><i class="fa fa-user" aria-hidden="true"></i><span aria-hidden="true" class="people-signature"> +1</span><span aria-label="One signature"></span> </td>
+                    <td headers="3">{{ 'common.from' | translate }}</td>
+                    <td headers="4"><span attr.aria-label="Signature of {{ supporter?.label | translate | uppercase }}"> {{ supporter?.label | translate | uppercase }} </span></td>
+                    <td headers="5"><span attr.aria-label="Date signature {{ supporter?.date }}"> {{ supporter?.date }}</span></td>
+                    <td headers="6"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

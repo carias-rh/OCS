@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<OCT_INITIATIVE_DESC id="1" objectives="[EN]testObjectives"
+		title="[EN]description" url="http://www.rest.test.url.uk" language_id="6"
+		isDefault="1" partialRegistration="partialRegistration url lg 6"/>
+	<OCT_INITIATIVE_DESC id="2" objectives="[IT]testObjectives"
+		title="[IT]description" url="http://www.rest.test.url.it" language_id="9"
+		isDefault="0" partialRegistration="partialRegistration url lg 9"/>
+</dataset>

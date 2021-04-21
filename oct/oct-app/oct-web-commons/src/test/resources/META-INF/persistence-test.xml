@@ -1,0 +1,59 @@
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/persistence"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="oct" transaction-type="RESOURCE_LOCAL">
+		<class>eu.europa.ec.eci.oct.entities.AuthenticationLock</class>
+		<class>eu.europa.ec.eci.oct.entities.AuditableEntity</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.Contact</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.ContactRole</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.Account</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.InitiativeDescription</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.SystemPreferences</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.SocialMedia</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.SocialMediaMessage</class>
+		<class>eu.europa.ec.eci.oct.entities.system.Country</class>
+		<class>eu.europa.ec.eci.oct.entities.system.CountryRule</class>
+		<class>eu.europa.ec.eci.oct.entities.system.Language</class>
+		<class>eu.europa.ec.eci.oct.entities.signature.Signature</class>
+		<class>eu.europa.ec.eci.oct.entities.CountryProperty</class>
+		<class>eu.europa.ec.eci.oct.entities.Property</class>
+		<class>eu.europa.ec.eci.oct.entities.PropertyGroup</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.RuleParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.ValidationRule</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.GlobalRuleParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.GlobalValidationRule</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.LocalRuleParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.rules.LocalValidationRule</class>
+		<class>eu.europa.ec.eci.oct.entities.ConfigurationParameter</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.Feedback</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.FeedbackRange</class>
+		<class>eu.europa.ec.eci.oct.entities.admin.StepState</class>
+		<class>eu.europa.ec.eci.oct.entities.views.LastSignatures</class>
+		<class>eu.europa.ec.eci.oct.entities.views.EvolutionMapByCountry</class>
+		<class>eu.europa.ec.eci.oct.entities.views.FastSignatureCount</class>
+		<class>eu.europa.ec.eci.oct.entities.translations.Translation</class>
+		<class>eu.europa.ec.eci.oct.entities.email.Email</class>
+		<class>eu.europa.ec.eci.oct.webcommons.services.export.utils.ExportSignatureBean</class>
+
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/oct_test" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="root" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.release_mode" value="transaction" />
+			<property name="hibernate.show_sql" value="false" />
+
+			<!-- <property name="hibernate.connection.datasource" value="javax.persistence.jdbc.url" 
+				/> -->
+			<!-- <property name="dialect" value="org.hibernate.dialect.MySQLDialect" 
+				/> -->
+			<!-- <property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.JTATransactionFactory" 
+				/> -->
+			<!-- <property name="transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup" 
+				/> -->
+		</properties>
+	</persistence-unit>
+</persistence>
+

@@ -352,11 +352,11 @@
 			<artifactId>freetts</artifactId>
 			<version>${freetts.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>eu.europa.ec.digit.ocs.freetts</groupId>
-			<artifactId>cmulex</artifactId>
-			<version>${freetts.version}</version>
-		</dependency>
+<dependency>
+    <groupId>org.mobicents.external.freetts</groupId>
+    <artifactId>cmulex</artifactId>
+    <version>1.0</version>
+</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.digit.ocs.freetts</groupId>
 			<artifactId>cmu_us_kal</artifactId>

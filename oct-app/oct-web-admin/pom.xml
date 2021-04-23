@@ -179,11 +179,6 @@
 
 	<dependencies>
 		<dependency>
-   			<groupId>org.mobicents.external.freetts</groupId>
-  			<artifactId>en_us</artifactId>
- 		        <version>1.0</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework.version}</version>

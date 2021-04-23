@@ -53,7 +53,7 @@
 						<id>angular-npm-install</id>
 						<phase>generate-sources</phase>
 						<configuration>
-							<workingDirectory>${project.basedir}/src/resources/angular</workingDirectory>
+							<workingDirectory>${project.basedir}/src/main/resources/angular</workingDirectory>
 							<executable>npm</executable>
 							<arguments>
 								<argument>install</argument>
@@ -67,7 +67,7 @@
 						<id>angular-npm-run-build-prod</id>
 						<phase>compile</phase>
 						<configuration>
-							<workingDirectory>${project.basedir}/src/resources/angular</workingDirectory>
+							<workingDirectory>${project.basedir}/src/main/resources/angular</workingDirectory>
 							<executable>npm</executable>
 							<arguments>
 								<argument>run</argument>
@@ -149,7 +149,7 @@
 							<outputDirectory>${project.basedir}/src/main/webapp</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.basedir}/src/resources/angular/dist</directory>
+									<directory>${project.basedir}/src/main/resources/angular/dist</directory>
 								</resource>
 							</resources>
 						</configuration>

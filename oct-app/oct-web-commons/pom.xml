@@ -347,21 +347,21 @@
     <artifactId>en_us</artifactId>
     <version>1.0</version>
 </dependency>
-		<dependency>
-			<groupId>eu.europa.ec.digit.ocs.freetts</groupId>
-			<artifactId>freetts</artifactId>
-			<version>${freetts.version}</version>
-		</dependency>
+<dependency>
+    <groupId>org.mobicents.external.freetts</groupId>
+    <artifactId>freetts</artifactId>
+    <version>1.0</version>
+</dependency>
 <dependency>
     <groupId>org.mobicents.external.freetts</groupId>
     <artifactId>cmulex</artifactId>
     <version>1.0</version>
 </dependency>
-		<dependency>
-			<groupId>eu.europa.ec.digit.ocs.freetts</groupId>
-			<artifactId>cmu_us_kal</artifactId>
-			<version>${freetts.version}</version>
-		</dependency>
+<dependency>
+    <groupId>org.mobicents.external.freetts</groupId>
+    <artifactId>cmu_us_kal</artifactId>
+    <version>1.0</version>
+</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-core</artifactId>

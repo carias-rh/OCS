@@ -342,11 +342,11 @@
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>eu.europa.ec.digit.ocs.freetts</groupId>
-			<artifactId>freetts-en_us</artifactId>
-			<version>${freetts.version}</version>
-		</dependency>
+<dependency>
+    <groupId>org.mobicents.external.freetts</groupId>
+    <artifactId>en_us</artifactId>
+    <version>1.0</version>
+</dependency>
 		<dependency>
 			<groupId>eu.europa.ec.digit.ocs.freetts</groupId>
 			<artifactId>freetts</artifactId>
